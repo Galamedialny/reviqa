@@ -2,7 +2,7 @@ export const contact = {
   phoneDisplay: "+421 917 072 074",
   phone: "+421917072074",
   email: "info@reviqa.sk",
-  address: "Hitschova 2, 058 01 Poprad",
+  address: "Hitschova 5022/2, 058 01 Poprad, SLOVAKIA",
   whatsapp:
     "https://wa.me/421917072074?text=Dobr%C3%BD%20de%C5%88%2C%20m%C3%A1m%20z%C3%A1ujem%20o%20vstupn%C3%BA%20konzult%C3%A1ciu%20v%20REVIQA.",
 };
@@ -218,7 +218,7 @@ export const faqs = [
   ["Ako dlho trvá návšteva?", "Úvodné komplexné vyšetrenie trvá približne 120 minút. Nadväzujúce stretnutie približne 90 minút a HBOT približne 60 minút."],
   ["Môžem kombinovať viaceré terapie?", "Áno, ak je to vhodné. Kombinácie a poradie terapií navrhujeme podľa individuálneho plánu, nie podľa univerzálneho balíka."],
   ["Ako zistím, či je terapia pre mňa vhodná?", "Pred začiatkom preberieme váš zdravotný stav, liečbu a možné obmedzenia. O vhodnosti konkrétneho postupu rozhoduje odborné posúdenie."],
-  ["Kde môžem zaparkovať?", "Parkovanie je dostupné priamo v objekte centra na adrese Hitschova 2 v Poprade."],
+  ["Kde môžem zaparkovať?", "Parkovanie je dostupné priamo v objekte centra na adrese Hitschova 5022/2 v Poprade."],
   ["Dá sa objednať aj mimo otváracích hodín?", "Áno. Mimo bežných hodín a počas víkendu je možné dohodnúť termín podľa potreby a dostupnosti."],
 ] as const;
 

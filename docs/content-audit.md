@@ -15,7 +15,7 @@
 
 Texty z obrazových podkladov boli prepísané do zrozumiteľnej webovej podoby. Výrazy, ktoré by mohli pôsobiť ako záruka výsledku, diagnóza alebo náhrada zdravotnej starostlivosti, sú formulované ako možné prínosy a vždy podmienené individuálnym posúdením.
 
-Pred ostrým spustením musí Dr. med. univ. Alexandra Foltinska potvrdiť najmä zdravotné tvrdenia, zoznamy vhodnosti, kontraindikácie a parametre jednotlivých protokolov. Bez odborného potvrdenia sa nesmú publikovať absolútne tvrdenia typu „bez vedľajších účinkov“, sľuby liečby orgánových alebo onkologických ochorení ani číselné výsledky bez presného zdroja.
+Pred ostrým spustením musí Dr. med. univ. Alexandra Foltinská potvrdiť najmä zdravotné tvrdenia, zoznamy vhodnosti, kontraindikácie a parametre jednotlivých protokolov. Bez odborného potvrdenia sa nesmú publikovať absolútne tvrdenia typu „bez vedľajších účinkov“, sľuby liečby orgánových alebo onkologických ochorení ani číselné výsledky bez presného zdroja.
 
 ## Stav vizuálov
 

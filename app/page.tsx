@@ -30,7 +30,7 @@ export default function Home() {
         <div className="center-action"><Link className="gold-button" href="/metoda-reviqa">Celá Metóda REVIQA</Link></div>
       </section>
 
-      <section className="section shell place-section"><div className="place-image"><img src={asset("/assets/center-garden-4.jpeg")} alt="Záhrada a budova centra REVIQA v Poprade" /></div><div><SectionHeading eyebrow="Miesto, ktoré spomaľuje" title="Pokojné centrum pod Tatrami" text="Moderný bezbariérový priestor, súkromie, záhrada a parkovanie priamo v objekte. Vytvorili sme miesto, kde má každý klient čas a pozornosť." /><ul className="gold-list"><li>Hitschova 2, Poprad</li><li>Parkovanie v objekte</li><li>Bezbariérový vstup</li><li>Návštevy na objednávku</li></ul><Link className="outline-link" href="/galeria">Pozrieť galériu</Link></div></section>
+      <section className="section shell place-section"><div className="place-image"><img src={asset("/assets/center-garden-4.jpeg")} alt="Záhrada a budova centra REVIQA v Poprade" /></div><div><SectionHeading eyebrow="Miesto, ktoré spomaľuje" title="Pokojné centrum pod Tatrami" text="Moderný bezbariérový priestor, súkromie, záhrada a parkovanie priamo v objekte. Vytvorili sme miesto, kde má každý klient čas a pozornosť." /><ul className="gold-list"><li>Hitschova 5022/2, Poprad</li><li>Parkovanie v objekte</li><li>Bezbariérový vstup</li><li>Návštevy na objednávku</li></ul><Link className="outline-link" href="/galeria">Pozrieť galériu</Link></div></section>
 
       <CTA />
     </>
