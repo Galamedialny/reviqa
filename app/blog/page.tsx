@@ -5,10 +5,10 @@ import { asset } from "@/lib/content";
 export const metadata: Metadata = { title: "Blog", description: "Články REVIQA o regenerácii, HBOT, molekulárnom vodíku, fotobiomodulácii a zdravom pohybe." };
 
 const drafts = [
-  ["HBOT", "Čo je hyperbarická oxygenoterapia?", "/assets/therapy-hbot.jpeg"],
+  ["HBOT", "Čo je hyperbarická oxygenoterapia?", "/assets/service-hbot.png"],
   ["Prvá návšteva", "Ako prebieha vstupná konzultácia v REVIQA", "/assets/center-garden-1.jpeg"],
-  ["H₂", "Molekulárny vodík v individuálnom regeneračnom pláne", "/assets/therapy-hydrogen.jpeg"],
-  ["Svetlo", "Čo je fotobiomodulácia?", "/assets/therapy-pbm.jpeg"],
+  ["H₂", "Molekulárny vodík v individuálnom regeneračnom pláne", "/assets/service-hydrogen.png"],
+  ["Svetlo", "Čo je fotobiomodulácia?", "/assets/service-pbm.png"],
   ["Pohyb", "Nervový systém, pohyb a regenerácia v súvislostiach", "/assets/therapy-regeneration.jpeg"],
 ] as const;
 

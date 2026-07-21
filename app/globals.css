@@ -139,6 +139,18 @@ p { color: #c9c9c5; margin: 16px 0 0; }
 .medical-note { max-width: 850px; padding: 24px 28px; border-left: 3px solid var(--gold); background: rgba(201,164,100,.06); margin-top: 50px; }
 .medical-note b { color: var(--gold-light); }
 .medical-note p { font-size: .86rem; margin-top: 5px; }
+.review-banner { margin-top: 28px; padding: 18px 22px; display: flex; gap: 24px; align-items: center; border: 1px solid var(--line); background: rgba(201,164,100,.05); }
+.review-banner span { flex: 0 0 auto; color: var(--gold-light); text-transform: uppercase; letter-spacing: .12em; font-size: .68rem; }
+.review-banner p { margin: 0; font-size: .78rem; }
+.tag-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag-grid span { padding: 13px 16px; border: 1px solid var(--line); background: var(--panel); color: #dedbd2; font-size: .78rem; }
+.service-content { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; align-items: start; }
+.service-audience { grid-template-columns: 1fr; }
+.content-blocks { border-top: 1px solid var(--line); }
+.content-blocks article { padding: 25px 0; border-bottom: 1px solid var(--line); }
+.content-blocks h3 { color: var(--gold-light); margin-bottom: 8px; }
+.content-blocks p { margin: 0; font-size: .88rem; }
+.service-faq { max-width: 100%; }
 
 .price-lines { border-top: 1px solid var(--line); }
 .price-lines article { display: grid; grid-template-columns: 1fr 110px 190px; gap: 30px; align-items: center; padding: 28px 0; border-bottom: 1px solid var(--line); }
@@ -263,7 +275,7 @@ p { color: #c9c9c5; margin: 16px 0 0; }
   .hero-facts span { padding: 12px; font-size: .6rem; border-bottom: 1px solid var(--line); }
   .page-hero { min-height: 420px; padding-block: 80px; }
   .page-hero h1 { font-size: clamp(2.8rem, 13vw, 4.8rem); }
-  .split, .place-section, .service-detail, .contact-layout { grid-template-columns: 1fr; gap: 55px; }
+  .split, .place-section, .service-detail, .service-content, .contact-layout { grid-template-columns: 1fr; gap: 55px; }
   .service-grid, .blog-grid { grid-template-columns: 1fr; }
   .method-steps, .values-grid, .benefit-grid, .program-grid { grid-template-columns: 1fr; }
   .method-steps article { min-height: auto; border-right: 1px solid var(--line); }
@@ -288,6 +300,7 @@ p { color: #c9c9c5; margin: 16px 0 0; }
   .contact-float { right: 14px; bottom: 14px; }
   .call-chip { width: 48px; }
   .cookie-bar { left: 14px; bottom: 14px; width: calc(100% - 28px); flex-direction: column; align-items: stretch; }
+  .review-banner { align-items: flex-start; flex-direction: column; gap: 8px; }
   .cookie-bar > div { margin: 0; }
   .cookie-bar button { flex: 1; }
 }
