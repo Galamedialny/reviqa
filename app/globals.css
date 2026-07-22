@@ -117,6 +117,8 @@ p { color: #c9c9c5; margin: 16px 0 0; }
 .portrait-crop img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
 .person-card blockquote { color: var(--gold-light); font-family: var(--serif); font-size: 1.45rem; border-left: 1px solid var(--gold); margin: 30px 0 0; padding-left: 22px; }
 .consultant { grid-template-columns: 260px 1fr; }
+.consultant-portrait { height: 390px; }
+.consultant-portrait img { object-position: center 31%; }
 .portrait-placeholder { aspect-ratio: 1; border: 1px solid var(--gold); display: grid; place-items: center; background: radial-gradient(circle, rgba(201,164,100,.18), transparent 62%); }
 .portrait-placeholder span { font: 3rem var(--serif); color: var(--gold-light); }
 
