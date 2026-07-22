@@ -14,7 +14,7 @@ export default function Home() {
           <p>Súkromné regeneračné centrum v Poprade. Spájame individuálny prístup, moderné technológie a pokojné prostredie pre vašu cestu k pohybu, regenerácii a vitalite.</p>
           <div className="hero-actions"><a className="gold-button" href={contact.whatsapp} target="_blank" rel="noreferrer">Objednať vstupnú konzultáciu</a><Link className="text-link" href="/metoda-reviqa">Spoznajte Metódu REVIQA →</Link></div>
         </div>
-        <aside className="hero-consult-card"><img src={asset("/assets/radovan-foltinsky-portrait-v2.jpg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" /><span>Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Vaše potreby, ciele a ďalší postup preberieme pokojne a individuálne.</p><a href={contact.whatsapp} target="_blank" rel="noreferrer">Objednať konzultáciu</a></aside>
+        <aside className="hero-consult-card"><img src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" /><span>Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Vaše potreby, ciele a ďalší postup preberieme pokojne a individuálne.</p><a href={contact.whatsapp} target="_blank" rel="noreferrer">Objednať konzultáciu</a></aside>
         <div className="hero-facts shell"><span><b>01</b> Individuálny plán</span><span><b>02</b> Pokoj a diskrétnosť</span><span><b>03</b> Moderné technológie</span><span><b>04</b> Dlhodobá starostlivosť</span></div>
       </section>
 
