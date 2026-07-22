@@ -39,7 +39,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         </div>
         <div className="nav-wrap">
           <Link href="/" className="brand" aria-label="REVIQA – domov">
-            <img src={asset("/assets/reviqa-logo-transparent.png")} alt="REVIQA Biomedica" />
+            <img src={asset("/assets/reviqa-logo-header.png")} alt="REVIQA Biomedica" />
           </Link>
           <button className="menu-toggle" aria-label="Otvoriť menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             <span /><span /><span />

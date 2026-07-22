@@ -38,8 +38,8 @@ p { color: #535754; margin: 16px 0 0; }
 .topline a { color: var(--gold-light); }
 .site-header { position: sticky; top: 0; z-index: 80; background: rgba(239,240,238,.94); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
 .nav-wrap { width: min(1320px, calc(100% - 40px)); height: 78px; margin-inline: auto; display: flex; align-items: center; gap: 36px; }
-.brand { flex: 0 0 160px; height: 58px; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; }
-.brand img { width: 168px; height: 54px; object-fit: contain; object-position: left center; transform: scale(1.08); transform-origin: left center; }
+.brand { flex: 0 0 168px; height: 70px; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; }
+.brand img { width: 154px; height: 74px; object-fit: contain; object-position: left center; filter: saturate(1.2) contrast(1.15) drop-shadow(0 1px 0 rgba(70,45,15,.28)); }
 .main-nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
 .main-nav > a:not(.nav-cta) { color: #252826; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
 .main-nav > a:hover { color: var(--gold-light); }
@@ -273,10 +273,10 @@ p { color: #535754; margin: 16px 0 0; }
   .topline { padding-inline: 15px; letter-spacing: .03em; }
   .topline span { max-width: 54%; white-space: nowrap; overflow: hidden; }
   .nav-wrap { width: calc(100% - 28px); height: 70px; }
-  .nav-wrap { height: 64px; }
-  .brand { flex-basis: 132px; height: 48px; }
-  .brand img { width: 138px; height: 44px; transform: scale(1.04); }
-  .main-nav { top: 95px; }
+  .nav-wrap { height: 70px; }
+  .brand { flex-basis: 148px; height: 64px; }
+  .brand img { width: 140px; height: 68px; }
+  .main-nav { top: 101px; }
   .home-hero { min-height: 780px; align-items: flex-start; }
   .hero-bg { object-position: 62% center; }
   .hero-shade { background: linear-gradient(90deg, rgba(238,240,238,.97), rgba(238,240,238,.68)), linear-gradient(0deg, rgba(236,238,236,.98), transparent 55%); }
