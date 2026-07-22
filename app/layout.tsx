@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
 import { StructuredData } from "@/components/StructuredData";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -68,5 +69,5 @@ const globalStructuredData = [
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="sk"><body><StructuredData data={globalStructuredData} /><SiteShell>{children}</SiteShell></body></html>;
+  return <html lang="sk"><body><StructuredData data={globalStructuredData} /><GoogleAnalytics /><SiteShell>{children}</SiteShell></body></html>;
 }

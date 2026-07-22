@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { asset, contact } from "@/lib/content";
+import { COOKIE_CONSENT_EVENT } from "@/components/GoogleAnalytics";
 
 const nav = [
   ["/", "Úvod"],
@@ -27,6 +28,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   const chooseCookies = (choice: string) => {
     localStorage.setItem("reviqa-cookie-choice", choice);
+    window.dispatchEvent(new CustomEvent(COOKIE_CONSENT_EVENT, { detail: choice }));
     setCookies(false);
   };
 
@@ -80,6 +82,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <Link href="/galeria">Galéria</Link>
             <Link href="/ochrana-osobnych-udajov">Ochrana osobných údajov</Link>
             <Link href="/cookies">Cookies</Link>
+            <button className="footer-cookie-button" type="button" onClick={() => setCookies(true)}>Nastavenie cookies</button>
           </div>
           <div>
             <h3>Sledujte nás</h3>
@@ -105,7 +108,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
       {cookies && (
         <div className="cookie-bar" role="dialog" aria-label="Nastavenie cookies">
-          <p><b>Cookies</b><br />Používame iba základné cookies potrebné na správne fungovanie stránky. <Link href="/cookies">Viac informácií</Link></p>
+          <p><b>Nastavenie cookies</b><br />Používame nevyhnutné technológie a po vašom súhlase Google Analytics na meranie návštevnosti. <Link href="/cookies">Viac informácií</Link></p>
           <div><button onClick={() => chooseCookies("necessary")}>Iba nevyhnutné</button><button className="gold-button" onClick={() => chooseCookies("accepted")}>Súhlasím</button></div>
         </div>
       )}

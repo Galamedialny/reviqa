@@ -239,6 +239,8 @@ p { color: #535754; margin: 16px 0 0; }
 .footer-map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(.82) opacity(.78); }
 .footer-bottom { border-top: 1px solid var(--line); padding: 22px 0; display: flex; justify-content: space-between; color: #686d6a; font-size: .72rem; }
 .footer-bottom a { color: var(--gold); }
+.footer-cookie-button { display: block; margin-top: 7px; padding: 0; border: 0; background: transparent; color: var(--gold); font: inherit; cursor: pointer; text-align: left; }
+.footer-cookie-button:hover { text-decoration: underline; }
 
 .contact-float { position: fixed; z-index: 70; right: 22px; bottom: 22px; display: flex; gap: 8px; align-items: stretch; }
 .call-chip { width: 52px; display: grid; place-items: center; border-radius: 50%; background: #f4f4f2; border: 1px solid var(--gold); color: var(--gold-light); font-size: 1.25rem; }
