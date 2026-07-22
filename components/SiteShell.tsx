@@ -100,9 +100,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       </footer>
 
       <div className="contact-float">
-        <a className="call-chip" href={`tel:${contact.phone}`} aria-label="Zavolať do REVIQA">☎</a>
+        <a className="call-chip" href={`tel:${contact.phone}`} aria-label="Zavolať do REVIQA">Zavolať</a>
         <a className="wa-chip" href={contact.whatsapp} target="_blank" rel="noreferrer" aria-label="Napísať cez WhatsApp">
-          <span className="online-dot" /> <b>Sme online</b><small>WhatsApp</small>
+          <span className="online-dot" aria-hidden="true" />
+          <span className="wa-copy"><b>WhatsApp</b><small>Sme online</small></span>
         </a>
       </div>
 

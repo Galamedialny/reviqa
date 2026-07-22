@@ -242,12 +242,15 @@ p { color: #535754; margin: 16px 0 0; }
 .footer-cookie-button { display: block; margin-top: 7px; padding: 0; border: 0; background: transparent; color: var(--gold); font: inherit; cursor: pointer; text-align: left; }
 .footer-cookie-button:hover { text-decoration: underline; }
 
-.contact-float { position: fixed; z-index: 70; right: 22px; bottom: 22px; display: flex; gap: 8px; align-items: stretch; }
-.call-chip { width: 52px; display: grid; place-items: center; border-radius: 50%; background: #f4f4f2; border: 1px solid var(--gold); color: var(--gold-light); font-size: 1.25rem; }
-.wa-chip { display: grid; grid-template-columns: 10px 1fr; column-gap: 8px; padding: 9px 16px; border-radius: 28px; background: #12351e; border: 1px solid #3c9c5a; box-shadow: 0 10px 35px #000; }
-.wa-chip b { font-size: .78rem; }
-.wa-chip small { grid-column: 2; color: #a5caae; font-size: .62rem; }
-.online-dot { width: 8px; height: 8px; margin-top: 6px; background: #56dc79; border-radius: 50%; box-shadow: 0 0 10px #56dc79; grid-row: span 2; }
+.contact-float { position: fixed; z-index: 70; right: 22px; bottom: 22px; display: flex; gap: 6px; align-items: stretch; padding: 5px; border: 1px solid rgba(168,125,67,.32); border-radius: 999px; background: rgba(246,246,244,.9); box-shadow: 0 12px 34px rgba(24,27,25,.14); backdrop-filter: blur(12px); }
+.call-chip { min-height: 46px; display: grid; place-items: center; padding: 0 18px; border-radius: 999px; background: rgba(255,255,255,.7); border: 1px solid rgba(168,125,67,.5); color: #765b36; font-size: .67rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: color .2s ease, border-color .2s ease, background .2s ease; }
+.call-chip:hover { color: #171917; border-color: var(--gold); background: #fff; }
+.wa-chip { min-height: 46px; display: flex; align-items: center; gap: 10px; padding: 7px 17px 7px 14px; border-radius: 999px; background: #edf3ed; border: 1px solid rgba(47,117,68,.34); color: #173521; box-shadow: none; transition: background .2s ease, border-color .2s ease; }
+.wa-chip:hover { background: #e4eee5; border-color: rgba(47,117,68,.62); }
+.wa-copy { display: grid; line-height: 1.05; }
+.wa-chip b { font-size: .74rem; letter-spacing: .025em; }
+.wa-chip small { margin-top: 4px; color: #5c7663; font-size: .58rem; }
+.online-dot { width: 7px; height: 7px; background: #42b866; border-radius: 50%; box-shadow: 0 0 0 4px rgba(66,184,102,.11); }
 .cookie-bar { position: fixed; z-index: 100; left: 22px; bottom: 22px; width: min(620px, calc(100% - 44px)); padding: 22px; display: flex; align-items: center; gap: 25px; background: #f6f6f4; border: 1px solid var(--gold); box-shadow: 0 20px 60px rgba(24,27,25,.18); }
 .cookie-bar p { font-size: .78rem; margin: 0; }
 .cookie-bar p a { color: var(--gold-light); text-decoration: underline; }
@@ -314,8 +317,9 @@ p { color: #535754; margin: 16px 0 0; }
   .footer-grid { grid-template-columns: 1fr; gap: 36px; }
   .footer-grid > div:last-child { grid-column: auto; }
   .footer-bottom { flex-direction: column; gap: 8px; }
-  .contact-float { right: 14px; bottom: 14px; }
-  .call-chip { width: 48px; }
+  .contact-float { right: 10px; bottom: 10px; padding: 4px; }
+  .call-chip { min-height: 42px; padding-inline: 13px; font-size: .61rem; }
+  .wa-chip { min-height: 42px; padding: 6px 13px 6px 11px; }
   .cookie-bar { left: 14px; bottom: 14px; width: calc(100% - 28px); flex-direction: column; align-items: stretch; }
   .review-banner { align-items: flex-start; flex-direction: column; gap: 8px; }
   .cookie-bar > div { margin: 0; }
