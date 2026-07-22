@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const preview = process.env.GITHUB_ACTIONS === "true";
+  const preview = process.env.GITHUB_ACTIONS === "true" && process.env.CUSTOM_DOMAIN !== "true";
   return preview
     ? { rules: { userAgent: "*", disallow: "/" } }
     : { rules: { userAgent: "*", allow: "/" }, sitemap: "https://www.reviqa.sk/sitemap.xml" };

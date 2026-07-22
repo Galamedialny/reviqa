@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/SiteShell";
 import "./globals.css";
 
-const githubPreview = process.env.GITHUB_ACTIONS === "true";
+const githubPreview = process.env.GITHUB_ACTIONS === "true" && process.env.CUSTOM_DOMAIN !== "true";
 const siteUrl = githubPreview ? "https://galamedialny.github.io/reviqa" : "https://www.reviqa.sk";
 
 export const metadata: Metadata = {
