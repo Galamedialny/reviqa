@@ -87,6 +87,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <span aria-label="Facebook">f</span><span aria-label="Instagram">◎</span>
             </div>
             <p className="muted">Odkazy doplníme čoskoro.</p>
+            <div className="footer-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199735.6963376034!2d20.152553270098007!3d49.01102797600171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e3b8f55e5821b%3A0xa48b688bd1373dd1!2sReviqa%20Biomedica!5e1!3m2!1scs!2ssk!4v1784717514004!5m2!1scs!2ssk" title="Poloha REVIQA Biomedica na Google Maps" loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /></div>
           </div>
         </div>
         <div className="footer-bottom shell">
