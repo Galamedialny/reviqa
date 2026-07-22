@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { CTA, PageHero, SectionHeading } from "@/components/Sections";
 import { asset } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Galéria", description: "Skutočné fotografie súkromného regeneračného centra REVIQA v Poprade." };
+export const metadata = createPageMetadata({ title: "Galéria centra REVIQA", description: "Pozrite si skutočné fotografie súkromného, bezbariérového regeneračného centra REVIQA, jeho záhrady a prostredia v Poprade.", path: "/galeria" });
 
 const photos = [
   ["/assets/center-garden-1.jpeg", "Záhrada centra REVIQA"], ["/assets/center-garden-2.jpeg", "Pokojná zeleň pri centre"],

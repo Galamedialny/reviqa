@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { CTA, PageHero, SectionHeading } from "@/components/Sections";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Metóda REVIQA", description: "Päť krokov personalizovanej regenerácie: objavenie, posúdenie, reset, obnova a udržanie." };
+export const metadata = createPageMetadata({ title: "Metóda REVIQA – 5 krokov regenerácie", description: "Objavte päť krokov individuálnej Metódy REVIQA: rozhovor, posúdenie súvislostí, reset, obnova a dlhodobé udržanie progresu.", path: "/metoda-reviqa" });
 
 const steps = [
   ["01", "Objavenie", "Počúvame", "Spoznávame váš príbeh, priority, aktuálne ťažkosti a to, čo chcete znovu zvládať s väčšou ľahkosťou."],

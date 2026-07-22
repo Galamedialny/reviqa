@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { CTA, SectionHeading, ServiceGrid } from "@/components/Sections";
 import { asset, contact } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({ title: "REVIQA Biomedica | Súkromné regeneračné centrum Poprad", description: "REVIQA Biomedica v Poprade ponúka individuálnu starostlivosť, vstupnú diagnostiku, HBOT, molekulárny vodík, fotobiomoduláciu a regeneračné terapie.", path: "" });
 
 export default function Home() {
   return (

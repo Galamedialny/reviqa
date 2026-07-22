@@ -16,7 +16,7 @@ export function SectionHeading({ eyebrow, title, text, center = false }: { eyebr
 export function ServiceGrid({ limit }: { limit?: number }) {
   return <div className="service-grid">{services.slice(0, limit ?? services.length).map((service, i) => (
     <article className="service-card" key={service.slug}>
-      <div className="service-image"><img src={asset(service.image)} alt="" /><span>Ilustračná vizualizácia</span></div>
+      <div className="service-image"><img src={asset(service.image)} alt={`Ilustračná vizualizácia – ${service.title}`} /><span>Ilustračná vizualizácia</span></div>
       <div className="service-body"><small>0{i + 1}</small><h3>{service.title}</h3><p>{service.intro}</p><Link href={`/sluzby/${service.slug}`}>Zistiť viac <span>→</span></Link></div>
     </article>
   ))}</div>;

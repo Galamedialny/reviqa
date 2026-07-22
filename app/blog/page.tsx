@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { CTA, PageHero, SectionHeading } from "@/components/Sections";
 import { asset } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Blog", description: "Články REVIQA o regenerácii, HBOT, molekulárnom vodíku, fotobiomodulácii a zdravom pohybe." };
+export const metadata = createPageMetadata({ title: "Blog o regenerácii a dlhovekosti", description: "Odborne kontrolované články REVIQA o regenerácii, HBOT, molekulárnom vodíku, fotobiomodulácii, pohybe a dlhodobej vitalite.", path: "/blog" });
 
 const drafts = [
   ["HBOT", "Čo je hyperbarická oxygenoterapia?", "/assets/service-hbot.png"],

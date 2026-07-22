@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { CTA, PageHero } from "@/components/Sections";
 import { asset } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Náš tím", description: "Radovan Foltinský, MSc, MEd, CertMgmt (Open) a Dr. med. univ. Alexandra Foltinská – tím a odborné zázemie centra REVIQA." };
+export const metadata = createPageMetadata({ title: "Náš tím a odborné zázemie", description: "Spoznajte zakladateľa Radovana Foltinského a odbornú konzultantku Dr. med. univ. Alexandru Foltinskú z REVIQA Biomedica.", path: "/nas-tim" });
 
 export default function TeamPage() {
   return <><PageHero eyebrow="Náš tím" title="Odbornosť s ľudskou tvárou" text="Osobný prístup, dôkladné porozumenie a odborná konzultácia tvoria základ každej spolupráce." />

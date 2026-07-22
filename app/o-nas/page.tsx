@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { CTA, PageHero, SectionHeading } from "@/components/Sections";
 import { asset } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "O nás", description: "Spoznajte filozofiu, tím a prostredie súkromného regeneračného centra REVIQA v Poprade." };
+export const metadata = createPageMetadata({ title: "O nás – filozofia a centrum", description: "Spoznajte filozofiu, odborné zázemie a pokojné prostredie súkromného regeneračného centra REVIQA Biomedica v Poprade.", path: "/o-nas" });
 
 export default function AboutPage() {
   return <><PageHero eyebrow="O nás" title="Váš potenciál. Naša misia." text="REVIQA vzniká ako pokojné, diskrétne miesto, kde sa moderné technológie stretávajú s časom, pozornosťou a individuálnym prístupom." image="/assets/center-garden-1.jpeg" />

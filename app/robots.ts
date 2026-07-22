@@ -6,5 +6,5 @@ export default function robots(): MetadataRoute.Robots {
   const preview = process.env.GITHUB_ACTIONS === "true" && process.env.CUSTOM_DOMAIN !== "true";
   return preview
     ? { rules: { userAgent: "*", disallow: "/" } }
-    : { rules: { userAgent: "*", allow: "/" }, sitemap: "https://www.reviqa.sk/sitemap.xml" };
+    : { rules: { userAgent: "*", allow: "/" }, sitemap: "https://www.reviqa.sk/sitemap.xml", host: "https://www.reviqa.sk" };
 }

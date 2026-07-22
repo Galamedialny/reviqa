@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { CTA, MedicalNote, PageHero, SectionHeading } from "@/components/Sections";
 import { programs } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Programy a cenník", description: "Cenník individuálnej starostlivosti, HBOT a regeneračných programov REVIQA." };
+export const metadata = createPageMetadata({ title: "Programy regenerácie a cenník", description: "Orientačný cenník vstupnej diagnostiky, individuálnej starostlivosti, HBOT a regeneračných programov REVIQA Biomedica v Poprade.", path: "/programy-cennik" });
 
 export default function PricingPage() {
   return <><PageHero eyebrow="Programy a cenník" title="Každý plán začína človekom" text="Ceny poskytujú orientáciu. Konečný rozsah starostlivosti odporučíme až po vstupnom zhodnotení a vždy ho prispôsobíme vašim potrebám." image="/assets/brochure-pricing.jpeg" />
