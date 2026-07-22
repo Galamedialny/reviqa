@@ -9,20 +9,20 @@ export default function Home() {
   return (
     <>
       <section className="home-hero">
-        <img className="hero-bg" src={asset("/assets/center-garden-4.jpeg")} alt="Záhrada a súkromné centrum REVIQA v Poprade" />
+        <img className="hero-bg" src={asset("/assets/logo-hero.jpeg")} alt="REVIQA Biomedica pod Vysokými Tatrami" />
         <div className="hero-shade" />
         <div className="hero-content shell">
           <span className="eyebrow">Private Regeneration & Longevity Center</span>
           <h1>Vaše telo.<br /><em>Vaša budúcnosť.</em><br />Naša veda.</h1>
           <p>Súkromné regeneračné centrum v Poprade. Spájame individuálny prístup, moderné technológie a pokojné prostredie pre vašu cestu k pohybu, regenerácii a vitalite.</p>
-          <div className="hero-actions"><a className="gold-button" href={contact.whatsapp} target="_blank" rel="noreferrer">Objednať vstupnú konzultáciu</a><Link className="text-link" href="/metoda-reviqa">Spoznajte Metódu REVIQA →</Link></div>
+          <div className="hero-actions"><a className="gold-button" href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si konzultáciu</a><Link className="text-link" href="/sluzby">Technológie a terapeutické metódy REVIQA →</Link></div>
         </div>
-        <aside className="hero-consult-card"><img src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" /><span>Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Vaše potreby, ciele a ďalší postup preberieme pokojne a individuálne.</p><a href={contact.whatsapp} target="_blank" rel="noreferrer">Objednať konzultáciu</a></aside>
-        <div className="hero-facts shell"><span><b>01</b> Individuálny plán</span><span><b>02</b> Pokoj a diskrétnosť</span><span><b>03</b> Moderné technológie</span><span><b>04</b> Dlhodobá starostlivosť</span></div>
+        <div className="hero-facts shell"><span><b>01</b> Individuálny plán</span><span><b>02</b> Súkromie a diskrétnosť</span><span><b>03</b> Moderné technológie</span><span><b>04</b> Dlhodobá starostlivosť</span></div>
       </section>
 
-      <section className="intro-section section shell split">
+      <section className="intro-section section shell intro-layout">
         <div><SectionHeading eyebrow="Prečo REVIQA" title="Regenerácia začína porozumením" text="Neriešime izolovane iba miesto ťažkostí. Hľadáme súvislosti a vytvárame podmienky, v ktorých môže telo lepšie fungovať, obnovovať sa a adaptovať." /><Link className="outline-link" href="/o-nas">Náš prístup</Link></div>
+        <aside className="intro-consult-card"><img src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" /><div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>Zakladateľ | Neuromyoskeletálny akreditovaný špecialista</span></div><span className="eyebrow">Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Vaše potreby, ciele a ďalší postup preberieme pokojne a individuálne.</p><a href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervovať</a></aside>
         <div className="feature-stack"><article><span>✦</span><div><h3>Hľadanie súvislostí</h3><p>Pozeráme sa na človeka, jeho príbeh, pohyb a ciele ako na jeden celok.</p></div></article><article><span>◇</span><div><h3>Starostlivosť na mieru</h3><p>Každý plán vzniká individuálne a priebežne sa prispôsobuje.</p></div></article><article><span>∞</span><div><h3>Dlhodobá vitalita</h3><p>Naším cieľom je udržateľná kvalita života, nie rýchle univerzálne riešenie.</p></div></article></div>
       </section>
 

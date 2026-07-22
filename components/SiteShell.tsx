@@ -35,10 +35,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <header className="site-header">
-        <div className="topline">
-          <span>Súkromné regeneračné centrum · Poprad</span>
-          <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>
-        </div>
         <div className="nav-wrap">
           <Link href="/" className="brand" aria-label="REVIQA – domov">
             <img src={asset("/assets/reviqa-logo-header.png")} alt="REVIQA Biomedica" />
@@ -55,7 +51,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <span title="Polski – pripravujeme">🇵🇱</span>
               <span title="Русский – pripravujeme">🇷🇺</span>
             </div>
-            <a className="nav-cta" href={contact.whatsapp} target="_blank" rel="noreferrer">Objednať konzultáciu</a>
+            <a className="nav-cta" href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si konzultáciu</a>
           </nav>
         </div>
       </header>
