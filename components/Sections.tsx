@@ -3,7 +3,7 @@ import { asset, contact, services } from "@/lib/content";
 
 export function PageHero({ eyebrow, title, text, image }: { eyebrow: string; title: string; text: string; image?: string }) {
   return (
-    <section className="page-hero" style={image ? { backgroundImage: `linear-gradient(90deg, rgba(5,7,8,.96), rgba(5,7,8,.58)), url('${asset(image)}')` } : undefined}>
+    <section className="page-hero" style={image ? { backgroundImage: `linear-gradient(90deg, rgba(239,240,238,.97), rgba(239,240,238,.68)), url('${asset(image)}')` } : undefined}>
       <div className="shell narrow"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p></div>
     </section>
   );
