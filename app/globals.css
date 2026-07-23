@@ -159,9 +159,6 @@ p { color: #535754; margin: 16px 0 0; }
 .medical-note { max-width: 850px; padding: 24px 28px; border-left: 3px solid var(--gold); background: rgba(201,164,100,.06); margin-top: 50px; }
 .medical-note b { color: var(--gold-light); }
 .medical-note p { font-size: .86rem; margin-top: 5px; }
-.review-banner { margin-top: 28px; padding: 18px 22px; display: flex; gap: 24px; align-items: center; border: 1px solid var(--line); background: rgba(201,164,100,.05); }
-.review-banner span { flex: 0 0 auto; color: var(--gold-light); text-transform: uppercase; letter-spacing: .12em; font-size: .68rem; }
-.review-banner p { margin: 0; font-size: .78rem; }
 .tag-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag-grid span { padding: 13px 16px; border: 1px solid var(--line); background: var(--panel); color: #3f4441; font-size: .78rem; }
 .service-content { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; align-items: start; }
@@ -339,7 +336,6 @@ p { color: #535754; margin: 16px 0 0; }
   .call-chip { min-height: 42px; padding-inline: 13px; font-size: .61rem; }
   .wa-chip { min-height: 42px; padding: 6px 13px 6px 11px; }
   .cookie-bar { left: 14px; bottom: 14px; width: calc(100% - 28px); flex-direction: column; align-items: stretch; }
-  .review-banner { align-items: flex-start; flex-direction: column; gap: 8px; }
   .cookie-bar > div { margin: 0; }
   .cookie-bar button { flex: 1; }
 }
