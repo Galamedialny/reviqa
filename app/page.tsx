@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <section className="home-hero">
-        <img className="hero-bg" src={asset("/assets/logo-hero.jpeg")} alt="REVIQA Biomedica pod Vysokými Tatrami" />
+        <img className="hero-bg" src={asset("/assets/home-freedom-family.jpg")} alt="Rodina tráviaca aktívny čas spoločne pod Vysokými Tatrami" />
         <div className="hero-shade" />
         <div className="hero-content shell">
           <h1>Vaše telo.<br /><em>Vaša budúcnosť.</em><br />Naša veda.</h1>
