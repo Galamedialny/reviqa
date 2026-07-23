@@ -176,6 +176,43 @@ export const services = [
       ["Ako sa pripraviť?", "Odporúčame pohodlné oblečenie a informácie o diagnózach, operáciách, úrazoch, liekoch a aktuálnych obmedzeniach."],
     ],
   },
+  {
+    slug: "fyzioterapeuticke-poradenstvo",
+    short: "Fyzioterapeutické poradenstvo",
+    title: "Fyzioterapeutické poradenstvo",
+    eyebrow: "Pokračujte v starostlivosti aj doma",
+    intro:
+      "Po terapii vás naučíme jednoduché a bezpečné cviky, ktoré môžete samostatne vykonávať doma. Individuálny plán pomáha nadviazať na terapiu, podporiť pohybové návyky a udržať dosiahnutý pokrok.",
+    image: "/assets/service-physio-home-exercise.jpg",
+    duration: "podľa vstupného zhodnotenia a rozsahu nácviku",
+    price: "individuálne",
+    process: [
+      "Zhodnotíme váš aktuálny pohyb, možnosti, obmedzenia a reakciu na absolvované terapie.",
+      "Vyberieme malý počet zrozumiteľných cvikov podľa vášho cieľa a aktuálneho stavu.",
+      "Každý cvik vám prakticky ukážeme a pod dohľadom si nacvičíte správnu techniku, dýchanie aj tempo.",
+      "Dostanete odporúčanie, ako často a v akom rozsahu cvičiť doma a ktoré signály tela sledovať.",
+      "Pri kontrole vyhodnotíme pokrok, upravíme náročnosť a podľa potreby plán doplníme.",
+    ],
+    benefits: ["nadviazanie na absolvované terapie", "podpora správnych pohybových návykov", "väčšia istota pri domácom cvičení", "podpora mobility a stability", "postupné budovanie samostatnosti", "dlhodobá starostlivosť o pohyb"],
+    audience: "Pre dospelých aj deti po individuálnom posúdení, ktorí chcú na terapiu bezpečne nadviazať domácim cvičením a aktívne sa podieľať na svojom pohybovom pláne.",
+    suitableFor: ["pokračovanie po manuálnej alebo regeneračnej terapii", "stuhnutosť a obmedzená pohyblivosť", "potreba zlepšiť stabilitu a koordináciu", "návrat k bežnému pohybu po záťaži", "prevencia opakovaného preťaženia", "budovanie pravidelného domáceho režimu"],
+    modalities: ["individuálny pohybový plán", "nácvik správnej techniky", "mobilizačné cvičenia", "stabilizačné cvičenia", "dychové a relaxačné prvky", "odporúčaná frekvencia a rozsah", "kontrola a úprava plánu"],
+    details: [
+      ["Cvičenie nadväzujúce na terapiu", "Domáci plán vychádza z priebehu terapie, funkčného zhodnotenia a cieľov klienta. Nejde o všeobecnú zostavu rovnakú pre každého."],
+      ["Jednoduchý plán, ktorý sa dá dodržať", "Uprednostňujeme menší počet dobre zvládnutých cvikov. Klient presne vie, ako cvik vykonať, koľko opakovaní zvoliť a ako často ho zaradiť."],
+      ["Správna technika a bezpečnosť", "Cviky si najprv nacvičíte pod dohľadom. Sledujeme postavenie tela, rozsah pohybu, dýchanie a reakciu organizmu, aby ste ich doma vykonávali s istotou."],
+      ["Samostatnosť medzi návštevami", "Pravidelná primeraná aktivita pomáha klientovi aktívne pokračovať v starostlivosti aj medzi stretnutiami a podporuje dlhodobejšie pohybové návyky."],
+      ["Kontrola a postupné napredovanie", "Pri ďalšej návšteve vyhodnotíme, čo sa darí a čo treba upraviť. Náročnosť zvyšujeme až vtedy, keď je technika bezpečná a telo reaguje primerane."],
+      ["Kedy cvičenie prerušiť", "Cvičenie sa nepraktizuje cez výraznú alebo novú bolesť. Pri zhoršení stavu, závratoch, dýchavičnosti, slabosti alebo inom neobvyklom príznaku treba cvičenie prerušiť a poradiť sa s odborníkom."],
+    ],
+    faq: [
+      ["Dostanem rovnaké cviky ako ostatní klienti?", "Nie. Výber cvikov, rozsah, počet opakovaní a frekvencia sa prispôsobujú vášmu aktuálnemu stavu, cieľu a reakcii na terapiu."],
+      ["Koľko času mám doma cvičiť?", "Plán nastavíme tak, aby bol realistický a dlhodobo udržateľný. Presný čas a frekvenciu určí odborník po zhodnotení."],
+      ["Potrebujem na cvičenie pomôcky?", "Mnohé cviky možno vykonávať bez pomôcok. Ak je vhodná podložka, elastický pás alebo iná jednoduchá pomôcka, vysvetlíme jej bezpečné použitie."],
+      ["Čo ak pri cvičení cítim bolesť?", "Mierne svalové úsilie môže byť prirodzené, ostrá, nová alebo zhoršujúca sa bolesť však nie. Cvik prerušte a kontaktujte nás, aby sme plán upravili."],
+      ["Ako zistím, či cviky robím správne?", "Techniku si nacvičíte počas osobného stretnutia. Pri kontrolnej návšteve ju opäť preveríme a podľa potreby opravíme alebo cvik zjednodušíme."],
+    ],
+  },
 ] as const;
 
 export const programs = [
