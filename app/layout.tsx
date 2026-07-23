@@ -55,15 +55,14 @@ const globalStructuredData = [
       "@type": "PostalAddress",
       streetAddress: "Hitschova 5022/2",
       postalCode: "058 01",
-      addressLocality: "Poprad",
+      addressLocality: "Poprad – Spišská Sobota",
       addressCountry: "SK",
     },
     openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "12:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "13:00", closes: "15:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "15:00" },
     ],
     founder: { "@type": "Person", name: "Radovan Foltinský, MSc, MEd, CertMGMT (Open)" },
-    hasMap: "https://www.google.com/maps/search/?api=1&query=Reviqa%20Biomedica%2C%20Hitschova%205022%2F2%2C%20058%2001%20Poprad%2C%20Slovakia",
+    hasMap: "https://www.google.com/maps/search/?api=1&query=Reviqa%20Biomedica%2C%20Hitschova%205022%2F2%2C%20058%2001%20Poprad%20Spi%C5%A1sk%C3%A1%20Sobota%2C%20Slovakia",
     areaServed: [{ "@type": "Country", name: "Slovakia" }, { "@type": "Place", name: "International" }],
   },
 ];

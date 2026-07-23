@@ -24,7 +24,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Úvod", item: `${SITE_URL}/` },
-        { "@type": "ListItem", position: 2, name: "Služby", item: `${SITE_URL}/sluzby/` },
+        { "@type": "ListItem", position: 2, name: "Terapie", item: `${SITE_URL}/sluzby/` },
         { "@type": "ListItem", position: 3, name: service.title, item: pageUrl },
       ],
     },

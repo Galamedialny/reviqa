@@ -6,7 +6,7 @@ export const metadata = createPageMetadata({ title: "Galéria centra REVIQA", de
 
 const photos = [
   ["/assets/center-garden-1.jpeg", "Záhrada centra REVIQA"], ["/assets/center-garden-2.jpeg", "Pokojná zeleň pri centre"],
-  ["/assets/center-garden-3.jpeg", "Areál centra REVIQA"], ["/assets/center-building.jpeg", "Moderná bezbariérová budova"],
+  ["/assets/center-garden-3.jpeg", "Areál centra REVIQA"], ["/assets/center-building-corrected.jpg", "Moderný bezbariérový modulový pavilón"],
   ["/assets/center-garden-4.jpeg", "Záhrada a vstup do centra"],
 ] as const;
 

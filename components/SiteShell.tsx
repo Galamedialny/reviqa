@@ -8,7 +8,7 @@ import { COOKIE_CONSENT_EVENT } from "@/components/GoogleAnalytics";
 const nav = [
   ["/", "Úvod"],
   ["/o-nas", "O nás"],
-  ["/sluzby", "Služby"],
+  ["/sluzby", "Terapie"],
   ["/metoda-reviqa", "Metóda"],
   ["/programy-cennik", "Cenník"],
   ["/blog", "Blog"],
@@ -51,7 +51,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <span title="Polski – pripravujeme">🇵🇱</span>
               <span title="Русский – pripravujeme">🇷🇺</span>
             </div>
-            <a className="nav-cta" href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si konzultáciu</a>
+            <a className="nav-cta" href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si termín</a>
           </nav>
         </div>
       </header>
@@ -69,7 +69,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
             <address>{contact.address}</address>
-            <p>Po–Pi: 9:00–12:00, 13:00–15:00<br />Víkend a iný čas: na objednávku</p>
+            <p>Po–Pia: 9:00–15:00<br />Víkend a iné termíny: dohodou</p>
           </div>
           <div>
             <h3>Informácie</h3>

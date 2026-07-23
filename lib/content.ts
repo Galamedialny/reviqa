@@ -2,7 +2,7 @@ export const contact = {
   phoneDisplay: "+421 917 072 074",
   phone: "+421917072074",
   email: "info@reviqa.sk",
-  address: "Hitschova 5022/2, 058 01 Poprad, SLOVAKIA",
+  address: "Hitschova 5022/2, 058 01 Poprad – Spišská Sobota, Slovensko",
   whatsapp:
     "https://wa.me/421917072074?text=Dobr%C3%BD%20de%C5%88%2C%20m%C3%A1m%20z%C3%A1ujem%20o%20vstupn%C3%BA%20konzult%C3%A1ciu%20v%20REVIQA.",
 };
@@ -15,7 +15,7 @@ export const services = [
     eyebrow: "Najprv porozumenie",
     intro:
       "Komplexný proces, ktorý nám pomáha porozumieť vášmu telu a pripraviť individuálny plán starostlivosti podľa vašich potrieb, cieľov a aktuálneho stavu.",
-    image: "/assets/service-diagnostics.png",
+    image: "/assets/service-diagnostics-concept.jpg",
     duration: "120 minút pri úvodnom vyšetrení",
     price: "od 165 €",
     process: [
@@ -47,7 +47,7 @@ export const services = [
     eyebrow: "Podpora okysličenia",
     intro:
       "Vedecky používaný postup, pri ktorom klient dýcha kyslík v prostredí so zvýšeným tlakom. Cieľom je zvýšiť dostupnosť kyslíka pre tkanivá a podporiť regeneračný plán.",
-    image: "/assets/service-hbot.png",
+    image: "/assets/service-hbot-concept.jpg",
     duration: "približne 60 minút",
     price: "od 50 €",
     process: [
@@ -79,7 +79,7 @@ export const services = [
     eyebrow: "Regenerácia na bunkovej úrovni",
     intro:
       "Vodík je najmenšia molekula. V REVIQA ho zaraďujeme do personalizovaných plánov formou inhalácie alebo vodíkovej vody podľa individuálneho cieľa.",
-    image: "/assets/service-hydrogen.png",
+    image: "/assets/service-hydrogen-concept.jpg",
     duration: "podľa individuálneho protokolu",
     price: "na základe plánu",
     process: [
@@ -111,7 +111,7 @@ export const services = [
     eyebrow: "Veda svetla. Energia života.",
     intro:
       "Fotobiomodulácia využíva vybrané vlnové dĺžky červeného a blízkeho infračerveného svetla na podporu prirodzených bunkových a regeneračných procesov.",
-    image: "/assets/service-pbm.png",
+    image: "/assets/service-pbm-concept.jpg",
     duration: "podľa zvolenej oblasti a protokolu",
     price: "na základe plánu",
     process: [
@@ -143,7 +143,7 @@ export const services = [
     eyebrow: "Pohyb, nervový systém, súvislosti",
     intro:
       "Komplexný prístup k obnove neuromuskuloskeletálneho systému pomocou šetrných manuálnych techník, funkčného vyšetrenia a individuálneho plánu.",
-    image: "/assets/service-manual.png",
+    image: "/assets/service-manual-concept.jpg",
     duration: "90 minút pri nadväzujúcom stretnutí",
     price: "od 155 €",
     process: [
@@ -175,7 +175,7 @@ export const services = [
     eyebrow: "Starostlivosť zostavená na mieru",
     intro:
       "Podľa potrieb kombinujeme mäkké a fasciálne techniky, Dornovu metódu, lymfodrenáž, bankovanie, kineziotaping a trigger-point terapiu.",
-    image: "/assets/service-complementary.png",
+    image: "/assets/service-complementary-concept.jpg",
     duration: "podľa zvoleného postupu",
     price: "individuálne",
     process: [
