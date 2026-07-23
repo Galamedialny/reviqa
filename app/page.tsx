@@ -26,6 +26,19 @@ export default function Home() {
         <div className="feature-stack"><article><span>✦</span><div><h3>Hľadanie súvislostí</h3><p>Pozeráme sa na človeka, jeho príbeh, pohyb a ciele ako na jeden celok.</p></div></article><article><span>◇</span><div><h3>Starostlivosť na mieru</h3><p>Každý plán vzniká individuálne a priebežne sa prispôsobuje.</p></div></article><article><span>∞</span><div><h3>Dlhodobá vitalita</h3><p>Naším cieľom je udržateľná kvalita života, nie rýchle univerzálne riešenie.</p></div></article></div>
       </section>
 
+      <section className="freedom-section shell">
+        <img src={asset("/assets/home-freedom-family.jpg")} alt="Rodina tráviaca aktívny čas spoločne pod Tatrami" />
+        <div className="freedom-shade" />
+        <div className="freedom-content">
+          <span className="eyebrow">Váš život. Vaše priority.</span>
+          <h2>Viac slobody pre život, ktorý chcete žiť</h2>
+          <p>Regenerácia nie je len o ústupe ťažkostí. Je o možnosti znovu sa slobodne hýbať, cestovať a aktívne tráviť čas s ľuďmi, na ktorých vám záleží.</p>
+          <div className="freedom-values"><span>Sloboda pohybu</span><span>Aktívny život</span><span>Čas s blízkymi</span><span>Mobilita bez zbytočných limitov</span></div>
+          <a className="gold-button" href={contact.whatsapp} target="_blank" rel="noreferrer">Začať svoju cestu</a>
+        </div>
+        <blockquote>„Nie je to len o dĺžke života. Je to o kvalite každého jedného dňa.“</blockquote>
+      </section>
+
       <section className="section services-section"><div className="shell"><SectionHeading center eyebrow="Terapie" title="Spoznajte naše terapie" text="Konkrétna kombinácia, frekvencia aj poradie vznikajú individuálne." /><ServiceGrid limit={6} /></div></section>
 
       <section className="method-preview section">
