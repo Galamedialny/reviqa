@@ -178,8 +178,8 @@ export const services = [
   },
   {
     slug: "fyzioterapeuticke-poradenstvo",
-    short: "Fyzioterapeutické poradenstvo",
-    title: "Fyzioterapeutické poradenstvo",
+    short: "Fyzio-regeneračné poradenstvo",
+    title: "Fyzio-regeneračné poradenstvo",
     eyebrow: "Pokračujte v starostlivosti aj doma",
     intro:
       "Po terapii vás naučíme jednoduché a bezpečné cviky, ktoré môžete samostatne vykonávať doma. Individuálny plán pomáha nadviazať na terapiu, podporiť pohybové návyky a udržať dosiahnutý pokrok.",
