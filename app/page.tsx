@@ -12,12 +12,11 @@ export default function Home() {
         <img className="hero-bg" src={asset("/assets/logo-hero.jpeg")} alt="REVIQA Biomedica pod Vysokými Tatrami" />
         <div className="hero-shade" />
         <div className="hero-content shell">
-          <span className="eyebrow">Private Regeneration & Longevity Center</span>
           <h1>Vaše telo.<br /><em>Vaša budúcnosť.</em><br />Naša veda.</h1>
-          <p>Súkromné regeneračné centrum v Poprade. Spájame individuálny prístup, moderné technológie a pokojné prostredie pre vašu cestu k pohybu, regenerácii a vitalite.</p>
-          <div className="hero-actions"><a className="gold-button" href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si konzultáciu</a><Link className="text-link" href="/sluzby">Technológie a terapeutické metódy REVIQA →</Link></div>
+          <span className="hero-divider" aria-hidden="true" />
+          <p>Individuálny biomechanický prístup k regenerácii pohybového aparátu, nervového systému a podpore dlhovekosti.</p>
+          <div className="hero-actions"><a className="gold-button hero-primary" href={contact.whatsapp} target="_blank" rel="noreferrer"><span>Objednať konzultáciu</span><span aria-hidden="true">→</span></a></div>
         </div>
-        <div className="hero-facts shell"><span><b>01</b> Individuálny plán</span><span><b>02</b> Súkromie a diskrétnosť</span><span><b>03</b> Moderné technológie</span><span><b>04</b> Dlhodobá starostlivosť</span></div>
       </section>
 
       <section className="intro-section section shell intro-layout">
