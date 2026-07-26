@@ -44,7 +44,8 @@ p { color: #535754; margin: 16px 0 0; }
 .nav-cta, .gold-button { display: inline-flex; justify-content: center; align-items: center; min-height: 46px; padding: 0 22px; background: #d8c3a3; color: #171918 !important; border: 1px solid #c8ae86; font-size: .72rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; transition: .25s ease; }
 .nav-cta:hover, .gold-button:hover { filter: brightness(1.12); transform: translateY(-2px); }
 .languages { display: flex; gap: 5px; padding-left: 8px; border-left: 1px solid var(--line); }
-.languages span { opacity: .35; cursor: not-allowed; font-size: .9rem; }
+.languages span, .languages a { opacity: .35; cursor: not-allowed; font-size: .9rem; text-decoration: none; }
+.languages a { cursor: pointer; }
 .languages .active { opacity: 1; cursor: default; }
 .menu-toggle { display: none; margin-left: auto; border: 0; background: transparent; padding: 8px; }
 .menu-toggle span { display: block; width: 26px; height: 1px; background: var(--gold); margin: 6px; }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { englishPathForSlovakPath } from "@/lib/i18n";
 
 export const SITE_NAME = "REVIQA Biomedica";
 export const SITE_URL = "https://www.reviqa.sk";
@@ -14,11 +15,15 @@ type PageSeo = {
 export function createPageMetadata({ title, description, path, noIndex = false }: PageSeo): Metadata {
   const canonicalPath = path ? `${path.replace(/\/$/, "")}/` : "/";
   const url = `${SITE_URL}${canonicalPath}`;
+  const englishUrl = `${SITE_URL}${englishPathForSlovakPath(canonicalPath)}`;
   const socialTitle = `${title} | REVIQA`;
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: { sk: url, en: englishUrl, "x-default": url },
+    },
     openGraph: {
       title: socialTitle,
       description,
