@@ -23,7 +23,7 @@ export function ServiceGrid({ limit }: { limit?: number }) {
 }
 
 export function CTA() {
-  return <section className="cta-band"><div className="shell"><div><span className="eyebrow">Prvý krok</span><h2>Rezervujte si termín</h2><p>Štruktúrovaný rozhovor a prvá terapia. Dôkladné zhodnotenie a návrh vášho individuálneho plánu.</p></div><div className="cta-actions"><a className="gold-button" href={contact.whatsapp} target="_blank" rel="noreferrer">Napísať cez WhatsApp</a><a className="ghost-button" href={`tel:${contact.phone}`}>Zavolať {contact.phoneDisplay}</a></div></div></section>;
+  return <section className="cta-band"><div className="shell"><div><span className="eyebrow">Prvý krok</span><h2>Rezervujte si termín</h2><p>Začíname rozhovorom a funkčným zhodnotením. Na ich základe zostavíme personalizovaný regeneračný protokol podľa vašich potrieb a cieľov.</p></div><div className="cta-actions"><a className="gold-button" href={contact.whatsapp} target="_blank" rel="noreferrer">Napísať cez WhatsApp</a><a className="ghost-button" href={`tel:${contact.phone}`}>Zavolať {contact.phoneDisplay}</a></div></div></section>;
 }
 
 export function MedicalNote() {

@@ -8,22 +8,29 @@ export const metadata = createPageMetadata({ title: "REVIQA Biomedica | Súkromn
 export default function Home() {
   return (
     <>
-      <section className="home-hero">
-        <img className="hero-bg" src={asset("/assets/home-freedom-family.jpg")} alt="Rodina tráviaca aktívny čas spoločne pod Vysokými Tatrami" />
+      <section className="home-hero home-hero-founder">
+        <img className="hero-bg" src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" />
         <div className="hero-shade" />
         <div className="hero-content shell">
+          <div className="hero-kicker"><span>Private Regeneration &amp; Longevity Center</span><em>Boutique Regeneration Experience</em></div>
           <h1>Vaše telo.<br /><em>Vaša budúcnosť.</em><br />Naša veda.</h1>
           <span className="hero-divider" aria-hidden="true" />
-          <p>Individuálny biomechanický prístup k regenerácii pohybového aparátu, nervového systému a podpore dlhovekosti.</p>
-          <div className="hero-actions"><a className="gold-button hero-primary" href={contact.whatsapp} target="_blank" rel="noreferrer"><span>Rezervujte si termín</span><span aria-hidden="true">→</span></a><Link className="text-link" href="/sluzby">Technológie a terapeutické metódy REVIQA</Link></div>
+          <p>Spájame biomechaniku, moderné regeneračné technológie a individuálny prístup pre podporu prirodzenej regenerácie a dlhodobého zdravia.</p>
+          <div className="hero-actions"><a className="gold-button hero-primary" href={contact.whatsapp} target="_blank" rel="noreferrer"><span>Rezervujte si termín</span><span aria-hidden="true">→</span></a></div>
         </div>
-        <div className="hero-facts shell"><div><b>01</b><span>Individuálny plán</span></div><div><b>02</b><span>Súkromie a diskrétnosť</span></div><div><b>03</b><span>Moderné technológie</span></div><div><b>04</b><span>Dlhodobá starostlivosť</span></div></div>
+        <div className="hero-facts shell"><div><b>01</b><span>Individuálny prístup</span></div><div><b>02</b><span>Veda a technológie</span></div><div><b>03</b><span>Regenerácia a dlhovekosť</span></div><div><b>04</b><span>Zdravie ako priorita</span></div></div>
       </section>
 
-      <section className="intro-section section shell intro-layout">
-        <div><SectionHeading eyebrow="Individuálna starostlivosť" title="REVIQA Method™ | Chironeurogenic System™" text="Vlastná systémová chironeurogénna metodika zameraná na podporu prirodzenej regenerácie, obnovu funkčných schopností organizmu a dlhodobé udržiavanie zdravia. Spája vedecky podložené princípy neuromyoskeletálnych manuálnych techník, fyzio-regeneračných postupov a moderných high-tech regeneračných technológií do jedného personalizovaného systému regenerácie." /><Link className="outline-link" href="/o-nas">Náš prístup</Link></div>
-        <aside className="intro-consult-card"><img src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" /><div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER – akreditovaný špecialista</span></div><span className="eyebrow">Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Začnime rozhovorom a úvodnou regeneračnou terapiou.</p><a href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si termín</a></aside>
-        <div className="feature-stack"><article><span>✦</span><div><h3>Hľadanie súvislostí</h3><p>Pozeráme sa na človeka, jeho príbeh, pohyb a ciele ako na jeden celok.</p></div></article><article><span>◇</span><div><h3>Starostlivosť na mieru</h3><p>Každý plán vzniká individuálne a priebežne sa prispôsobuje.</p></div></article><article><span>∞</span><div><h3>Dlhodobá vitalita</h3><p>Naším cieľom je udržateľná kvalita života, nie rýchle univerzálne riešenie.</p></div></article></div>
+      <section className="intro-section section shell home-story-grid">
+        <article className="home-story-copy">
+          <SectionHeading eyebrow="Prečo REVIQA" title="Regenerácia začína porozumením." text="Skutočná regenerácia nezačína terapiou, ale pochopením človeka. Hľadáme funkčné súvislosti, ktoré ovplyvňujú pohyb, nervový systém a celkovú rovnováhu organizmu." />
+          <Link className="outline-link" href="/o-nas">Zistiť viac</Link>
+        </article>
+        <article className="home-story-visual">
+          <img src={asset("/assets/center-building-corrected.jpg")} alt="Privátne centrum REVIQA Biomedica v Poprade" />
+          <div><span className="eyebrow">Individuálna starostlivosť</span><h2>Jeden človek. Jeden príbeh. Jeden plán.</h2><p>Nevyberáte si jednotlivé terapie. Spoločne vytvárame personalizovaný regeneračný protokol podľa vášho stavu, potrieb a dlhodobých cieľov.</p><Link href="/metoda-reviqa">Spoznať našu metódu →</Link></div>
+        </article>
+        <aside className="intro-consult-card consultation-without-portrait"><span className="eyebrow">Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Prvým krokom je pokojný rozhovor a funkčné zhodnotenie. Na ich základe odporučíme ďalší postup.</p><div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER – akreditovaný špecialista</span></div><a href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si termín</a></aside>
       </section>
 
       <section className="freedom-section shell">

@@ -45,6 +45,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     },
   ];
   return <><StructuredData data={structuredData} /><PageHero eyebrow={service.eyebrow} title={service.title} text={service.intro} image={service.image} />
+    <section className="service-impact"><div className="shell">{service.impact.map((item) => <p key={item}>{item}</p>)}</div></section>
     <section className="section shell service-detail"><div><SectionHeading eyebrow="Ako prebieha" title="Pokojne, zrozumiteľne a individuálne" /><ol className="process-list">{service.process.map((item, i) => <li key={item}><span>0{i + 1}</span><p>{item}</p></li>)}</ol></div><aside className="detail-box"><div><small>Pre koho</small><p>{service.audience}</p></div></aside></section>
     <section className="section dark-panel"><div className="shell"><SectionHeading eyebrow="Možné prínosy" title="Súčasť širšieho regeneračného plánu" /><div className="benefit-grid">{service.benefits.map((benefit, i) => <article key={benefit}><span>0{i + 1}</span><h3>{benefit}</h3></article>)}</div><MedicalNote /></div></section>
     {service.slug === "chiromanualne-terapie"

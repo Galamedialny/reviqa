@@ -14,7 +14,12 @@ export const services = [
     title: "Hyperbarická oxygenoterapia (HBOT)",
     eyebrow: "Podpora okysličenia",
     intro:
-      "Vedecky používaný postup, pri ktorom klient dýcha kyslík v prostredí so zvýšeným tlakom. Cieľom je zvýšiť dostupnosť kyslíka pre tkanivá a podporiť regeneračný plán.",
+      "Viac dostupného kyslíka pre tkanivá. Väčšia podpora prirodzených regeneračných procesov. Hyperbarickú oxygenoterapiu zaraďujeme do protokolu vždy individuálne – podľa zdravotného stavu, cieľa a tolerancie klienta.",
+    impact: [
+      "Zvýšený tlak umožňuje organizmu využiť kyslík spôsobom, ktorý pri bežnom atmosférickom tlaku nie je dostupný.",
+      "Terapia môže podporiť okysličenie tkanív, prirodzené hojivé procesy a zotavenie po vybraných typoch záťaže.",
+      "Konkrétny protokol aj očakávaný prínos posudzujeme individuálne.",
+    ],
     image: "/assets/service-hbot-concept.jpg",
     duration: "približne 60 minút",
     price: "od 50 €",
@@ -29,10 +34,10 @@ export const services = [
     suitableFor: ["chronická únava", "rekonvalescencia po úrazoch a výkonoch", "športovci a zvýšená fyzická záťaž", "kožné a hojivé ťažkosti", "znížená vitalita", "ďalšie stavy po odbornom odporúčaní"],
     modalities: ["individuálny HBOT protokol", "jedna terapia", "séria 5 terapií", "séria 10 terapií", "kombinácia s ďalšou starostlivosťou"],
     details: [
-      ["Zvýšenie okysličenia", "HBOT zvyšuje dostupnosť kyslíka v krvi a tkanivách. Konkrétny účinok závisí od tlaku, dĺžky, nastaveného protokolu a zdravotného stavu klienta."],
-      ["Obnova buniek a hojenie", "HBOT sa v regeneračných plánoch využíva na podporu prirodzených hojivých procesov, obnovy tkanív a zotavenia po vybraných typoch záťaže."],
-      ["Zápal, bolesť a vitalita", "HBOT môže byť súčasťou individuálneho plánu pri podpore zvládania zápalovej záťaže, bolestivých stavov, imunity, energie a vitality. Vhodnosť vždy posudzujeme individuálne."],
-      ["Mozog a nervový systém", "HBOT sa využíva aj pri podpore kognície, sústredenia a vybraných neuroprotektívnych mechanizmov. Nenahrádza neurologické vyšetrenie ani liečbu."],
+      ["Zvýšenie okysličenia", "Hyperbarická kompresia zvyšuje množstvo kyslíka rozpusteného v krvnej plazme, a tým môže podporiť jeho dostupnosť aj v tkanivách so zhoršeným prekrvením. Miera účinku závisí od tlaku, dĺžky, nastaveného protokolu a zdravotného stavu klienta."],
+      ["Obnova buniek a hojenie", "Vyššia dostupnosť kyslíka môže vytvárať priaznivejšie podmienky pre prirodzené hojivé procesy, obnovu tkanív a zotavenie organizmu po vybraných typoch záťaže."],
+      ["Zápal, bolesť a vitalita", "V personalizovanom regeneračnom pláne môže technológia podporiť zvládanie zápalovej záťaže, bolestivých stavov, imunity, energie a vitality. Vhodnosť a realistický cieľ stanovujeme individuálne."],
+      ["Mozog a nervový systém", "Zvýšená dostupnosť kyslíka sa využíva aj na podporu kognitívnych a neuroprotektívnych mechanizmov. Hyperbarická oxygenoterapia nenahrádza neurologické vyšetrenie ani predpísanú liečbu."],
     ],
     faq: [
       ["Čo budem počas terapie cítiť?", "Pri zmene tlaku môžete cítiť tlak v ušiach podobný letu lietadlom. Obsluha vysvetlí techniky vyrovnávania tlaku."],
@@ -46,7 +51,12 @@ export const services = [
     title: "Molekulárna vodíková terapia (H₂)",
     eyebrow: "Regenerácia na bunkovej úrovni",
     intro:
-      "Vodík je najmenšia molekula. V REVIQA ho zaraďujeme do personalizovaných plánov formou inhalácie alebo vodíkovej vody podľa individuálneho cieľa.",
+      "Najmenšia molekula s pozoruhodným regeneračným potenciálom. Molekulárny vodík môže podporiť bunkovú rovnováhu, vitalitu a zvládanie oxidačnej záťaže. Spôsob podania aj frekvenciu vždy nastavujeme individuálne.",
+    impact: [
+      "Molekulárny vodík sa skúma pre selektívne antioxidačné pôsobenie a schopnosť prenikať cez biologické membrány.",
+      "Môže podporiť mitochondrie, bunkovú energiu a prirodzenú rovnováhu organizmu.",
+      "V REVIQA je doplnkovým modulom širšieho personalizovaného protokolu, nie náhradou diagnostiky alebo liečby.",
+    ],
     image: "/assets/service-hydrogen-concept.jpg",
     duration: "podľa individuálneho protokolu",
     price: "na základe plánu",
@@ -78,7 +88,12 @@ export const services = [
     title: "Molekulárna kyslíková terapia (O₂)",
     eyebrow: "Podpora okysličenia a regenerácie",
     intro:
-      "Kyslíkovú terapiu zaraďujeme do personalizovaného regeneračného protokolu s cieľom podporiť okysličenie organizmu, bunkovú energiu a prirodzené regeneračné procesy.",
+      "Kyslík je základom bunkovej energie. Individuálne nastavená kyslíková terapia môže podporiť vitalitu, adaptáciu na záťaž a prirodzené regeneračné procesy. Jej vhodnosť posudzujeme podľa aktuálneho stavu klienta.",
+    impact: [
+      "Cielená kyslíková podpora môže pomôcť organizmu lepšie zvládať fyzickú aj psychickú záťaž.",
+      "V personalizovanom protokole ju využívame na podporu bunkovej energie, vitality a zotavenia.",
+      "Spôsob podania, intenzitu a frekvenciu určuje odborné posúdenie.",
+    ],
     image: "/assets/service-diagnostics-concept.jpg",
     duration: "podľa individuálneho protokolu",
     price: "na základe plánu",
@@ -110,7 +125,12 @@ export const services = [
     title: "Fotobiomodulácia (660–850 nm)",
     eyebrow: "Veda svetla. Energia života.",
     intro:
-      "Fotobiomodulácia využíva vybrané vlnové dĺžky červeného a blízkeho infračerveného svetla na podporu prirodzených bunkových a regeneračných procesov.",
+      "Svetlo, ktoré komunikuje s bunkami. Vybrané vlnové dĺžky červeného a blízkeho infračerveného svetla môžu podporiť bunkovú energiu, obnovu tkanív a prirodzené regeneračné procesy. Parametre nastavujeme podľa cieľovej oblasti a potrieb klienta.",
+    impact: [
+      "Fotóny svetla môžu ovplyvňovať mitochondrie a tvorbu bunkovej energie ATP.",
+      "Červené a blízke infračervené svetlo využívame cielene podľa hĺbky tkaniva a požadovaného účinku.",
+      "Ide o neinvazívny podporný modul, ktorého nastavenie vždy vychádza z individuálneho plánu.",
+    ],
     image: "/assets/service-pbm-concept.jpg",
     duration: "podľa zvolenej oblasti a protokolu",
     price: "na základe plánu",
@@ -142,7 +162,12 @@ export const services = [
     title: "Chironeurogénna manuálna regeneračná terapia",
     eyebrow: "Pohyb, nervový systém, súvislosti",
     intro:
-      "Je naša autorská metóda. Precízne spája špecializované manuálne techniky s hlbokým poznaním vzájomného prepojenia nervového a pohybového systému.",
+      "Naša autorská terapia prepája nervový a pohybový systém do jedného funkčného celku. Cielenou manuálnou prácou sa snažíme vytvárať podmienky pre prirodzenejší pohyb, lepšiu adaptáciu a regeneráciu organizmu.",
+    impact: [
+      "Nezameriavame sa iba na miesto bolesti, ale na funkčné súvislosti chrbtice, kĺbov, svalov, fascií a nervových dráh.",
+      "Špecializované manuálne techniky vyberáme podľa aktuálneho funkčného stavu a cieľov klienta.",
+      "Každé stretnutie je súčasťou personalizovaného systému starostlivosti.",
+    ],
     image: "/assets/service-manual-concept.jpg",
     duration: "90 minút pri nadväzujúcom stretnutí",
     price: "od 155 €",
@@ -170,7 +195,12 @@ export const services = [
     title: "Fyzio-regeneračné poradenstvo",
     eyebrow: "Pokračujte v starostlivosti aj doma",
     intro:
-      "Po terapii vás naučíme jednoduché a bezpečné cviky, ktoré môžete samostatne vykonávať doma. Individuálny plán pomáha nadviazať na terapiu, podporiť pohybové návyky a udržať dosiahnutý pokrok.",
+      "Regenerácia pokračuje aj medzi návštevami. Naučíme vás jednoduché a bezpečné pohybové postupy, ktorými môžete doma aktívne podporovať svoj plán. Rozsah cvičenia prispôsobujeme vašim možnostiam a reakcii organizmu.",
+    impact: [
+      "Cieľom je preniesť vhodný pohyb do každodenného života a podporiť samostatnosť klienta.",
+      "Menší počet správne zvládnutých cvikov môže byť užitočnejší než všeobecná zostava bez kontroly.",
+      "Plán priebežne upravujeme podľa techniky, tolerancie a dosiahnutého pokroku.",
+    ],
     image: "/assets/service-physio-home-exercise.jpg",
     duration: "podľa vstupného zhodnotenia a rozsahu nácviku",
     price: "individuálne",
@@ -204,10 +234,10 @@ export const services = [
 ] as const;
 
 export const programs = [
-  { name: "RESET", price: "305 €", note: "Prvý krok smerom k regenerácii", items: ["2 individuálne stretnutia", "individuálny plán starostlivosti", "možnosť HBOT podľa plánu"] },
-  { name: "RESTORE", price: "455 €", note: "Návrat k tomu, čo máte radi", items: ["3 individuálne stretnutia", "individuálny plán starostlivosti", "možnosť HBOT podľa plánu"] },
-  { name: "REGENERATE", price: "755 €", note: "Obnova sily a vitality", items: ["5 individuálnych stretnutí", "individuálny plán starostlivosti", "HBOT podľa individuálneho plánu"] },
-  { name: "LONGEVITY", price: "1 495 €", note: "Objavujeme čas", items: ["10 individuálnych stretnutí", "komplexný dlhodobý plán", "priebežné hodnotenie a optimalizácia"] },
+  { name: "RESET", price: "320 €", note: "Prvý krok smerom k regenerácii", sessions: "2×", duration: "2 × 90 min.", image: "/assets/home-freedom-family.jpg" },
+  { name: "RESTORE", price: "465 €", note: "Návrat k tomu, čo máte radi", sessions: "3×", duration: "3 × 90 min.", image: "/assets/service-manual-concept.jpg" },
+  { name: "REGENERATE", price: "750 €", note: "Obnova sily a vitality", sessions: "5×", duration: "5 × 90 min.", image: "/assets/service-pbm-concept.jpg" },
+  { name: "LONGEVITY", price: "1 450 €", note: "Objavujeme čas", sessions: "10×", duration: "10 × 90 min.", image: "/assets/center-garden-1.jpeg" },
 ] as const;
 
 export const faqs = [
