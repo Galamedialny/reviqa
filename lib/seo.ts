@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { englishPathForSlovakPath } from "@/lib/i18n";
+import { englishPathForSlovakPath, germanPathForSlovakPath } from "@/lib/i18n";
 
 export const SITE_NAME = "REVIQA Biomedica";
 export const SITE_URL = "https://www.reviqa.sk";
@@ -16,13 +16,14 @@ export function createPageMetadata({ title, description, path, noIndex = false }
   const canonicalPath = path ? `${path.replace(/\/$/, "")}/` : "/";
   const url = `${SITE_URL}${canonicalPath}`;
   const englishUrl = `${SITE_URL}${englishPathForSlovakPath(canonicalPath)}`;
+  const germanUrl = `${SITE_URL}${germanPathForSlovakPath(canonicalPath)}`;
   const socialTitle = `${title} | REVIQA`;
   return {
     title,
     description,
     alternates: {
       canonical: url,
-      languages: { sk: url, en: englishUrl, "x-default": url },
+      languages: { sk: url, en: englishUrl, de: germanUrl, "x-default": url },
     },
     openGraph: {
       title: socialTitle,

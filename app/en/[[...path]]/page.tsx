@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { StructuredData } from "@/components/StructuredData";
 import { asset } from "@/lib/content";
 import { contactEn, faqsEn, programmesEn, servicesEn, type EnglishService } from "@/lib/content-en";
-import { toSlovakPath } from "@/lib/i18n";
+import { toGermanPath, toSlovakPath } from "@/lib/i18n";
 import { OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const staticPaths = [
@@ -54,6 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<{ path?: st
       languages: {
         en: url,
         sk: service ? `${SITE_URL}/sluzby/${service.slovakSlug}/` : slovakUrl,
+        de: `${SITE_URL}${toGermanPath(service ? `/sluzby/${service.slovakSlug}/` : route)}`,
         "x-default": service ? `${SITE_URL}/sluzby/${service.slovakSlug}/` : slovakUrl,
       },
     },
