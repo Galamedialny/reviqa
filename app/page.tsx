@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <section className="home-hero home-hero-founder">
-        <img className="hero-bg" src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" />
+        <img className="hero-bg" src={asset("/assets/radovan-hero-mobile-v2.png")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" />
         <div className="hero-shade" />
         <div className="hero-content shell">
           <div className="hero-kicker"><span>Private Regeneration &amp; Longevity Center</span><em>Boutique Regeneration Experience</em></div>
