@@ -2,56 +2,52 @@ import { CTA, MedicalNote, PageHero, SectionHeading } from "@/components/Section
 import { programs } from "@/lib/content";
 import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = createPageMetadata({ title: "Programy regenerácie a cenník", description: "Orientačný cenník vstupnej diagnostiky, individuálnej starostlivosti, HBOT a regeneračných programov REVIQA Biomedica v Poprade.", path: "/programy-cennik" });
+export const metadata = createPageMetadata({ title: "Programy regenerácie a cenník", description: "Cenník personalizovaného regeneračného protokolu REVIQA Method, HBOT a individuálnych programov REVIQA Biomedica v Poprade.", path: "/programy-cennik" });
 
 export default function PricingPage() {
-  return <><PageHero eyebrow="Programy a cenník" title="Každý plán začína človekom" text="Ceny poskytujú orientáciu. Konečný rozsah starostlivosti odporučíme až po vstupnom zhodnotení a vždy ho prispôsobíme vašim potrebám." image="/assets/pricing-consultation-hero.jpg" />
+  return <><PageHero eyebrow="Programy a cenník" title="Za každou regeneráciou je príbeh človeka" text="Veríme v plne individuálny prístup. Výber konkrétneho programu a rozsah starostlivosti vždy prispôsobujeme reálnym potrebám vášho tela." image="/assets/pricing-consultation-hero.jpg" />
     <section className="section shell">
-      <SectionHeading eyebrow="Individuálna starostlivosť" title="Vstupné a nadväzujúce stretnutia" />
-      <div className="price-lines">
-        <article>
-          <div><h3>Úvodné individuálne regeneračné stretnutie</h3><p>Komplexné vstupné stretnutie a prvá personalizovaná regenerácia.</p></div>
-          <span>do 120 min.</span><b>165 €</b>
-        </article>
-        <article>
-          <div><h3>Nadväzujúce individuálne stretnutie</h3><p>Stretnutie prispôsobené aktuálnemu funkčnému stavu a priebehu regenerácie.</p></div>
-          <span>do 90 min.</span><b>155 €</b>
-        </article>
-        <article>
-          <div><h3>Hyperbarická oxygenoterapia (HBOT)</h3><p>1 terapia | séria 5 terapií | séria 10 terapií</p></div>
-          <span>60 min.</span><b>50 € / 150 € / 250 €</b>
-        </article>
-      </div>
-      <div className="meeting-details">
-        <article>
-          <span className="eyebrow">Prvé stretnutie</span>
-          <h2>Úvodné individuálne regeneračné stretnutie</h2>
-          <p>Komplexné vstupné stretnutie zamerané na funkčné zhodnotenie zdravotného stavu, identifikáciu priorít a nastavenie individuálneho programu starostlivosti. Súčasťou stretnutia je aj prvá personalizovaná regenerácia prispôsobená aktuálnemu funkčnému stavu a potrebám klienta.</p>
-          <h3>Súčasťou stretnutia je</h3>
-          <ul>
-            <li>Založenie REVIQA Health Passport™</li>
-            <li>Neuromyoskeletálna manuálna rekompozícia</li>
-            <li>Individuálne nastavený protokol molekulárnej regenerácie na bunkovej úrovni O₂, H₂ a iné terapie</li>
-            <li>Fyzio-regeneračné poradenstvo</li>
-            <li>Nastavenie personalizovaného programu REVIQA Method™</li>
-            <li>Osobné odborné odporúčania</li>
-          </ul>
-        </article>
-        <article>
-          <span className="eyebrow">Pokračovanie starostlivosti</span>
-          <h2>Nadväzujúce individuálne stretnutia</h2>
-          <p>Každé ďalšie stretnutie nadväzuje na výsledky predchádzajúcich návštev a je prispôsobené aktuálnemu funkčnému stavu, priebehu regenerácie a individuálnym potrebám klienta. Cieľom je podporiť prirodzené regeneračné procesy organizmu, obnoviť optimálnu funkciu pohybového aparátu a dlhodobo zlepšovať kvalitu života.</p>
-          <h3>Súčasťou stretnutia je</h3>
-          <ul>
-            <li>Priebežné funkčné zhodnotenie</li>
-            <li>Neuromyoskeletálna podporná manuálna rekompozícia</li>
-            <li>Individuálne nastavený protokol molekulárnej regenerácie na bunkovej úrovni O₂, H₂ a iné terapie</li>
-            <li>Personalizovaná kombinácia regeneračných postupov podľa REVIQA Method™</li>
-            <li>Priebežná optimalizácia individuálneho programu</li>
-            <li>Osobné odborné odporúčania</li>
-          </ul>
-        </article>
-      </div>
+      <SectionHeading eyebrow="Individuálna starostlivosť" title="REVIQA Method™" text="Personalizovaný regeneračný protokol" />
+      <article className="protocol-card">
+        <div className="protocol-head">
+          <div><span className="eyebrow">Personalizovaný regeneračný protokol</span><h2>REVIQA Method™</h2></div>
+          <strong>do 90 min. | 165 €</strong>
+        </div>
+        <p>Komplexné individuálne stretnutie zamerané na funkčné zhodnotenie zdravotného stavu, identifikáciu hlavných priorít a zostavenie personalizovaného regeneračného protokolu podľa aktuálneho zdravotného stavu, individuálnych potrieb a cieľov klienta.</p>
+        <div className="protocol-columns">
+          <div>
+            <h3>Personalizovaný regeneračný protokol zahŕňa</h3>
+            <ul>
+              <li>Založenie REVIQA Health Passport™</li>
+              <li>Funkčné zhodnotenie zdravotného stavu</li>
+              <li>Terapie z terapeutických modulov REVIQA Method™ podľa individuálne zostaveného regeneračného protokolu</li>
+              <li>Odporúčanie vhodného REVIQA Method™ Programu podľa potrieb regenerácie klienta</li>
+              <li>Konzultačné poradenstvo a odbornú podporu</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Terapeutické moduly REVIQA Method™</h3>
+            <p>Personalizovaný regeneračný protokol zostavuje odborník REVIQA | BIOMEDICA na základe funkčného zhodnotenia zdravotného stavu a individuálnych potrieb klienta z nasledujúcich terapeutických modulov:</p>
+            <ul>
+              <li>Chironeurogénne manuálne regeneračné techniky</li>
+              <li>Psychosomatické techniky</li>
+              <li>Hyperbarická oxygenoterapia (HBOT)</li>
+              <li>Vodíková terapia (H₂)</li>
+              <li>Kyslíková terapia (O₂)</li>
+              <li>Fotobiomodulácia</li>
+              <li>Perkutánna elektropresúra</li>
+              <li>Fyzio-regeneračné cvičenia a edukácia</li>
+              <li>Odporúčania v oblasti regenerácie a prevencie</li>
+              <li>Ďalšie terapeutické postupy podľa individuálnych potrieb klienta</li>
+            </ul>
+          </div>
+        </div>
+        <div className="protocol-note"><h3>Poznámka</h3><p>REVIQA Method™ predstavuje autorskú metodiku individuálnej regenerácie. Klient si nevyberá jednotlivé terapie – odborník REVIQA | BIOMEDICA zostavuje personalizovaný regeneračný protokol na základe funkčného zhodnotenia zdravotného stavu a aktuálnych potrieb klienta.</p></div>
+      </article>
+      <article className="hbot-price-card">
+        <div><span className="eyebrow">Samostatná terapia</span><h2>Hyperbarická oxygenoterapia (HBOT)</h2><p>1 terapia | séria 5 terapií | séria 10 terapií</p></div>
+        <div><span>60 min.</span><strong>50 € / 150 € / 250 €</strong></div>
+      </article>
     </section>
     <section className="section dark-panel"><div className="shell"><SectionHeading center eyebrow="Programy regenerácie & longevity" title="Rozsah podľa potrieb a cieľov" /><div className="program-grid">{programs.map((p) => <article key={p.name}><span>{p.note}</span><h2>{p.name}</h2><ul>{p.items.map((i) => <li key={i}>{i}</li>)}</ul><b>{p.price}</b></article>)}</div><p className="pricing-note">Programy nadväzujú na vstupné komplexné vyšetrenie a individuálny plán. Odporúčaný počet stretnutí sa môže po zhodnotení upraviť.</p></div></section><section className="section shell"><MedicalNote /></section><CTA /></>;
 }

@@ -3,7 +3,7 @@ import { CTA, SectionHeading, ServiceGrid } from "@/components/Sections";
 import { asset, contact } from "@/lib/content";
 import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = createPageMetadata({ title: "REVIQA Biomedica | Súkromné regeneračné centrum Poprad", description: "REVIQA Biomedica v Poprade ponúka individuálnu starostlivosť, vstupnú diagnostiku, HBOT, molekulárny vodík, fotobiomoduláciu a regeneračné terapie.", path: "" });
+export const metadata = createPageMetadata({ title: "REVIQA Biomedica | Súkromné regeneračné centrum Poprad", description: "REVIQA Biomedica v Poprade ponúka individuálnu starostlivosť, HBOT, molekulárny vodík a kyslík, fotobiomoduláciu a regeneračné terapie.", path: "" });
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       </section>
 
       <section className="intro-section section shell intro-layout">
-        <div><SectionHeading eyebrow="Prečo REVIQA" title="Regenerácia začína porozumením" text="Neriešime izolovane iba miesto ťažkostí. Hľadáme súvislosti a vytvárame podmienky, v ktorých môže telo lepšie fungovať, obnovovať sa a adaptovať." /><Link className="outline-link" href="/o-nas">Náš prístup</Link></div>
+        <div><SectionHeading eyebrow="Individuálna starostlivosť" title="REVIQA Method™ | Chironeurogenic System™" text="Vlastná systémová chironeurogénna metodika zameraná na podporu prirodzenej regenerácie, obnovu funkčných schopností organizmu a dlhodobé udržiavanie zdravia. Spája vedecky podložené princípy neuromyoskeletálnych manuálnych techník, fyzio-regeneračných postupov a moderných high-tech regeneračných technológií do jedného personalizovaného systému regenerácie." /><Link className="outline-link" href="/o-nas">Náš prístup</Link></div>
         <aside className="intro-consult-card"><img src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, zakladateľ REVIQA Biomedica" /><div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER – akreditovaný špecialista</span></div><span className="eyebrow">Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Začnime rozhovorom a úvodnou regeneračnou terapiou.</p><a href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si termín</a></aside>
         <div className="feature-stack"><article><span>✦</span><div><h3>Hľadanie súvislostí</h3><p>Pozeráme sa na človeka, jeho príbeh, pohyb a ciele ako na jeden celok.</p></div></article><article><span>◇</span><div><h3>Starostlivosť na mieru</h3><p>Každý plán vzniká individuálne a priebežne sa prispôsobuje.</p></div></article><article><span>∞</span><div><h3>Dlhodobá vitalita</h3><p>Naším cieľom je udržateľná kvalita života, nie rýchle univerzálne riešenie.</p></div></article></div>
       </section>
@@ -43,7 +43,7 @@ export default function Home() {
 
       <section className="method-preview section">
         <div className="shell"><SectionHeading eyebrow="Metóda REVIQA" title="Päť krokov personalizovanej regenerácie" /></div>
-        <div className="method-steps shell">{[["01","Objavenie","Počúvame váš príbeh a ciele."],["02","Posúdenie","Hľadáme vzorce a súvislosti."],["03","Reset","Znižujeme preťaženie a pripravujeme základ."],["04","Obnova","Podporujeme tkanivá, funkciu a výkon."],["05","Udržanie","Sledujeme progres a dlhodobú vitalitu."]].map(([n,t,p]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div>
+        <div className="method-steps shell">{[["01","Objavenie","Počúvame váš príbeh a ciele."],["02","Posúdenie","Hľadáme vzorce a súvislosti."],["03","Reset","Vyberáme prvé kroky a terapie."],["04","Obnova","Kombinujeme vhodné postupy a terapie."],["05","Udržanie","Sledujeme progres a dlhodobú vitalitu."]].map(([n,t,p]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div>
         <div className="center-action"><Link className="gold-button" href="/metoda-reviqa">Celá Metóda REVIQA</Link></div>
       </section>
 

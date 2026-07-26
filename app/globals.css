@@ -172,7 +172,10 @@ p { color: #535754; margin: 16px 0 0; }
 .medical-note p { font-size: .86rem; margin-top: 5px; }
 .tag-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag-grid span { padding: 13px 16px; border: 1px solid var(--line); background: var(--panel); color: #3f4441; font-size: .78rem; }
+.care-copy { max-width: 900px; display: grid; gap: 22px; }
+.care-copy p { margin: 0; color: #454a47; font-size: 1rem; line-height: 1.85; }
 .service-content { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; align-items: start; }
+.service-content-single { grid-template-columns: minmax(0, 850px); }
 .service-audience { grid-template-columns: 1fr; }
 .content-blocks { border-top: 1px solid var(--line); }
 .content-blocks article { padding: 25px 0; border-bottom: 1px solid var(--line); }
@@ -192,6 +195,24 @@ p { color: #535754; margin: 16px 0 0; }
 .meeting-details p, .meeting-details li { color: #515653; font-size: .9rem; line-height: 1.75; }
 .meeting-details ul { margin: 0; padding-left: 20px; }
 .meeting-details li + li { margin-top: 7px; }
+.protocol-card { padding: clamp(30px, 5vw, 64px); border: 1px solid var(--gold); background: rgba(249,249,247,.86); }
+.protocol-card > p { max-width: 950px; margin: 28px 0 0; font-size: .96rem; line-height: 1.8; }
+.protocol-head { display: flex; justify-content: space-between; gap: 35px; align-items: flex-end; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+.protocol-head h2 { margin-top: 10px; font-size: clamp(2.5rem, 5vw, 5rem); }
+.protocol-head strong { color: var(--gold-light); font: 1.55rem var(--serif); white-space: nowrap; }
+.protocol-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(35px, 6vw, 80px); margin-top: 48px; }
+.protocol-columns h3, .protocol-note h3 { margin-bottom: 18px; color: var(--gold-light); font: 1rem var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.protocol-columns p, .protocol-columns li, .protocol-note p { color: #515653; font-size: .89rem; line-height: 1.75; }
+.protocol-columns ul { margin: 0; padding-left: 20px; }
+.protocol-columns li + li { margin-top: 8px; }
+.protocol-note { margin-top: 45px; padding: 28px 30px; border-left: 3px solid var(--gold); background: rgba(201,164,100,.07); }
+.protocol-note p { margin: 0; }
+.hbot-price-card { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; margin-top: 24px; padding: 34px 40px; border: 1px solid var(--line); background: var(--panel); }
+.hbot-price-card h2 { margin: 11px 0 5px; font-size: clamp(1.8rem, 3vw, 2.8rem); }
+.hbot-price-card p { margin: 0; font-size: .88rem; }
+.hbot-price-card > div:last-child { display: grid; gap: 6px; text-align: right; }
+.hbot-price-card > div:last-child span { color: var(--muted); }
+.hbot-price-card strong { color: var(--gold-light); font: 1.5rem var(--serif); white-space: nowrap; }
 .program-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .program-grid article { padding: 30px; min-height: 390px; display: flex; flex-direction: column; border: 1px solid var(--line); background: rgba(249,249,247,.82); }
 .program-grid span { color: var(--gold); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
@@ -298,6 +319,7 @@ p { color: #535754; margin: 16px 0 0; }
   .method-steps article { border-bottom: 1px solid var(--line); }
   .values-grid, .benefit-grid, .program-grid { grid-template-columns: repeat(2, 1fr); }
   .meeting-details { grid-template-columns: 1fr; }
+  .protocol-columns { grid-template-columns: 1fr; }
   .values-grid article:nth-child(2), .benefit-grid article:nth-child(2) { border-right: 0; }
   .program-grid article { min-height: 330px; }
   .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
@@ -350,6 +372,14 @@ p { color: #535754; margin: 16px 0 0; }
   .price-lines > article > b { text-align: left; }
   .meeting-details { margin-top: 40px; }
   .meeting-details article { padding: 28px 24px; }
+  .protocol-card { padding: 28px 22px; }
+  .protocol-head { align-items: flex-start; flex-direction: column; }
+  .protocol-head strong { white-space: normal; }
+  .protocol-columns { margin-top: 36px; gap: 34px; }
+  .protocol-note { padding: 23px 20px; }
+  .hbot-price-card { grid-template-columns: 1fr; gap: 24px; padding: 28px 22px; }
+  .hbot-price-card > div:last-child { text-align: left; }
+  .hbot-price-card strong { white-space: normal; }
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 310px); }
   .gallery-grid figure:first-child { grid-row: auto; }
   .visual-gallery { grid-template-columns: 1fr; }
