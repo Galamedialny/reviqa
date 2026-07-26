@@ -1,4 +1,4 @@
-export const supportedLocales = ["sk", "en", "de"] as const;
+export const supportedLocales = ["sk", "en", "de", "pl"] as const;
 export type SupportedLocale = (typeof supportedLocales)[number];
 
 export const englishRoutes: Record<string, string> = {
@@ -51,6 +51,31 @@ export const germanServiceSlugMap: Record<string, string> = {
   "fyzioterapeuticke-poradenstvo": "physio-regenerative-beratung",
 };
 
+export const polishRoutes: Record<string, string> = {
+  "/": "/pl/",
+  "/o-nas/": "/pl/o-nas/",
+  "/nas-tim/": "/pl/nasz-zespol/",
+  "/sluzby/": "/pl/terapie/",
+  "/metoda-reviqa/": "/pl/metoda-reviqa/",
+  "/programy-cennik/": "/pl/programy-cennik/",
+  "/blog/": "/pl/blog/",
+  "/kontakt/": "/pl/kontakt/",
+  "/faq/": "/pl/faq/",
+  "/referencie/": "/pl/opinie/",
+  "/galeria/": "/pl/galeria/",
+  "/ochrana-osobnych-udajov/": "/pl/ochrona-danych/",
+  "/cookies/": "/pl/cookies/",
+};
+
+export const polishServiceSlugMap: Record<string, string> = {
+  "hyperbaricka-oxygenoterapia": "tlenoterapia-hiperbaryczna",
+  "molekularny-vodik": "terapia-wodorem-molekularnym",
+  "molekularny-kyslik": "terapia-tlenem-molekularnym",
+  fotobiomodulacia: "fotobiomodulacja",
+  "chiromanualne-terapie": "chironeurogenna-terapia-manualna",
+  "fyzioterapeuticke-poradenstvo": "doradztwo-fizjoregeneracyjne",
+};
+
 const reverseEnglishRoutes = Object.fromEntries(
   Object.entries(englishRoutes).map(([sk, en]) => [en, sk]),
 );
@@ -62,6 +87,12 @@ const reverseGermanRoutes = Object.fromEntries(
 );
 const reverseGermanServiceSlugMap = Object.fromEntries(
   Object.entries(germanServiceSlugMap).map(([sk, de]) => [de, sk]),
+);
+const reversePolishRoutes = Object.fromEntries(
+  Object.entries(polishRoutes).map(([sk, pl]) => [pl, sk]),
+);
+const reversePolishServiceSlugMap = Object.fromEntries(
+  Object.entries(polishServiceSlugMap).map(([sk, pl]) => [pl, sk]),
 );
 
 function normalise(pathname: string) {
@@ -92,7 +123,13 @@ export function toSlovakPath(pathname: string) {
     const translated = reverseGermanServiceSlugMap[germanServiceMatch[1]];
     return translated ? `/sluzby/${translated}/` : "/sluzby/";
   }
+  const polishServiceMatch = path.match(/^\/pl\/terapie\/([^/]+)\/$/);
+  if (polishServiceMatch) {
+    const translated = reversePolishServiceSlugMap[polishServiceMatch[1]];
+    return translated ? `/sluzby/${translated}/` : "/sluzby/";
+  }
   if (reverseGermanRoutes[path]) return reverseGermanRoutes[path];
+  if (reversePolishRoutes[path]) return reversePolishRoutes[path];
   if (Object.prototype.hasOwnProperty.call(englishRoutes, path)) return path;
   return reverseEnglishRoutes[path] ?? "/";
 }
@@ -107,6 +144,16 @@ export function toGermanPath(pathname: string) {
   return germanRoutes[path] ?? "/de/";
 }
 
+export function toPolishPath(pathname: string) {
+  const path = toSlovakPath(pathname);
+  const serviceMatch = path.match(/^\/sluzby\/([^/]+)\/$/);
+  if (serviceMatch) {
+    const translated = polishServiceSlugMap[serviceMatch[1]];
+    return translated ? `/pl/terapie/${translated}/` : "/pl/terapie/";
+  }
+  return polishRoutes[path] ?? "/pl/";
+}
+
 export function englishPathForSlovakPath(path: string) {
   return toEnglishPath(path || "/");
 }
@@ -117,4 +164,8 @@ export function slovakServiceSlugForEnglish(slug: string) {
 
 export function germanPathForSlovakPath(path: string) {
   return toGermanPath(path || "/");
+}
+
+export function polishPathForSlovakPath(path: string) {
+  return toPolishPath(path || "/");
 }
