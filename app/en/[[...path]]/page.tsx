@@ -353,7 +353,7 @@ function HomeEn() {
           <span className="eyebrow">Personal consultation</span>
           <h2>Let us begin with a conversation</h2>
           <p>The first step is an unhurried conversation and functional assessment. We then recommend the next steps.</p>
-          <div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER – accredited specialist</span></div>
+          <div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER | accredited specialist</span></div>
           <a href={contactEn.whatsapp} target="_blank" rel="noreferrer">Book your appointment</a>
         </aside>
       </section>

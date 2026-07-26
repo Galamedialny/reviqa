@@ -30,7 +30,7 @@ export default function Home() {
           <img src={asset("/assets/center-building-corrected.jpg")} alt="Privátne centrum REVIQA Biomedica v Poprade" />
           <div><span className="eyebrow">Individuálna starostlivosť</span><h2>Jeden človek. Jeden príbeh. Jeden plán.</h2><p>Nevyberáte si jednotlivé terapie. Spoločne vytvárame personalizovaný regeneračný protokol podľa vášho stavu, potrieb a dlhodobých cieľov.</p><Link href="/metoda-reviqa">Spoznať našu metódu →</Link></div>
         </article>
-        <aside className="intro-consult-card consultation-without-portrait"><span className="eyebrow">Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Prvým krokom je pokojný rozhovor a funkčné zhodnotenie. Na ich základe odporučíme ďalší postup.</p><div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER – akreditovaný špecialista</span></div><a href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si termín</a></aside>
+        <aside className="intro-consult-card consultation-without-portrait"><span className="eyebrow">Osobná konzultácia</span><h2>Začnime rozhovorom</h2><p>Prvým krokom je pokojný rozhovor a funkčné zhodnotenie. Na ich základe odporučíme ďalší postup.</p><div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER | akreditovaný špecialista</span></div><a href={contact.whatsapp} target="_blank" rel="noreferrer">Rezervujte si termín</a></aside>
       </section>
 
       <section className="freedom-section shell">
