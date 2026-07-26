@@ -195,9 +195,9 @@ p { color: #535754; margin: 16px 0 0; }
 .timeline h2 { font-size: 2.5rem; margin-top: 6px; }
 
 .service-detail { display: grid; grid-template-columns: 1fr 370px; gap: 90px; align-items: start; }
-.service-impact { padding-block: 48px; background: #171918; border-bottom: 1px solid rgba(168,125,67,.35); }
+.service-impact { padding-block: 48px; background: #e5e7e4; border-block: 1px solid var(--line); }
 .service-impact > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
-.service-impact p { margin: 0; padding: 8px 30px; color: #eee9df; border-right: 1px solid rgba(216,183,120,.28); font: 400 1.1rem/1.55 var(--serif); }
+.service-impact p { margin: 0; padding: 8px 30px; color: #292d2a; border-right: 1px solid var(--line); font: 400 1.1rem/1.55 var(--serif); }
 .service-impact p:first-child { padding-left: 0; }
 .service-impact p:last-child { padding-right: 0; border-right: 0; }
 .process-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
@@ -464,7 +464,7 @@ p { color: #535754; margin: 16px 0 0; }
   .service-grid, .blog-grid { grid-template-columns: 1fr; }
   .method-steps, .values-grid, .benefit-grid, .program-grid { grid-template-columns: 1fr; }
   .service-impact > div { grid-template-columns: 1fr; }
-  .service-impact p, .service-impact p:first-child, .service-impact p:last-child { padding: 20px 0; border-right: 0; border-bottom: 1px solid rgba(216,183,120,.22); }
+  .service-impact p, .service-impact p:first-child, .service-impact p:last-child { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .service-impact p:last-child { border-bottom: 0; }
   .method-steps article { min-height: auto; border-right: 1px solid var(--line); }
   .method-steps span { margin-bottom: 22px; }
