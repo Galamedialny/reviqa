@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { StructuredData } from "@/components/StructuredData";
 import { asset } from "@/lib/content";
 import { contactDe, faqsDe, servicesDe, type GermanService } from "@/lib/content-de";
-import { toEnglishPath, toPolishPath, toSlovakPath } from "@/lib/i18n";
+import { toEnglishPath, toPolishPath, toRussianPath, toSlovakPath } from "@/lib/i18n";
 import { OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const staticPaths = [
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ path?: st
     description,
     alternates: {
       canonical: url,
-      languages: { de: url, sk: slovakUrl, en: `${SITE_URL}${toEnglishPath(slovakPath)}`, pl: `${SITE_URL}${toPolishPath(slovakPath)}`, "x-default": slovakUrl },
+      languages: { de: url, sk: slovakUrl, en: `${SITE_URL}${toEnglishPath(slovakPath)}`, pl: `${SITE_URL}${toPolishPath(slovakPath)}`, ru: `${SITE_URL}${toRussianPath(slovakPath)}`, "x-default": slovakUrl },
     },
     openGraph: {
       title: `${title} | REVIQA`, description, url, siteName: SITE_NAME, locale: "de_DE", type: "website",

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { StructuredData } from "@/components/StructuredData";
 import { asset } from "@/lib/content";
 import { contactPl, faqsPl, servicesPl, type PolishService } from "@/lib/content-pl";
-import { toEnglishPath, toGermanPath, toSlovakPath } from "@/lib/i18n";
+import { toEnglishPath, toGermanPath, toRussianPath, toSlovakPath } from "@/lib/i18n";
 import { OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const staticPaths = [
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ path?: st
   const slovakUrl = `${SITE_URL}${slovakPath}`;
   return {
     title, description,
-    alternates: { canonical: url, languages: { pl: url, sk: slovakUrl, en: `${SITE_URL}${toEnglishPath(slovakPath)}`, de: `${SITE_URL}${toGermanPath(slovakPath)}`, "x-default": slovakUrl } },
+    alternates: { canonical: url, languages: { pl: url, sk: slovakUrl, en: `${SITE_URL}${toEnglishPath(slovakPath)}`, de: `${SITE_URL}${toGermanPath(slovakPath)}`, ru: `${SITE_URL}${toRussianPath(slovakPath)}`, "x-default": slovakUrl } },
     openGraph: { title: `${title} | REVIQA`, description, url, siteName: SITE_NAME, locale: "pl_PL", type: "website", images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "REVIQA Biomedica – prywatne centrum regeneracji na Słowacji" }] },
     twitter: { card: "summary_large_image", title: `${title} | REVIQA`, description, images: [OG_IMAGE] },
     robots: path[0] === "ochrona-danych" || path[0] === "cookies" ? { index: false, follow: true } : { index: true, follow: true },

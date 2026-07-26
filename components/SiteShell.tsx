@@ -7,7 +7,8 @@ import { asset, contact } from "@/lib/content";
 import { contactEn } from "@/lib/content-en";
 import { contactDe } from "@/lib/content-de";
 import { contactPl } from "@/lib/content-pl";
-import { toEnglishPath, toGermanPath, toPolishPath, toSlovakPath } from "@/lib/i18n";
+import { contactRu } from "@/lib/content-ru";
+import { toEnglishPath, toGermanPath, toPolishPath, toRussianPath, toSlovakPath } from "@/lib/i18n";
 import { COOKIE_CONSENT_EVENT } from "@/components/GoogleAnalytics";
 
 const navSk = [
@@ -50,14 +51,25 @@ const navPl = [
   ["/pl/kontakt", "Kontakt"],
 ] as const;
 
+const navRu = [
+  ["/ru", "Главная"],
+  ["/ru/o-nas", "О нас"],
+  ["/ru/terapii", "Терапии"],
+  ["/ru/metod-reviqa", "Метод"],
+  ["/ru/programmy-ceny", "Цены"],
+  ["/ru/blog", "Журнал"],
+  ["/ru/kontakty", "Контакты"],
+] as const;
+
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const english = pathname === "/en" || pathname.startsWith("/en/");
   const german = pathname === "/de" || pathname.startsWith("/de/");
   const polish = pathname === "/pl" || pathname.startsWith("/pl/");
-  const locale = polish ? "pl" : german ? "de" : english ? "en" : "sk";
-  const localeContact = polish ? contactPl : german ? contactDe : english ? contactEn : contact;
-  const nav = polish ? navPl : german ? navDe : english ? navEn : navSk;
+  const russian = pathname === "/ru" || pathname.startsWith("/ru/");
+  const locale = russian ? "ru" : polish ? "pl" : german ? "de" : english ? "en" : "sk";
+  const localeContact = russian ? contactRu : polish ? contactPl : german ? contactDe : english ? contactEn : contact;
+  const nav = russian ? navRu : polish ? navPl : german ? navDe : english ? navEn : navSk;
   const ui = {
     sk: {
       home: "/", homeLabel: "REVIQA – domov", menu: "Otvoriť menu", nav: "Hlavná navigácia", languages: "Jazykové verzie",
@@ -107,6 +119,18 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       more: "Więcej informacji", necessary: "Tylko niezbędne", accept: "Akceptuję", faqHref: "/pl/faq", testimonialsHref: "/pl/opinie",
       galleryHref: "/pl/galeria", privacyHref: "/pl/ochrona-danych", cookiesHref: "/pl/cookies",
     },
+    ru: {
+      home: "/ru", homeLabel: "REVIQA — главная страница", menu: "Открыть меню", nav: "Главная навигация", languages: "Языковые версии",
+      appointment: "Записаться", footer: "Частный центр восстановления с индивидуальным подходом к движению, регенерации и долгосрочному жизненному тонусу.",
+      contact: "Контакты", hours: <>Пн–Пт: 9:00–15:00<br />Выходные и другое время: по договорённости</>, information: "Информация",
+      faq: "Часто задаваемые вопросы", testimonials: "Отзывы", gallery: "Галерея", privacy: "Защита персональных данных",
+      cookieSettings: "Настройки cookies", follow: "Мы в социальных сетях", social: "Ссылки на социальные сети будут добавлены",
+      linksSoon: "Ссылки появятся в ближайшее время.", rights: "Все права защищены.", agency: "Сайт создан медиаагентством",
+      call: "Позвонить", callLabel: "Позвонить в REVIQA", messageLabel: "Написать REVIQA в WhatsApp", online: "Мы онлайн",
+      cookieText: "Мы используем необходимые технологии и, с вашего согласия, Google Analytics для измерения посещаемости.",
+      more: "Подробнее", necessary: "Только необходимые", accept: "Принять", faqHref: "/ru/faq", testimonialsHref: "/ru/otzyvy",
+      galleryHref: "/ru/galereya", privacyHref: "/ru/zashchita-dannyh", cookiesHref: "/ru/cookies",
+    },
   }[locale];
   const [menuOpen, setMenuOpen] = useState(false);
   const [cookies, setCookies] = useState(true);
@@ -142,7 +166,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <Link className={english ? "active" : ""} href={toEnglishPath(pathname)} title="English" hrefLang="en">🇬🇧</Link>
               <Link className={german ? "active" : ""} href={toGermanPath(pathname)} title="Deutsch" hrefLang="de">🇩🇪</Link>
               <Link className={polish ? "active" : ""} href={toPolishPath(pathname)} title="Polski" hrefLang="pl">🇵🇱</Link>
-              <span title="Русский – pripravujeme">🇷🇺</span>
+              <Link className={russian ? "active" : ""} href={toRussianPath(pathname)} title="Русский" hrefLang="ru">🇷🇺</Link>
             </div>
             <a className="nav-cta" href={localeContact.whatsapp} target="_blank" rel="noreferrer">{ui.appointment}</a>
           </nav>

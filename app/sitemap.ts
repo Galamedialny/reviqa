@@ -3,6 +3,7 @@ import { services } from "@/lib/content";
 import { servicesEn } from "@/lib/content-en";
 import { servicesDe } from "@/lib/content-de";
 import { servicesPl } from "@/lib/content-pl";
+import { servicesRu } from "@/lib/content-ru";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const englishRoutes = ["", "/about", "/our-team", "/reviqa-method", "/therapies", "/programmes-pricing", "/gallery", "/faq", "/testimonials", "/blog", "/contact"];
   const germanRoutes = ["", "/ueber-uns", "/unser-team", "/reviqa-methode", "/therapien", "/programme-preise", "/galerie", "/haeufige-fragen", "/erfahrungen", "/blog", "/kontakt"];
   const polishRoutes = ["", "/o-nas", "/nasz-zespol", "/metoda-reviqa", "/terapie", "/programy-cennik", "/galeria", "/faq", "/opinie", "/blog", "/kontakt"];
+  const russianRoutes = ["", "/o-nas", "/nasha-komanda", "/metod-reviqa", "/terapii", "/programmy-ceny", "/galereya", "/faq", "/otzyvy", "/blog", "/kontakty"];
   return [
     ...routes.map((route, i) => ({ url: route ? `${base}${route}/` : `${base}/`, changeFrequency: i === 0 ? "weekly" as const : "monthly" as const, priority: i === 0 ? 1 : .7 })),
     ...services.map(({ slug }) => ({ url: `${base}/sluzby/${slug}/`, changeFrequency: "monthly" as const, priority: .8 })),
@@ -21,5 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicesDe.map(({ slug }) => ({ url: `${base}/de/therapien/${slug}/`, changeFrequency: "monthly" as const, priority: .8 })),
     ...polishRoutes.map((route, i) => ({ url: route ? `${base}/pl${route}/` : `${base}/pl/`, changeFrequency: i === 0 ? "weekly" as const : "monthly" as const, priority: i === 0 ? .9 : .7 })),
     ...servicesPl.map(({ slug }) => ({ url: `${base}/pl/terapie/${slug}/`, changeFrequency: "monthly" as const, priority: .8 })),
+    ...russianRoutes.map((route, i) => ({ url: route ? `${base}/ru${route}/` : `${base}/ru/`, changeFrequency: i === 0 ? "weekly" as const : "monthly" as const, priority: i === 0 ? .9 : .7 })),
+    ...servicesRu.map(({ slug }) => ({ url: `${base}/ru/terapii/${slug}/`, changeFrequency: "monthly" as const, priority: .8 })),
   ];
 }

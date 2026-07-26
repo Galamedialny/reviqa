@@ -1,4 +1,4 @@
-export const supportedLocales = ["sk", "en", "de", "pl"] as const;
+export const supportedLocales = ["sk", "en", "de", "pl", "ru"] as const;
 export type SupportedLocale = (typeof supportedLocales)[number];
 
 export const englishRoutes: Record<string, string> = {
@@ -76,6 +76,31 @@ export const polishServiceSlugMap: Record<string, string> = {
   "fyzioterapeuticke-poradenstvo": "doradztwo-fizjoregeneracyjne",
 };
 
+export const russianRoutes: Record<string, string> = {
+  "/": "/ru/",
+  "/o-nas/": "/ru/o-nas/",
+  "/nas-tim/": "/ru/nasha-komanda/",
+  "/sluzby/": "/ru/terapii/",
+  "/metoda-reviqa/": "/ru/metod-reviqa/",
+  "/programy-cennik/": "/ru/programmy-ceny/",
+  "/blog/": "/ru/blog/",
+  "/kontakt/": "/ru/kontakty/",
+  "/faq/": "/ru/faq/",
+  "/referencie/": "/ru/otzyvy/",
+  "/galeria/": "/ru/galereya/",
+  "/ochrana-osobnych-udajov/": "/ru/zashchita-dannyh/",
+  "/cookies/": "/ru/cookies/",
+};
+
+export const russianServiceSlugMap: Record<string, string> = {
+  "hyperbaricka-oxygenoterapia": "giperbaricheskaya-oksigenoterapiya",
+  "molekularny-vodik": "terapiya-molekulyarnym-vodorodom",
+  "molekularny-kyslik": "terapiya-molekulyarnym-kislorodom",
+  fotobiomodulacia: "fotobiomodulyatsiya",
+  "chiromanualne-terapie": "hironeirogennaya-manualnaya-terapiya",
+  "fyzioterapeuticke-poradenstvo": "fizio-regeneracionnoe-konsultirovanie",
+};
+
 const reverseEnglishRoutes = Object.fromEntries(
   Object.entries(englishRoutes).map(([sk, en]) => [en, sk]),
 );
@@ -93,6 +118,12 @@ const reversePolishRoutes = Object.fromEntries(
 );
 const reversePolishServiceSlugMap = Object.fromEntries(
   Object.entries(polishServiceSlugMap).map(([sk, pl]) => [pl, sk]),
+);
+const reverseRussianRoutes = Object.fromEntries(
+  Object.entries(russianRoutes).map(([sk, ru]) => [ru, sk]),
+);
+const reverseRussianServiceSlugMap = Object.fromEntries(
+  Object.entries(russianServiceSlugMap).map(([sk, ru]) => [ru, sk]),
 );
 
 function normalise(pathname: string) {
@@ -128,8 +159,14 @@ export function toSlovakPath(pathname: string) {
     const translated = reversePolishServiceSlugMap[polishServiceMatch[1]];
     return translated ? `/sluzby/${translated}/` : "/sluzby/";
   }
+  const russianServiceMatch = path.match(/^\/ru\/terapii\/([^/]+)\/$/);
+  if (russianServiceMatch) {
+    const translated = reverseRussianServiceSlugMap[russianServiceMatch[1]];
+    return translated ? `/sluzby/${translated}/` : "/sluzby/";
+  }
   if (reverseGermanRoutes[path]) return reverseGermanRoutes[path];
   if (reversePolishRoutes[path]) return reversePolishRoutes[path];
+  if (reverseRussianRoutes[path]) return reverseRussianRoutes[path];
   if (Object.prototype.hasOwnProperty.call(englishRoutes, path)) return path;
   return reverseEnglishRoutes[path] ?? "/";
 }
@@ -154,6 +191,16 @@ export function toPolishPath(pathname: string) {
   return polishRoutes[path] ?? "/pl/";
 }
 
+export function toRussianPath(pathname: string) {
+  const path = toSlovakPath(pathname);
+  const serviceMatch = path.match(/^\/sluzby\/([^/]+)\/$/);
+  if (serviceMatch) {
+    const translated = russianServiceSlugMap[serviceMatch[1]];
+    return translated ? `/ru/terapii/${translated}/` : "/ru/terapii/";
+  }
+  return russianRoutes[path] ?? "/ru/";
+}
+
 export function englishPathForSlovakPath(path: string) {
   return toEnglishPath(path || "/");
 }
@@ -168,4 +215,8 @@ export function germanPathForSlovakPath(path: string) {
 
 export function polishPathForSlovakPath(path: string) {
   return toPolishPath(path || "/");
+}
+
+export function russianPathForSlovakPath(path: string) {
+  return toRussianPath(path || "/");
 }
