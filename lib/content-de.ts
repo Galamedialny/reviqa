@@ -14,6 +14,7 @@ export type GermanService = {
   title: string;
   eyebrow: string;
   intro: string;
+  impact: string[];
   image: string;
   process: string[];
   benefits: string[];
@@ -31,7 +32,8 @@ export const servicesDe: GermanService[] = [
     short: "HBOT",
     title: "Hyperbare Sauerstofftherapie (HBOT)",
     eyebrow: "Unterstützung der Sauerstoffversorgung",
-    intro: "Ein wissenschaftlich etabliertes Verfahren, bei dem der Klient in einer Umgebung mit erhöhtem Druck Sauerstoff einatmet. Ziel ist es, die Sauerstoffverfügbarkeit im Gewebe im Rahmen eines individuellen Regenerationsplans zu erhöhen.",
+    intro: "Mehr verfügbarer Sauerstoff für das Gewebe. Stärkere Unterstützung natürlicher Regenerationsprozesse. Die hyperbare Sauerstofftherapie wird stets individuell in das Protokoll integriert – entsprechend Gesundheitszustand, Ziel und Verträglichkeit.",
+    impact: ["Der erhöhte Druck ermöglicht dem Organismus, Sauerstoff auf eine Weise zu nutzen, die unter normalem Atmosphärendruck nicht verfügbar ist.", "Die Therapie kann die Sauerstoffversorgung des Gewebes, natürliche Heilungsprozesse und die Erholung nach ausgewählten Belastungen unterstützen.", "Das konkrete Protokoll und der realistisch zu erwartende Nutzen werden immer individuell beurteilt."],
     image: "/assets/service-hbot-concept.jpg",
     process: [
       "Vor der Anwendung beurteilen wir den Gesundheitszustand, mögliche Kontraindikationen und die Eignung von HBOT.",
@@ -61,7 +63,8 @@ export const servicesDe: GermanService[] = [
     short: "H₂-Therapie",
     title: "Molekulare Wasserstofftherapie (H₂)",
     eyebrow: "Regeneration auf Zellebene",
-    intro: "Wasserstoff ist das kleinste Molekül. Bei REVIQA wird er je nach individuellem Ziel durch Inhalation oder wasserstoffreiches Wasser in personalisierte Pläne integriert.",
+    intro: "Das kleinste Molekül mit bemerkenswertem regenerativem Potenzial. Molekularer Wasserstoff kann Zellgleichgewicht, Vitalität und den Umgang mit oxidativer Belastung unterstützen.",
+    impact: ["Molekularer Wasserstoff kann selektive antioxidative Mechanismen und den Schutz der Zellen vor oxidativem Stress unterstützen.", "Aufgrund seiner geringen Größe kann er biologische Membranen passieren; der konkrete Nutzen hängt von Anwendung und individuellem Zustand ab.", "Wir integrieren H₂ als ergänzendes Modul in einen umfassenderen Regenerationsplan – nicht als Ersatz für Diagnostik oder Behandlung."],
     image: "/assets/service-hydrogen-concept.jpg",
     process: [
       "Wir besprechen Ihr Ziel, Ihren Gesundheitszustand und die Rolle der Wasserstofftherapie im Gesamtplan.",
@@ -91,7 +94,8 @@ export const servicesDe: GermanService[] = [
     short: "O₂-Therapie",
     title: "Molekulare Sauerstofftherapie (O₂)",
     eyebrow: "Sauerstoffversorgung und Regeneration",
-    intro: "Die Sauerstofftherapie wird in ein personalisiertes Regenerationsprotokoll integriert, um Sauerstoffversorgung, Zellenergie und natürliche Regenerationsprozesse zu unterstützen.",
+    intro: "Gezielte Sauerstoffunterstützung für Energie, Erholung und Vitalität. Die Sauerstofftherapie wird ausschließlich nach individueller Beurteilung in das Regenerationsprotokoll integriert.",
+    impact: ["Sauerstoff ist eine grundlegende Voraussetzung für die zelluläre Energieproduktion und natürliche Anpassungsprozesse.", "Ein individuell eingestelltes Protokoll kann Erholung, Vitalität und die Rückkehr zu Alltag oder Sport unterstützen.", "Methode, Intensität und Häufigkeit richten sich immer nach Gesundheitszustand, Ziel und Verträglichkeit."],
     image: "/assets/service-diagnostics-concept.jpg",
     process: [
       "Wir beurteilen Ihren aktuellen Zustand, Ihre individuellen Bedürfnisse und mögliche Einschränkungen.",
@@ -121,7 +125,8 @@ export const servicesDe: GermanService[] = [
     short: "Lichttherapie",
     title: "Photobiomodulation (660–850 nm)",
     eyebrow: "Die Wissenschaft des Lichts. Die Energie des Lebens.",
-    intro: "Die Photobiomodulation nutzt ausgewählte Wellenlängen von rotem und nahem infrarotem Licht zur Unterstützung natürlicher zellulärer und regenerativer Prozesse.",
+    intro: "Licht, das die Energie der Zellen aktiviert. Ausgewählte Wellenlängen von rotem und nahinfrarotem Licht können mitochondriale Aktivität, Geweberegeneration und Vitalität unterstützen.",
+    impact: ["Rotes und nahinfrarotes Licht kann zelluläre Strukturen erreichen und die natürliche ATP-Produktion unterstützen.", "Je nach Wellenlänge kann die Anwendung Haut, oberflächliches Gewebe, Muskeln oder tiefer liegende Strukturen ansprechen.", "Parameter und Anwendungsserie werden individuell gewählt; wir versprechen keine universelle Wirkung."],
     image: "/assets/service-pbm-concept.jpg",
     process: [
       "Wir bestimmen Zielbereich und Zielsetzung und schließen mögliche Kontraindikationen aus.",
@@ -152,6 +157,7 @@ export const servicesDe: GermanService[] = [
     title: "Chironeurogene manuelle regenerative Therapie",
     eyebrow: "Bewegung, Nervensystem und Zusammenhänge",
     intro: "Unsere eigene Methode verbindet spezialisierte manuelle Techniken präzise mit einem tiefen Verständnis der Wechselwirkung zwischen Nerven- und Bewegungssystem.",
+    impact: ["Wir behandeln nicht nur den Ort der Beschwerden, sondern suchen funktionelle Zusammenhänge zwischen Wirbelsäule, Gelenken, Muskeln, Faszien und Nervenbahnen.", "Gezielte manuelle Arbeit kann Beweglichkeit, Spannungsregulation und natürlichere Bewegungsmuster unterstützen.", "Jede Anwendung wird dem aktuellen Funktionszustand, den Bedürfnissen und Zielen des Klienten angepasst."],
     image: "/assets/service-manual-concept.jpg",
     process: [
       "Gespräch und funktionelle Beurteilung von Wirbelsäule, Gelenken, Muskeln, Faszien und Bewegungsmustern.",
@@ -177,7 +183,8 @@ export const servicesDe: GermanService[] = [
     short: "Physio-regenerative Beratung",
     title: "Physio-regenerative Beratung",
     eyebrow: "Die Betreuung zu Hause fortsetzen",
-    intro: "Nach der Therapie zeigen wir Ihnen einfache und sichere Übungen für zu Hause. Ihr individueller Plan knüpft an die Behandlung an, unterstützt Bewegungsgewohnheiten und hilft, Fortschritte zu erhalten.",
+    intro: "Regeneration endet nicht mit dem Termin. Wir zeigen Ihnen verständliche und sichere Übungen, mit denen Sie den Fortschritt zu Hause aktiv unterstützen können.",
+    impact: ["Ein individueller Bewegungsplan überträgt die Betreuung in Ihren Alltag und fördert gesunde Bewegungsgewohnheiten.", "Wenige präzise eingeübte Schritte können Mobilität, Stabilität und Selbstständigkeit zwischen den Terminen unterstützen.", "Umfang und Belastung werden nach funktioneller Beurteilung festgelegt und bei Bedarf angepasst."],
     image: "/assets/service-physio-home-exercise.jpg",
     process: [
       "Wir beurteilen aktuelle Bewegung, Möglichkeiten, Einschränkungen und die Reaktion auf bisherige Therapien.",

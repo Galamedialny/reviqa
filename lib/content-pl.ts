@@ -14,6 +14,7 @@ export type PolishService = {
   title: string;
   eyebrow: string;
   intro: string;
+  impact: string[];
   image: string;
   process: string[];
   benefits: string[];
@@ -31,7 +32,8 @@ export const servicesPl: PolishService[] = [
     short: "HBOT",
     title: "Tlenoterapia hiperbaryczna (HBOT)",
     eyebrow: "Wsparcie dostępności tlenu",
-    intro: "Uznana naukowo procedura, podczas której klient oddycha tlenem w środowisku o podwyższonym ciśnieniu. Jej celem jest zwiększenie dostępności tlenu w tkankach w ramach indywidualnego planu regeneracji.",
+    intro: "Więcej dostępnego tlenu dla tkanek. Silniejsze wsparcie naturalnych procesów regeneracyjnych. Tlenoterapię hiperbaryczną zawsze włączamy do protokołu indywidualnie – zgodnie ze stanem zdrowia, celem i tolerancją klienta.",
+    impact: ["Podwyższone ciśnienie pozwala organizmowi wykorzystywać tlen w sposób niedostępny przy zwykłym ciśnieniu atmosferycznym.", "Terapia może wspierać dotlenienie tkanek, naturalne procesy gojenia i regenerację po wybranych obciążeniach.", "Konkretny protokół i realistycznie oczekiwane korzyści zawsze oceniamy indywidualnie."],
     image: "/assets/service-hbot-concept.jpg",
     process: [
       "Przed zabiegiem oceniamy stan zdrowia, możliwe przeciwwskazania i zasadność zastosowania HBOT.",
@@ -61,7 +63,8 @@ export const servicesPl: PolishService[] = [
     short: "Terapia H₂",
     title: "Terapia wodorem molekularnym (H₂)",
     eyebrow: "Regeneracja na poziomie komórkowym",
-    intro: "Wodór jest najmniejszą cząsteczką. W REVIQA włączamy go do spersonalizowanych planów poprzez inhalację lub wodę wodorową, zależnie od indywidualnego celu.",
+    intro: "Najmniejsza cząsteczka o interesującym potencjale regeneracyjnym. Wodór molekularny może wspierać równowagę komórkową, witalność i radzenie sobie ze stresem oksydacyjnym.",
+    impact: ["Wodór molekularny może wspierać selektywne mechanizmy antyoksydacyjne i ochronę komórek przed stresem oksydacyjnym.", "Ze względu na niewielki rozmiar może przenikać przez błony biologiczne; znaczenie zależy od sposobu podania i indywidualnego stanu.", "H₂ włączamy jako moduł uzupełniający szerszy plan regeneracji, a nie zamiennik diagnostyki lub leczenia."],
     image: "/assets/service-hydrogen-concept.jpg",
     process: [
       "Omawiamy cel, stan zdrowia i rolę terapii wodorowej w całym planie.",
@@ -91,7 +94,8 @@ export const servicesPl: PolishService[] = [
     short: "Terapia O₂",
     title: "Terapia tlenem molekularnym (O₂)",
     eyebrow: "Wsparcie dotlenienia i regeneracji",
-    intro: "Terapię tlenową włączamy do spersonalizowanego protokołu regeneracji, aby wspierać dotlenienie, energię komórkową i naturalne procesy odnowy organizmu.",
+    intro: "Ukierunkowane wsparcie tlenowe dla energii, regeneracji i witalności. Terapię tlenową włączamy do protokołu wyłącznie po indywidualnej ocenie.",
+    impact: ["Tlen jest podstawowym warunkiem produkcji energii komórkowej i naturalnych procesów adaptacyjnych.", "Indywidualnie ustawiony protokół może wspierać regenerację, witalność i powrót do codziennej lub sportowej aktywności.", "Metodę, intensywność i częstotliwość zawsze dobieramy do stanu zdrowia, celu i tolerancji."],
     image: "/assets/service-diagnostics-concept.jpg",
     process: [
       "Oceniamy aktualny stan zdrowia, indywidualne potrzeby i możliwe ograniczenia.",
@@ -121,7 +125,8 @@ export const servicesPl: PolishService[] = [
     short: "Terapia światłem",
     title: "Fotobiomodulacja (660–850 nm)",
     eyebrow: "Nauka światła. Energia życia.",
-    intro: "Fotobiomodulacja wykorzystuje wybrane długości fal światła czerwonego i bliskiej podczerwieni do wspierania naturalnych procesów komórkowych i regeneracyjnych.",
+    intro: "Światło, które aktywuje energię komórek. Wybrane długości fal czerwonych i bliskiej podczerwieni mogą wspierać aktywność mitochondriów, regenerację tkanek i witalność.",
+    impact: ["Światło czerwone i bliskiej podczerwieni może docierać do struktur komórkowych i wspierać naturalną produkcję ATP.", "W zależności od długości fali pracujemy ze skórą, tkankami powierzchownymi, mięśniami lub strukturami położonymi głębiej.", "Parametry i serię zabiegów dobieramy indywidualnie; nie obiecujemy uniwersalnego efektu."],
     image: "/assets/service-pbm-concept.jpg",
     process: [
       "Określamy obszar i cel oraz wykluczamy możliwe przeciwwskazania.",
@@ -152,6 +157,7 @@ export const servicesPl: PolishService[] = [
     title: "Chironeurogenna manualna terapia regeneracyjna",
     eyebrow: "Ruch, układ nerwowy i zależności",
     intro: "Nasza autorska metoda precyzyjnie łączy specjalistyczne techniki manualne z dogłębnym rozumieniem wzajemnych zależności układu nerwowego i ruchowego.",
+    impact: ["Nie koncentrujemy się wyłącznie na miejscu dolegliwości, lecz szukamy funkcjonalnych zależności między kręgosłupem, stawami, mięśniami, powięziami i drogami nerwowymi.", "Ukierunkowana praca manualna może wspierać ruchomość, regulację napięcia i bardziej naturalny wzorzec ruchu.", "Każdą terapię dostosowujemy do aktualnego stanu funkcjonalnego, potrzeb i celów klienta."],
     image: "/assets/service-manual-concept.jpg",
     process: [
       "Rozmowa i funkcjonalna ocena kręgosłupa, stawów, mięśni, powięzi i wzorców ruchowych.",
@@ -177,7 +183,8 @@ export const servicesPl: PolishService[] = [
     short: "Doradztwo fizjoregeneracyjne",
     title: "Doradztwo fizjoregeneracyjne",
     eyebrow: "Kontynuuj opiekę w domu",
-    intro: "Po terapii uczymy prostych i bezpiecznych ćwiczeń do samodzielnego wykonywania w domu. Indywidualny plan nawiązuje do terapii, wspiera nawyki ruchowe i pomaga utrzymać postępy.",
+    intro: "Regeneracja nie kończy się wraz z wizytą. Uczymy prostych i bezpiecznych ćwiczeń, dzięki którym możesz aktywnie wspierać postęp również w domu.",
+    impact: ["Indywidualny plan ruchowy przenosi opiekę do codziennego życia i wspiera zdrowe nawyki ruchowe.", "Kilka precyzyjnie przećwiczonych kroków może wspierać mobilność, stabilność i samodzielność między wizytami.", "Zakres i obciążenie ustalamy po ocenie funkcjonalnej i w razie potrzeby modyfikujemy."],
     image: "/assets/service-physio-home-exercise.jpg",
     process: [
       "Oceniamy aktualny ruch, możliwości, ograniczenia i reakcję na wykonane terapie.",

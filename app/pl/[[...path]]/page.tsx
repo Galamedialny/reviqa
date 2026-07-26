@@ -3,144 +3,1338 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { StructuredData } from "@/components/StructuredData";
 import { asset } from "@/lib/content";
-import { contactPl, faqsPl, servicesPl, type PolishService } from "@/lib/content-pl";
-import { toEnglishPath, toGermanPath, toRussianPath, toSlovakPath } from "@/lib/i18n";
+import {
+  contactPl,
+  faqsPl,
+  servicesPl,
+  type PolishService,
+} from "@/lib/content-pl";
+import {
+  toEnglishPath,
+  toGermanPath,
+  toRussianPath,
+  toSlovakPath,
+} from "@/lib/i18n";
 import { OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const staticPaths = [
-  [], ["o-nas"], ["nasz-zespol"], ["terapie"], ["metoda-reviqa"],
-  ["programy-cennik"], ["galeria"], ["faq"], ["opinie"],
-  ["blog"], ["kontakt"], ["ochrona-danych"], ["cookies"],
+  [],
+  ["o-nas"],
+  ["nasz-zespol"],
+  ["terapie"],
+  ["metoda-reviqa"],
+  ["programy-cennik"],
+  ["galeria"],
+  ["faq"],
+  ["opinie"],
+  ["blog"],
+  ["kontakt"],
+  ["ochrona-danych"],
+  ["cookies"],
 ];
 
 export function generateStaticParams() {
-  return [...staticPaths.map((path) => ({ path })), ...servicesPl.map((service) => ({ path: ["terapie", service.slug] }))];
+  return [
+    ...staticPaths.map((path) => ({ path })),
+    ...servicesPl.map((service) => ({ path: ["terapie", service.slug] })),
+  ];
 }
 
 const pageSeo: Record<string, [string, string]> = {
-  "": ["REVIQA Biomedica | Prywatne centrum regeneracji na Słowacji", "Indywidualna regeneracja, HBOT, wodór i tlen molekularny, fotobiomodulacja i terapie manualne w Popradzie."],
-  "o-nas": ["O REVIQA – filozofia i centrum", "Poznaj filozofię, zaplecze specjalistyczne i prywatne otoczenie REVIQA Biomedica w Popradzie."],
-  "nasz-zespol": ["Nasz zespół i doświadczenie", "Poznaj założyciela Radovana Foltinskiego i konsultantkę medyczną Dr. med. univ. Alexandrę Foltinską."],
-  terapie: ["Terapie regeneracyjne", "HBOT, wodór i tlen molekularny, fotobiomodulacja, terapia chironeurogenna i doradztwo fizjoregeneracyjne."],
-  "metoda-reviqa": ["REVIQA Method – pięć kroków regeneracji", "Od poznania i oceny po odbudowę i długoterminową optymalizację."],
-  "programy-cennik": ["Programy i cennik", "Ceny spersonalizowanego protokołu REVIQA Method, HBOT i indywidualnych programów regeneracji."],
-  galeria: ["Galeria centrum REVIQA", "Prawdziwe zdjęcia prywatnego, dostępnego centrum REVIQA i ogrodu w Popradzie."],
-  faq: ["Najczęściej zadawane pytania", "Praktyczne odpowiedzi dotyczące pierwszej wizyty, terapii, dzieci, parkingu i dostępności."],
-  opinie: ["Doświadczenia i opinie klientów", "Zweryfikowane doświadczenia klientów REVIQA będą publikowane za ich zgodą."],
-  blog: ["Magazyn o regeneracji i longevity", "Zrozumiałe, specjalistycznie sprawdzone artykuły o HBOT, wodorze, świetle, ruchu i długowieczności."],
-  kontakt: ["Kontakt i rezerwacja wizyty", "Skontaktuj się z REVIQA Biomedica przy Hitschova 5022/2 w Popradzie telefonicznie, e-mailem lub przez WhatsApp."],
-  "ochrona-danych": ["Ochrona danych osobowych", "Informacje o przetwarzaniu danych osobowych na stronie REVIQA Biomedica."],
-  cookies: ["Polityka cookies", "Informacje o plikach cookies i usługach zewnętrznych używanych na stronie REVIQA Biomedica."],
+  "": [
+    "REVIQA Biomedica | Prywatne centrum regeneracji na Słowacji",
+    "Indywidualna regeneracja, HBOT, wodór i tlen molekularny, fotobiomodulacja i terapie manualne w Popradzie.",
+  ],
+  "o-nas": [
+    "O REVIQA – filozofia i centrum",
+    "Poznaj filozofię, zaplecze specjalistyczne i prywatne otoczenie REVIQA Biomedica w Popradzie.",
+  ],
+  "nasz-zespol": [
+    "Nasz zespół i doświadczenie",
+    "Poznaj założyciela Radovana Foltinskiego i konsultantkę medyczną Dr. med. univ. Alexandrę Foltinską.",
+  ],
+  terapie: [
+    "Terapie regeneracyjne",
+    "HBOT, wodór i tlen molekularny, fotobiomodulacja, terapia chironeurogenna i doradztwo fizjoregeneracyjne.",
+  ],
+  "metoda-reviqa": [
+    "REVIQA Method – pięć kroków regeneracji",
+    "Od poznania i oceny po odbudowę i długoterminową optymalizację.",
+  ],
+  "programy-cennik": [
+    "Programy i cennik",
+    "Ceny spersonalizowanego protokołu REVIQA Method, HBOT i indywidualnych programów regeneracji.",
+  ],
+  galeria: [
+    "Galeria centrum REVIQA",
+    "Prawdziwe zdjęcia prywatnego, dostępnego centrum REVIQA i ogrodu w Popradzie.",
+  ],
+  faq: [
+    "Najczęściej zadawane pytania",
+    "Praktyczne odpowiedzi dotyczące pierwszej wizyty, terapii, dzieci, parkingu i dostępności.",
+  ],
+  opinie: [
+    "Doświadczenia i opinie klientów",
+    "Zweryfikowane doświadczenia klientów REVIQA będą publikowane za ich zgodą.",
+  ],
+  blog: [
+    "Magazyn o regeneracji i longevity",
+    "Zrozumiałe, specjalistycznie sprawdzone artykuły o HBOT, wodorze, świetle, ruchu i długowieczności.",
+  ],
+  kontakt: [
+    "Kontakt i rezerwacja wizyty",
+    "Skontaktuj się z REVIQA Biomedica przy Hitschova 5022/2 w Popradzie telefonicznie, e-mailem lub przez WhatsApp.",
+  ],
+  "ochrona-danych": [
+    "Ochrona danych osobowych",
+    "Informacje o przetwarzaniu danych osobowych na stronie REVIQA Biomedica.",
+  ],
+  cookies: [
+    "Polityka cookies",
+    "Informacje o plikach cookies i usługach zewnętrznych używanych na stronie REVIQA Biomedica.",
+  ],
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ path?: string[] }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ path?: string[] }>;
+}): Promise<Metadata> {
   const { path = [] } = await params;
-  const service = path[0] === "terapie" && path[1] ? servicesPl.find((item) => item.slug === path[1]) : undefined;
-  const [title, description] = service ? [service.title, service.intro] : pageSeo[path.join("/")] ?? pageSeo[""];
+  const service =
+    path[0] === "terapie" && path[1]
+      ? servicesPl.find((item) => item.slug === path[1])
+      : undefined;
+  const [title, description] = service
+    ? [service.title, service.intro]
+    : (pageSeo[path.join("/")] ?? pageSeo[""]);
   const route = path.length ? `/pl/${path.join("/")}/` : "/pl/";
   const url = `${SITE_URL}${route}`;
-  const slovakPath = service ? `/sluzby/${service.slovakSlug}/` : toSlovakPath(route);
+  const slovakPath = service
+    ? `/sluzby/${service.slovakSlug}/`
+    : toSlovakPath(route);
   const slovakUrl = `${SITE_URL}${slovakPath}`;
   return {
-    title, description,
-    alternates: { canonical: url, languages: { pl: url, sk: slovakUrl, en: `${SITE_URL}${toEnglishPath(slovakPath)}`, de: `${SITE_URL}${toGermanPath(slovakPath)}`, ru: `${SITE_URL}${toRussianPath(slovakPath)}`, "x-default": slovakUrl } },
-    openGraph: { title: `${title} | REVIQA`, description, url, siteName: SITE_NAME, locale: "pl_PL", type: "website", images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "REVIQA Biomedica – prywatne centrum regeneracji na Słowacji" }] },
-    twitter: { card: "summary_large_image", title: `${title} | REVIQA`, description, images: [OG_IMAGE] },
-    robots: path[0] === "ochrona-danych" || path[0] === "cookies" ? { index: false, follow: true } : { index: true, follow: true },
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: {
+        pl: url,
+        sk: slovakUrl,
+        en: `${SITE_URL}${toEnglishPath(slovakPath)}`,
+        de: `${SITE_URL}${toGermanPath(slovakPath)}`,
+        ru: `${SITE_URL}${toRussianPath(slovakPath)}`,
+        "x-default": slovakUrl,
+      },
+    },
+    openGraph: {
+      title: `${title} | REVIQA`,
+      description,
+      url,
+      siteName: SITE_NAME,
+      locale: "pl_PL",
+      type: "website",
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: "REVIQA Biomedica – prywatne centrum regeneracji na Słowacji",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | REVIQA`,
+      description,
+      images: [OG_IMAGE],
+    },
+    robots:
+      path[0] === "ochrona-danych" || path[0] === "cookies"
+        ? { index: false, follow: true }
+        : { index: true, follow: true },
   };
 }
 
-function Hero({ eyebrow, title, text, image }: { eyebrow: string; title: string; text: React.ReactNode; image?: string }) {
-  return <section className="page-hero" style={image ? { backgroundImage: `linear-gradient(90deg, rgba(239,240,238,.97), rgba(239,240,238,.68)), url('${asset(image)}')` } : undefined}><div className="shell narrow"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p></div></section>;
+function Hero({
+  eyebrow,
+  title,
+  text,
+  image,
+}: {
+  eyebrow: string;
+  title: string;
+  text: React.ReactNode;
+  image?: string;
+}) {
+  return (
+    <section
+      className="page-hero"
+      style={
+        image
+          ? {
+              backgroundImage: `linear-gradient(90deg, rgba(239,240,238,.97), rgba(239,240,238,.68)), url('${asset(image)}')`,
+            }
+          : undefined
+      }
+    >
+      <div className="shell narrow">
+        <span className="eyebrow">{eyebrow}</span>
+        <h1>{title}</h1>
+        <p>{text}</p>
+      </div>
+    </section>
+  );
 }
 
-function Heading({ eyebrow, title, text, center = false }: { eyebrow: string; title: string; text?: string; center?: boolean }) {
-  return <div className={center ? "section-heading center" : "section-heading"}><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>;
+function Heading({
+  eyebrow,
+  title,
+  text,
+  center = false,
+}: {
+  eyebrow: string;
+  title: string;
+  text?: string;
+  center?: boolean;
+}) {
+  return (
+    <div className={center ? "section-heading center" : "section-heading"}>
+      <span className="eyebrow">{eyebrow}</span>
+      <h2>{title}</h2>
+      {text && <p>{text}</p>}
+    </div>
+  );
 }
 
 function Notice() {
-  return <div className="medical-note"><b>Ważna informacja</b><p>Informacje na tej stronie mają charakter ogólny. Nie zastępują diagnozy ani leczenia. Zasadność każdej terapii i możliwe przeciwwskazania oceniamy indywidualnie przed rozpoczęciem opieki.</p></div>;
+  return (
+    <div className="medical-note">
+      <b>Ważna informacja</b>
+      <p>
+        Informacje na tej stronie mają charakter ogólny. Nie zastępują diagnozy
+        ani leczenia. Zasadność każdej terapii i możliwe przeciwwskazania
+        oceniamy indywidualnie przed rozpoczęciem opieki.
+      </p>
+    </div>
+  );
 }
 
 function CTA() {
-  return <section className="cta-band"><div className="shell"><div><span className="eyebrow">Pierwszy krok</span><h2>Umów wizytę</h2><p>Uporządkowana rozmowa, ocena wstępna i indywidualne zalecenie dalszych kroków.</p></div><div className="cta-actions"><a className="gold-button" href={contactPl.whatsapp} target="_blank" rel="noreferrer">Napisz przez WhatsApp</a><a className="ghost-button" href={`tel:${contactPl.phone}`}>Zadzwoń {contactPl.phoneDisplay}</a></div></div></section>;
+  return (
+    <section className="cta-band">
+      <div className="shell">
+        <div>
+          <span className="eyebrow">Pierwszy krok</span>
+          <h2>Umów wizytę</h2>
+          <p>
+            Uporządkowana rozmowa, ocena wstępna i indywidualne zalecenie
+            dalszych kroków.
+          </p>
+        </div>
+        <div className="cta-actions">
+          <a
+            className="gold-button"
+            href={contactPl.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Napisz przez WhatsApp
+          </a>
+          <a className="ghost-button" href={`tel:${contactPl.phone}`}>
+            Zadzwoń {contactPl.phoneDisplay}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function ServiceGrid() {
-  return <div className="service-grid">{servicesPl.map((service, i) => <article className="service-card" key={service.slug}><div className="service-image"><img src={asset(service.image)} alt={`Ilustracja: ${service.title}`} /><span>Zdjęcie ilustracyjne</span></div><div className="service-body"><small>0{i + 1}</small><h3>{service.title}</h3><p>{service.intro}</p><Link href={`/pl/terapie/${service.slug}`}>Dowiedz się więcej <span>→</span></Link></div></article>)}</div>;
+  return (
+    <div className="service-grid">
+      {servicesPl.map((service, i) => (
+        <article className="service-card" key={service.slug}>
+          <div className="service-image">
+            <img
+              src={asset(service.image)}
+              alt={`Ilustracja: ${service.title}`}
+            />
+            <span>Zdjęcie ilustracyjne</span>
+          </div>
+          <div className="service-body">
+            <small>0{i + 1}</small>
+            <h3>{service.title}</h3>
+            <p>{service.intro}</p>
+            <Link href={`/pl/terapie/${service.slug}`}>
+              Dowiedz się więcej <span>→</span>
+            </Link>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
 }
 
 function Home() {
-  const steps = [["01","Poznanie","Słuchamy Twojej historii i celów."],["02","Ocena","Rozpoznajemy wzorce i zależności."],["03","Reset","Wybieramy pierwsze kroki i terapie."],["04","Odbudowa","Łączymy odpowiednie metody i technologie."],["05","Utrzymanie","Monitorujemy postępy i długoterminową witalność."]];
-  return <><section className="home-hero"><img className="hero-bg" src={asset("/assets/home-freedom-family.jpg")} alt="Rodzina spędzająca aktywnie czas pod Tatrami Wysokimi" /><div className="hero-shade" /><div className="hero-content shell"><h1>Twoje ciało.<br /><em>Twoja przyszłość.</em><br />Nasza nauka.</h1><span className="hero-divider" /><p>Indywidualne biomechaniczne podejście do regeneracji układu ruchu, układu nerwowego i wspierania długowieczności.</p><div className="hero-actions"><a className="gold-button hero-primary" href={contactPl.whatsapp} target="_blank" rel="noreferrer"><span>Umów wizytę</span><span>→</span></a><Link className="text-link" href="/pl/terapie">Technologie i metody terapeutyczne REVIQA</Link></div></div><div className="hero-facts shell"><div><b>01</b><span>Indywidualny plan</span></div><div><b>02</b><span>Prywatność i dyskrecja</span></div><div><b>03</b><span>Nowoczesne technologie</span></div><div><b>04</b><span>Długoterminowa opieka</span></div></div></section>
-    <section className="intro-section section shell intro-layout"><div><Heading eyebrow="Indywidualna opieka" title="REVIQA Method™ | Chiro-Neurogenic System™" text="Autorska systemowa metoda chironeurogenna ukierunkowana na wspieranie naturalnej regeneracji, odbudowę funkcji i długoterminowe utrzymanie zdrowia. Łączy zasady neuromięśniowo-szkieletowych technik manualnych, metody fizjoregeneracyjne i nowoczesne technologie w jednym spersonalizowanym systemie." /><Link className="outline-link" href="/pl/o-nas">Nasze podejście</Link></div><aside className="intro-consult-card"><img src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský, założyciel REVIQA Biomedica" /><div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER – akredytowany specjalista</span></div><span className="eyebrow">Osobista konsultacja</span><h2>Zacznijmy od rozmowy</h2><p>Rozmowa wstępna i pierwsza sesja regeneracyjna.</p><a href={contactPl.whatsapp} target="_blank" rel="noreferrer">Umów wizytę</a></aside><div className="feature-stack"><article><span>✦</span><div><h3>Rozumiemy zależności</h3><p>Patrzymy na człowieka, jego historię, ruch i cele jako na jedną całość.</p></div></article><article><span>◇</span><div><h3>Opieka dopasowana do Ciebie</h3><p>Każdy plan powstaje indywidualnie i jest na bieżąco modyfikowany.</p></div></article><article><span>∞</span><div><h3>Długoterminowa witalność</h3><p>Celem jest trwała jakość życia, a nie szybkie, uniwersalne rozwiązanie.</p></div></article></div></section>
-    <section className="freedom-section shell"><img src={asset("/assets/home-freedom-family.jpg")} alt="Aktywna rodzina pod Tatrami" /><div className="freedom-shade" /><div className="freedom-content"><span className="eyebrow">Twoje życie. Twoje priorytety.</span><h2>Więcej swobody w życiu, którym chcesz żyć</h2><p>Regeneracja to nie tylko zmniejszenie dolegliwości. To możliwość swobodnego ruchu, podróżowania i aktywnego spędzania czasu z bliskimi.</p><div className="freedom-values"><span>Swoboda ruchu</span><span>Aktywne życie</span><span>Czas z bliskimi</span><span>Mobilność bez zbędnych ograniczeń</span></div><a className="gold-button" href={contactPl.whatsapp} target="_blank" rel="noreferrer">Rozpocznij swoją drogę</a></div><blockquote>„Nie chodzi tylko o długość życia, lecz o jakość każdego dnia.”</blockquote></section>
-    <section className="section services-section"><div className="shell"><Heading center eyebrow="Terapie" title="Poznaj nasze terapie" text="Połączenie, częstotliwość i kolejność zawsze dobieramy indywidualnie." /><ServiceGrid /></div></section>
-    <section className="method-preview section"><div className="shell"><Heading eyebrow="REVIQA Method" title="Pięć kroków spersonalizowanej regeneracji" /></div><div className="method-steps shell">{steps.map(([n,t,p]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div><div className="center-action"><Link className="gold-button" href="/pl/metoda-reviqa">Poznaj REVIQA Method</Link></div></section>
-    <section className="section shell place-section"><div className="place-image"><img src={asset("/assets/center-garden-1.jpeg")} alt="Centrum i ogród REVIQA w Popradzie" /></div><div><Heading eyebrow="Miejsce, w którym zwalniasz" title="Spokojne centrum pod Tatrami" text="Nowoczesne, dostępne otoczenie zapewniające prywatność, ogród i parking bezpośrednio przy centrum." /><ul className="gold-list"><li>Hitschova 5022/2, Poprad – Spišská Sobota</li><li>Parking na terenie obiektu</li><li>Wejście bez barier</li><li>Wizyty po umówieniu</li></ul><Link className="outline-link" href="/pl/galeria">Zobacz galerię</Link></div></section><CTA /></>;
+  const steps = [
+    ["01", "Poznanie", "Słuchamy Twojej historii i celów."],
+    ["02", "Ocena", "Rozpoznajemy wzorce i zależności."],
+    ["03", "Reset", "Wybieramy pierwsze kroki i terapie."],
+    ["04", "Odbudowa", "Łączymy odpowiednie metody i technologie."],
+    ["05", "Utrzymanie", "Monitorujemy postępy i długoterminową witalność."],
+  ];
+  return (
+    <>
+      <section className="home-hero home-hero-founder">
+        <img
+          className="hero-bg"
+          src={asset("/assets/radovan-hero-mobile-v2.png")}
+          alt="Radovan Foltinský, założyciel REVIQA Biomedica"
+        />
+        <div className="hero-shade" />
+        <div className="hero-content shell">
+          <div className="hero-kicker"><span>Private Regeneration &amp; Longevity Center</span><em>Boutique Regeneration Experience</em></div>
+          <h1>
+            Twoje ciało.
+            <br />
+            <em>Twoja przyszłość.</em>
+            <br />
+            Nasza nauka.
+          </h1>
+          <span className="hero-divider" />
+          <p>
+            Łączymy biomechanikę, nowoczesne technologie regeneracyjne i
+            indywidualne podejście, aby wspierać naturalną regenerację i długoterminowe zdrowie.
+          </p>
+          <div className="hero-actions">
+            <a
+              className="gold-button hero-primary"
+              href={contactPl.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Umów wizytę</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+        <div className="hero-facts shell">
+          <div>
+            <b>01</b>
+            <span>Indywidualne podejście</span>
+          </div>
+          <div>
+            <b>02</b>
+            <span>Nauka i technologia</span>
+          </div>
+          <div>
+            <b>03</b>
+            <span>Regeneracja i długowieczność</span>
+          </div>
+          <div>
+            <b>04</b>
+            <span>Zdrowie jako priorytet</span>
+          </div>
+        </div>
+      </section>
+      <section className="intro-section section shell home-story-grid">
+        <article className="home-story-copy">
+          <Heading eyebrow="Dlaczego REVIQA" title="Regeneracja zaczyna się od zrozumienia." text="Prawdziwa regeneracja nie zaczyna się od terapii, lecz od zrozumienia człowieka. Szukamy zależności funkcjonalnych wpływających na ruch, układ nerwowy i ogólną równowagę organizmu." />
+          <Link className="outline-link" href="/pl/o-nas">Dowiedz się więcej</Link>
+        </article>
+        <article className="home-story-visual">
+          <img src={asset("/assets/center-building-corrected.jpg")} alt="Prywatne centrum REVIQA Biomedica w Popradzie" />
+          <div><span className="eyebrow">Indywidualna opieka</span><h2>Jedna osoba. Jedna historia. Jeden plan.</h2><p>Nie wybierasz pojedynczych terapii. Wspólnie tworzymy spersonalizowany protokół regeneracyjny zgodny z Twoim stanem, potrzebami i długoterminowymi celami.</p><Link href="/pl/metoda-reviqa">Poznaj naszą metodę →</Link></div>
+        </article>
+        <aside className="intro-consult-card consultation-without-portrait">
+          <span className="eyebrow">Osobista konsultacja</span>
+          <h2>Zacznijmy od rozmowy</h2>
+          <p>Pierwszym krokiem jest spokojna rozmowa i ocena funkcjonalna. Na tej podstawie zalecimy dalsze postępowanie.</p>
+          <div className="consult-person"><strong>Radovan Foltinský</strong><small>MSc, MEd, CertMGMT (Open)</small><span>FOUNDER – akredytowany specjalista</span></div>
+          <a href={contactPl.whatsapp} target="_blank" rel="noreferrer">Umów wizytę</a>
+        </aside>
+      </section>
+      <section className="freedom-section shell">
+        <img
+          src={asset("/assets/home-freedom-family.jpg")}
+          alt="Aktywna rodzina pod Tatrami"
+        />
+        <div className="freedom-shade" />
+        <div className="freedom-content">
+          <span className="eyebrow">Twoje życie. Twoje priorytety.</span>
+          <h2>Więcej swobody w życiu, którym chcesz żyć</h2>
+          <p>
+            Regeneracja to nie tylko zmniejszenie dolegliwości. To możliwość
+            swobodnego ruchu, podróżowania i aktywnego spędzania czasu z
+            bliskimi.
+          </p>
+          <div className="freedom-values">
+            <span>Swoboda ruchu</span>
+            <span>Aktywne życie</span>
+            <span>Czas z bliskimi</span>
+            <span>Mobilność bez zbędnych ograniczeń</span>
+          </div>
+          <a
+            className="gold-button"
+            href={contactPl.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rozpocznij swoją drogę
+          </a>
+        </div>
+        <blockquote>
+          „Nie chodzi tylko o długość życia, lecz o jakość każdego dnia.”
+        </blockquote>
+      </section>
+      <section className="section services-section">
+        <div className="shell">
+          <Heading
+            center
+            eyebrow="Terapie"
+            title="Poznaj nasze terapie"
+            text="Połączenie, częstotliwość i kolejność zawsze dobieramy indywidualnie."
+          />
+          <ServiceGrid />
+        </div>
+      </section>
+      <section className="method-preview section">
+        <div className="shell">
+          <Heading
+            eyebrow="REVIQA Method"
+            title="Pięć kroków spersonalizowanej regeneracji"
+          />
+        </div>
+        <div className="method-steps shell">
+          {steps.map(([n, t, p]) => (
+            <article key={n}>
+              <span>{n}</span>
+              <h3>{t}</h3>
+              <p>{p}</p>
+            </article>
+          ))}
+        </div>
+        <div className="center-action">
+          <Link className="gold-button" href="/pl/metoda-reviqa">
+            Poznaj REVIQA Method
+          </Link>
+        </div>
+      </section>
+      <section className="section shell place-section">
+        <div className="place-image">
+          <img
+            src={asset("/assets/center-garden-1.jpeg")}
+            alt="Centrum i ogród REVIQA w Popradzie"
+          />
+        </div>
+        <div>
+          <Heading
+            eyebrow="Miejsce, w którym zwalniasz"
+            title="Spokojne centrum pod Tatrami"
+            text="Nowoczesne, dostępne otoczenie zapewniające prywatność, ogród i parking bezpośrednio przy centrum."
+          />
+          <ul className="gold-list">
+            <li>Hitschova 5022/2, Poprad – Spišská Sobota</li>
+            <li>Parking na terenie obiektu</li>
+            <li>Wejście bez barier</li>
+            <li>Wizyty po umówieniu</li>
+          </ul>
+          <Link className="outline-link" href="/pl/galeria">
+            Zobacz galerię
+          </Link>
+        </div>
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function About() {
-  return <><Hero eyebrow="O nas" title="Twój potencjał. Nasza misja." text={<>Ból, zmęczenie i długotrwałe przeciążenie nie muszą być nową normalnością. Zasługujesz na miejsce, w którym zostaniesz wysłuchany, a opieka będzie dopasowana do Ciebie.<br /><br />REVIQA Biomedica to prywatne centrum regeneracji i longevity w nowoczesnym pawilonie, w spokojnym otoczeniu.</>} image="/assets/center-garden-1.jpeg" /><section className="section shell split"><div><Heading eyebrow="Nasza filozofia" title="Człowiek to więcej niż zbiór objawów" text="Układ ruchu, układ nerwowy, regeneracja, sen i codzienne obciążenie wpływają na siebie. Dlatego zaczynamy od zrozumienia całej historii klienta." /><p>REVIQA przyjmuje ograniczoną liczbę klientów, aby każda wizyta przebiegała spokojnie, prywatnie i bez pośpiechu.</p></div><div className="framed-image"><img src={asset("/assets/center-building-corrected.jpg")} alt="Nowoczesny pawilon REVIQA" /></div></section><section className="section dark-panel"><div className="shell"><Heading center eyebrow="Nasze wartości" title="Człowiek. Nauka. Technologia." /><div className="values-grid"><article><span>01</span><h3>Indywidualne podejście</h3><p>Szanujemy wyjątkowe potrzeby każdego klienta.</p></article><article><span>02</span><h3>Dyskrecja</h3><p>Zaufanie i prywatność są podstawą opieki.</p></article><article><span>03</span><h3>Profesjonalizm</h3><p>Akredytowani specjaliści podejmują decyzje z wiedzą i precyzją.</p></article><article><span>04</span><h3>Nauka i technologia</h3><p>Nowoczesne technologie wspierają naturalne procesy regeneracji.</p></article></div></div></section><section className="section shell"><Heading center eyebrow="Ludzie REVIQA" title="Zespół, który słucha" /><div className="center-action"><Link className="gold-button" href="/pl/nasz-zespol">Poznaj nasz zespół</Link></div></section><CTA /></>;
+  return (
+    <>
+      <Hero
+        eyebrow="O nas"
+        title="Twój potencjał. Nasza misja."
+        text={
+          <>
+            Ból, zmęczenie i długotrwałe przeciążenie nie muszą być nową
+            normalnością. Zasługujesz na miejsce, w którym zostaniesz
+            wysłuchany, a opieka będzie dopasowana do Ciebie.
+            <br />
+            <br />
+            REVIQA Biomedica to prywatne centrum regeneracji i longevity w
+            nowoczesnym pawilonie, w spokojnym otoczeniu.
+          </>
+        }
+        image="/assets/center-garden-1.jpeg"
+      />
+      <section className="section shell why-reviqa">
+        <div>
+          <Heading
+            eyebrow="Dlaczego REVIQA"
+            title="Regeneracja zaczyna się od zrozumienia."
+          />
+          <p>Wierzymy, że prawdziwa regeneracja nie zaczyna się od terapii, lecz od zrozumienia człowieka. Dlatego nie koncentrujemy się wyłącznie na miejscu dolegliwości, ale szukamy zależności funkcjonalnych wpływających na ruch, układ nerwowy i ogólną równowagę organizmu.</p>
+          <span className="hero-divider" aria-hidden="true" />
+          <h2>Indywidualna opieka</h2>
+          <h3>REVIQA Method™ | Chironeurogenic System™</h3>
+          <p>Nasza autorska metodologia łączy biomechanikę, neuromięśniowo-szkieletową terapię manualną, metody fizjoregeneracyjne i nowoczesne technologie regeneracyjne w jeden spersonalizowany system opieki.</p>
+          <p>Nie wybierasz pojedynczych terapii. Po ocenie funkcjonalnej wspólnie tworzymy spersonalizowany protokół regeneracyjny uwzględniający Twoje potrzeby, aktualny stan funkcjonalny i długoterminowe cele.</p>
+          <p>Każdy protokół przygotowujemy indywidualnie, ponieważ prawdziwie osobista opieka jest podstawą trwałych rezultatów.</p>
+        </div>
+        <div className="framed-image">
+          <img
+            src={asset("/assets/center-building-corrected.jpg")}
+            alt="Nowoczesny pawilon REVIQA"
+          />
+        </div>
+      </section>
+      <section className="section dark-panel">
+        <div className="shell">
+          <Heading
+            center
+            eyebrow="Nasze wartości"
+            title="Człowiek. Nauka. Technologia."
+          />
+          <div className="values-grid">
+            <article>
+              <span>01</span>
+              <h3>Indywidualne podejście</h3>
+              <p>Szanujemy wyjątkowe potrzeby każdego klienta.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Dyskrecja</h3>
+              <p>Zaufanie i prywatność są podstawą opieki.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Profesjonalizm</h3>
+              <p>
+                Akredytowani specjaliści podejmują decyzje z wiedzą i precyzją.
+              </p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Nauka i technologia</h3>
+              <p>
+                Nowoczesne technologie wspierają naturalne procesy regeneracji.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section className="section shell">
+        <Heading center eyebrow="Ludzie REVIQA" title="Zespół, który słucha" />
+        <div className="center-action">
+          <Link className="gold-button" href="/pl/nasz-zespol">
+            Poznaj nasz zespół
+          </Link>
+        </div>
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Team() {
-  return <><Hero eyebrow="Nasz zespół" title="Wiedza z ludzką twarzą" text="Osobista opieka, dokładne zrozumienie i specjalistyczna konsultacja są podstawą każdej współpracy." /><section className="section shell team-grid"><article className="person-card featured"><div className="portrait-crop"><img src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")} alt="Radovan Foltinský" /></div><div><h2 className="person-name">Radovan Foltinský</h2><p className="person-titles">MSc, MEd, CertMGMT (Open)</p><p className="person-role">Founder &amp; Accredited Specialist | REVIQA Biomedica</p><p>Pracował jako menedżer najwyższego szczebla i CEO odnoszących sukcesy firm technologicznych oraz członek zarządu AVS. Jako wykładowca akademicki prowadził doktorantów i uczestniczył w projektach badawczo-rozwojowych. Dziś łączy doświadczenie menedżerskie i akademickie z misją pomagania ludziom w odzyskaniu siły, zdrowia i energii jako akredytowany specjalista w zakresie układów neuromięśniowo-szkieletowych.</p><blockquote>„Moim celem jest nowy standard prywatnej regeneracji i długowieczności, łączący naukę, doświadczenie i spersonalizowaną opiekę.<br /><br />Nie skupiamy się wyłącznie na miejscu bólu. Patrzymy na człowieka jako całość.”</blockquote></div></article><article className="person-card consultant"><div className="portrait-crop consultant-portrait"><img src={asset("/assets/alexandra-foltinska-portrait.jpg")} alt="Dr. med. univ. Alexandra Foltinská" /></div><div><h2 className="person-name">Alexandra Foltinská</h2><p className="person-titles">Dr. med. univ.</p><p className="person-role">Consulting Partner | REVIQA Biomedica</p><p>Lekarka zarejestrowana w Austriackiej Izbie Lekarskiej (ÖÄK), aktywnie pracująca klinicznie w Tyrolu. Odpowiada za specjalistyczne konsultacje medyczne.</p><blockquote>„W REVIQA | BIOMEDICA staramy się łączyć nowoczesną medycynę naukową z indywidualną regeneracją i profilaktyką.”</blockquote></div></article></section><CTA /></>;
+  return (
+    <>
+      <Hero
+        eyebrow="Nasz zespół"
+        title="Wiedza z ludzką twarzą"
+        text="Osobista opieka, dokładne zrozumienie i specjalistyczna konsultacja są podstawą każdej współpracy."
+      />
+      <section className="section shell team-grid">
+        <article className="person-card featured">
+          <div className="portrait-crop">
+            <img
+              src={asset("/assets/radovan-foltinsky-portrait-2026.jpeg")}
+              alt="Radovan Foltinský"
+            />
+          </div>
+          <div>
+            <h2 className="person-name">Radovan Foltinský</h2>
+            <p className="person-titles">MSc, MEd, CertMGMT (Open)</p>
+            <p className="person-role">
+              Founder &amp; Accredited Specialist | REVIQA Biomedica
+            </p>
+            <p>
+              Pracował jako menedżer najwyższego szczebla i CEO odnoszących
+              sukcesy firm technologicznych oraz członek zarządu AVS. Jako
+              wykładowca akademicki prowadził doktorantów i uczestniczył w
+              projektach badawczo-rozwojowych. Dziś łączy doświadczenie
+              menedżerskie i akademickie z misją pomagania ludziom w odzyskaniu
+              siły, zdrowia i energii jako akredytowany specjalista w zakresie
+              układów neuromięśniowo-szkieletowych.
+            </p>
+            <blockquote>
+              „Moim celem jest nowy standard prywatnej regeneracji i
+              długowieczności, łączący naukę, doświadczenie i spersonalizowaną
+              opiekę.
+              <br />
+              <br />
+              Nie skupiamy się wyłącznie na miejscu bólu. Patrzymy na człowieka
+              jako całość.”
+            </blockquote>
+          </div>
+        </article>
+        <article className="person-card consultant">
+          <div className="portrait-crop consultant-portrait">
+            <img
+              src={asset("/assets/alexandra-foltinska-portrait.jpg")}
+              alt="Dr. med. univ. Alexandra Foltinská"
+            />
+          </div>
+          <div>
+            <h2 className="person-name">Alexandra Foltinská</h2>
+            <p className="person-titles">Dr. med. univ.</p>
+            <p className="person-role">Consulting Partner | REVIQA Biomedica</p>
+            <p>
+              Lekarka zarejestrowana w Austriackiej Izbie Lekarskiej (ÖÄK),
+              aktywnie pracująca klinicznie w Tyrolu. Odpowiada za
+              specjalistyczne konsultacje medyczne.
+            </p>
+            <blockquote>
+              „W REVIQA | BIOMEDICA staramy się łączyć nowoczesną medycynę
+              naukową z indywidualną regeneracją i profilaktyką.”
+            </blockquote>
+          </div>
+        </article>
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Therapies() {
-  return <><Hero eyebrow="Terapie" title="Opieka zaprojektowana wokół Ciebie" text="Nie traktujemy technologii i terapii w oderwaniu od siebie. Dobieramy je do celów, aktualnego stanu i oceny wstępnej." image="/assets/service-complementary-concept.jpg" /><section className="section shell"><Heading center eyebrow="Możliwości opieki" title="Poznaj nasze terapie" text="Konkretne połączenie, częstotliwość i kolejność są zawsze indywidualne." /><ServiceGrid /></section><CTA /></>;
+  return (
+    <>
+      <Hero
+        eyebrow="Terapie"
+        title="Opieka zaprojektowana wokół Ciebie"
+        text="Nie traktujemy technologii i terapii w oderwaniu od siebie. Dobieramy je do celów, aktualnego stanu i oceny wstępnej."
+        image="/assets/service-complementary-concept.jpg"
+      />
+      <section className="section shell">
+        <Heading
+          center
+          eyebrow="Możliwości opieki"
+          title="Poznaj nasze terapie"
+          text="Konkretne połączenie, częstotliwość i kolejność są zawsze indywidualne."
+        />
+        <ServiceGrid />
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Therapy({ service }: { service: PolishService }) {
   const url = `${SITE_URL}/pl/terapie/${service.slug}/`;
-  const data = [{ "@context": "https://schema.org", "@type": "Service", name: service.title, description: service.intro, url, provider: { "@id": `${SITE_URL}/#organization` }, areaServed: { "@type": "Place", name: "International" } }, { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: service.faq.map(([q,a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) }];
+  const data = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service.title,
+      description: service.intro,
+      url,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: { "@type": "Place", name: "International" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: service.faq.map(([q, a]) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
+  ];
   const manual = service.slug === "chironeurogenna-terapia-manualna";
-  return <><StructuredData data={data} /><Hero eyebrow={service.eyebrow} title={service.title} text={service.intro} image={service.image} /><section className="section shell service-detail"><div><Heading eyebrow="Jak przebiega" title="Spokojnie, jasno i indywidualnie" /><ol className="process-list">{service.process.map((item,i) => <li key={item}><span>0{i + 1}</span><p>{item}</p></li>)}</ol></div><aside className="detail-box"><div><small>DLA KOGO</small><p>{service.audience}</p></div></aside></section><section className="section dark-panel"><div className="shell"><Heading eyebrow="Możliwe korzyści" title="Element szerszego planu regeneracji" /><div className="benefit-grid">{service.benefits.map((benefit,i) => <article key={benefit}><span>0{i + 1}</span><h3>{benefit}</h3></article>)}</div><Notice /></div></section>{manual ? <section className="section shell"><Heading eyebrow="Możliwości opieki" title="Postępowanie dobieramy do konkretnego klienta" /><div className="care-copy"><p>Nie skupiamy się tylko na miejscu bólu. Pracujemy celowo z funkcjonalnymi blokadami kręgosłupa, stawów, mięśni, powięzi i dróg nerwowych, które mogą wpływać na naturalne funkcjonowanie organizmu.</p><p>Za pomocą specjalistycznych technik manualnych tworzymy optymalne warunki dla naturalnej regeneracji, odbudowy funkcji i długoterminowego zdrowia. Każdą terapię dopasowujemy do stanu, potrzeb i celów klienta.</p></div></section> : <section className="section shell"><Heading eyebrow="Możliwości opieki" title="Postępowanie dobieramy do konkretnego klienta" /><div className="tag-grid">{service.modalities.map((item) => <span key={item}>{item}</span>)}</div></section>}<section className="section dark-panel"><div className={`shell service-content${service.details.length === 0 ? " service-content-single" : ""}`}><div><Heading eyebrow="Dla kogo" title="Najpierw oceniamy cały kontekst" /><ul className="gold-list service-audience">{service.suitableFor.map((item) => <li key={item}>{item}</li>)}</ul></div>{service.details.length > 0 && <div className="content-blocks">{service.details.map(([title,text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div>}</div></section><section className="section shell"><Heading eyebrow="Przeciwwskazania" title="Bezpieczeństwo oceniamy przed każdą terapią" text="Nie każda metoda jest odpowiednia dla każdego. Przed wizytą poinformuj nas o diagnozach, aktualnym leczeniu, ciąży, implantach i istotnych zmianach stanu zdrowia. Ostateczny protokół potwierdzamy po indywidualnej ocenie specjalisty." /></section><section className="section dark-panel"><div className="shell"><Heading eyebrow="Najczęściej zadawane pytania" title={`Informacje praktyczne: ${service.short}`} /><div className="faq-list service-faq">{service.faq.map(([q,a],i) => <details key={q}><summary><span>0{i + 1}</span>{q}<b>+</b></summary><p>{a}</p></details>)}</div></div></section><CTA /></>;
+  return (
+    <>
+      <StructuredData data={data} />
+      <Hero
+        eyebrow={service.eyebrow}
+        title={service.title}
+        text={service.intro}
+        image={service.image}
+      />
+      <section className="service-impact">
+        <div className="shell">
+          {service.impact.map((item) => <p key={item}>{item}</p>)}
+        </div>
+      </section>
+      <section className="section shell service-detail">
+        <div>
+          <Heading
+            eyebrow="Jak przebiega"
+            title="Spokojnie, jasno i indywidualnie"
+          />
+          <ol className="process-list">
+            {service.process.map((item, i) => (
+              <li key={item}>
+                <span>0{i + 1}</span>
+                <p>{item}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <aside className="detail-box">
+          <div>
+            <small>DLA KOGO</small>
+            <p>{service.audience}</p>
+          </div>
+        </aside>
+      </section>
+      <section className="section dark-panel">
+        <div className="shell">
+          <Heading
+            eyebrow="Możliwe korzyści"
+            title="Element szerszego planu regeneracji"
+          />
+          <div className="benefit-grid">
+            {service.benefits.map((benefit, i) => (
+              <article key={benefit}>
+                <span>0{i + 1}</span>
+                <h3>{benefit}</h3>
+              </article>
+            ))}
+          </div>
+          <Notice />
+        </div>
+      </section>
+      {manual ? (
+        <section className="section shell">
+          <Heading
+            eyebrow="Możliwości opieki"
+            title="Postępowanie dobieramy do konkretnego klienta"
+          />
+          <div className="care-copy">
+            <p>
+              Nie skupiamy się tylko na miejscu bólu. Pracujemy celowo z
+              funkcjonalnymi blokadami kręgosłupa, stawów, mięśni, powięzi i
+              dróg nerwowych, które mogą wpływać na naturalne funkcjonowanie
+              organizmu.
+            </p>
+            <p>
+              Za pomocą specjalistycznych technik manualnych tworzymy optymalne
+              warunki dla naturalnej regeneracji, odbudowy funkcji i
+              długoterminowego zdrowia. Każdą terapię dopasowujemy do stanu,
+              potrzeb i celów klienta.
+            </p>
+          </div>
+        </section>
+      ) : (
+        <section className="section shell">
+          <Heading
+            eyebrow="Możliwości opieki"
+            title="Postępowanie dobieramy do konkretnego klienta"
+          />
+          <div className="tag-grid">
+            {service.modalities.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="section dark-panel">
+        <div
+          className={`shell service-content${service.details.length === 0 ? " service-content-single" : ""}`}
+        >
+          <div>
+            <Heading
+              eyebrow="Dla kogo"
+              title="Najpierw oceniamy cały kontekst"
+            />
+            <ul className="gold-list service-audience">
+              {service.suitableFor.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          {service.details.length > 0 && (
+            <div className="content-blocks">
+              {service.details.map(([title, text]) => (
+                <article key={title}>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+      <section className="section shell">
+        <Heading
+          eyebrow="Przeciwwskazania"
+          title="Bezpieczeństwo oceniamy przed każdą terapią"
+          text="Nie każda metoda jest odpowiednia dla każdego. Przed wizytą poinformuj nas o diagnozach, aktualnym leczeniu, ciąży, implantach i istotnych zmianach stanu zdrowia. Ostateczny protokół potwierdzamy po indywidualnej ocenie specjalisty."
+        />
+      </section>
+      <section className="section dark-panel">
+        <div className="shell">
+          <Heading
+            eyebrow="Najczęściej zadawane pytania"
+            title={`Informacje praktyczne: ${service.short}`}
+          />
+          <div className="faq-list service-faq">
+            {service.faq.map(([q, a], i) => (
+              <details key={q}>
+                <summary>
+                  <span>0{i + 1}</span>
+                  {q}
+                  <b>+</b>
+                </summary>
+                <p>{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Method() {
-  const steps = [["01","Poznanie","Słuchamy","Poznajemy Twoją historię, priorytety, aktualne dolegliwości i aktywności, do których chcesz wrócić."],["02","Ocena","Analizujemy","Badamy ruch, wzorce funkcjonalne, obciążenie i zależności, które mogą wpływać na Twój stan."],["03","Reset","Przygotowujemy","Zmniejszamy przeciążenie i wybieramy pierwsze kroki oraz terapie, które tworzą podstawę dalszej opieki."],["04","Odbudowa","Wspieramy","Łączymy odpowiednie procedury chironeurogenne, technologiczne i terapie według indywidualnego planu."],["05","Utrzymanie","Optymalizujemy","Monitorujemy postępy, modyfikujemy plan i wspieramy długoterminową witalność oraz funkcję."]];
-  return <><Hero eyebrow="REVIQA Method" title="Pięć kroków. Jedna indywidualna historia." text="REVIQA Method jest ramą spersonalizowanej opieki. Nie jest uniwersalnym protokołem ani samodzielnym leczeniem medycznym; każdy krok dopasowujemy do klienta." image="/assets/reviqa-philosophy.jpeg" /><section className="section shell"><Heading eyebrow="Proces" title="Od zrozumienia do trwałych postępów" /><div className="timeline">{steps.map(([n,t,v,p]) => <article key={n}><span>{n}</span><div><small>{v}</small><h2>{t}</h2><p>{p}</p></div></article>)}</div></section><CTA /></>;
+  const steps = [
+    [
+      "01",
+      "Poznanie",
+      "Słuchamy",
+      "Poznajemy Twoją historię, priorytety, aktualne dolegliwości i aktywności, do których chcesz wrócić.",
+    ],
+    [
+      "02",
+      "Ocena",
+      "Analizujemy",
+      "Badamy ruch, wzorce funkcjonalne, obciążenie i zależności, które mogą wpływać na Twój stan.",
+    ],
+    [
+      "03",
+      "Reset",
+      "Przygotowujemy",
+      "Zmniejszamy przeciążenie i wybieramy pierwsze kroki oraz terapie, które tworzą podstawę dalszej opieki.",
+    ],
+    [
+      "04",
+      "Odbudowa",
+      "Wspieramy",
+      "Łączymy odpowiednie procedury chironeurogenne, technologiczne i terapie według indywidualnego planu.",
+    ],
+    [
+      "05",
+      "Utrzymanie",
+      "Optymalizujemy",
+      "Monitorujemy postępy, modyfikujemy plan i wspieramy długoterminową witalność oraz funkcję.",
+    ],
+  ];
+  return (
+    <>
+      <Hero
+        eyebrow="REVIQA Method"
+        title="Pięć kroków. Jedna indywidualna historia."
+        text="REVIQA Method jest ramą spersonalizowanej opieki. Nie jest uniwersalnym protokołem ani samodzielnym leczeniem medycznym; każdy krok dopasowujemy do klienta."
+        image="/assets/reviqa-philosophy.jpeg"
+      />
+      <section className="section shell method-system">
+        <Heading eyebrow="Autorska metodologia" title="REVIQA Method™ | Chironeurogenic System™" text="Nasza autorska metodologia łączy biomechanikę, neuromięśniowo-szkieletową terapię manualną, metody fizjoregeneracyjne i nowoczesne technologie regeneracyjne w jednym spersonalizowanym systemie opieki." />
+        <div className="method-system-copy"><p>Nie wybierasz pojedynczych terapii. Po ocenie funkcjonalnej wspólnie tworzymy spersonalizowany protokół regeneracyjny uwzględniający potrzeby, aktualny stan funkcjonalny i długoterminowe cele.</p><p>Poniższych pięć kroków pokazuje, jak stosujemy metodologię w praktyce – od zrozumienia do długofalowego wsparcia.</p></div>
+      </section>
+      <section className="section shell">
+        <Heading eyebrow="Proces" title="Od zrozumienia do trwałych postępów" />
+        <div className="timeline">
+          {steps.map(([n, t, v, p]) => (
+            <article key={n}>
+              <span>{n}</span>
+              <div>
+                <small>{v}</small>
+                <h2>{t}</h2>
+                <p>{p}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Pricing() {
-  const programmes = [{name:"RESET",note:"Pierwszy krok do regeneracji",items:["2 indywidualne spotkania","Indywidualny plan opieki","HBOT według planu"],price:"305 €"},{name:"RESTORE",note:"Powrót do tego, co lubisz",items:["3 indywidualne spotkania","Indywidualny plan opieki","HBOT według planu"],price:"455 €"},{name:"REGENERATE",note:"Odnowa siły i witalności",items:["5 indywidualnych spotkań","Indywidualny plan opieki","HBOT według planu"],price:"755 €"},{name:"LONGEVITY",note:"Odkrywamy czas",items:["10 indywidualnych spotkań","Kompleksowy plan długoterminowy","HBOT według planu","Bieżąca ocena"],price:"1 495 €"}];
-  return <><Hero eyebrow="Programy i cennik" title="Za każdą regeneracją stoi historia człowieka" text="Wierzymy w w pełni indywidualne podejście. Program i zakres opieki zawsze dostosowujemy do rzeczywistych potrzeb Twojego ciała." image="/assets/pricing-consultation-hero.jpg" /><section className="section shell"><Heading eyebrow="Indywidualna opieka" title="REVIQA Method™" text="Spersonalizowany protokół regeneracyjny" /><article className="protocol-card"><div className="protocol-head"><div><span className="eyebrow">Spersonalizowany protokół regeneracyjny</span><h2>REVIQA Method™</h2></div><strong>do 90 min | 165 €</strong></div><p>Kompleksowe indywidualne spotkanie skupione na funkcjonalnej ocenie zdrowia, ustaleniu głównych priorytetów i stworzeniu protokołu zgodnego z aktualnym stanem, potrzebami i celami klienta.</p><div className="protocol-columns"><div><h3>Protokół obejmuje</h3><ul><li>Założenie REVIQA Health Passport™</li><li>Funkcjonalną ocenę stanu zdrowia</li><li>Terapie z modułów REVIQA Method™</li><li>Zalecenie odpowiedniego programu</li><li>Konsultację i wsparcie specjalisty</li></ul></div><div><h3>Moduły terapeutyczne</h3><ul><li>Chironeurogenne manualne techniki regeneracyjne</li><li>Techniki psychosomatyczne</li><li>Tlenoterapia hiperbaryczna (HBOT)</li><li>Terapia wodorowa (H₂)</li><li>Terapia tlenowa (O₂)</li><li>Fotobiomodulacja</li><li>Przezskórna elektropresura</li><li>Ćwiczenia fizjoregeneracyjne i edukacja</li><li>Zalecenia regeneracyjne i profilaktyczne</li><li>Inne procedury według potrzeb</li></ul></div></div><div className="protocol-note"><h3>Uwaga</h3><p>REVIQA Method™ jest autorską metodą indywidualnej regeneracji. Klient nie wybiera pojedynczych terapii; specjalista tworzy protokół po funkcjonalnej ocenie zdrowia i aktualnych potrzeb.</p></div></article><article className="hbot-price-card"><div><span className="eyebrow">Terapia indywidualna</span><h2>Tlenoterapia hiperbaryczna (HBOT)</h2><p>1 sesja | seria 5 | seria 10</p></div><div><span>60 min</span><strong>50 € / 150 € / 250 €</strong></div></article></section><section className="section dark-panel"><div className="shell"><Heading center eyebrow="Programy regeneracji & longevity" title="Zakres według potrzeb i celów" /><div className="program-grid">{programmes.map((p) => <article key={p.name}><span>{p.note}</span><h2>{p.name}</h2><ul>{p.items.map((i) => <li key={i}>{i}</li>)}</ul><b>{p.price}</b></article>)}</div><p className="pricing-note">Programy są kontynuacją kompleksowej oceny wstępnej i indywidualnego planu. Zalecana liczba spotkań może ulec zmianie po ocenie.</p></div></section><section className="section shell"><Notice /></section><CTA /></>;
+  const programmes = [
+    {
+      name: "RESET",
+      note: "Pierwszy krok do regeneracji",
+      sessions: "2 ×",
+      duration: "2 × 90 min",
+      price: "320 €",
+      image: "/assets/home-freedom-family.jpg",
+    },
+    {
+      name: "RESTORE",
+      note: "Powrót do tego, co lubisz",
+      sessions: "3 ×",
+      duration: "3 × 90 min",
+      price: "465 €",
+      image: "/assets/service-manual-concept.jpg",
+    },
+    {
+      name: "REGENERATE",
+      note: "Odnowa siły i witalności",
+      sessions: "5 ×",
+      duration: "5 × 90 min",
+      price: "750 €",
+      image: "/assets/service-pbm-concept.jpg",
+    },
+    {
+      name: "LONGEVITY",
+      note: "Odkrywamy czas",
+      sessions: "10 ×",
+      duration: "10 × 90 min",
+      price: "1 450 €",
+      image: "/assets/center-garden-1.jpeg",
+    },
+  ];
+  const protocolBenefits = [
+    "Założenie REVIQA Health Passport™",
+    "Funkcjonalna ocena stanu zdrowia",
+    "Terapie z modułów REVIQA Method™ zgodnie z indywidualnym protokołem",
+    "Zalecenie odpowiedniego programu REVIQA Method™",
+    "Konsultacja i profesjonalne wsparcie",
+  ];
+  const therapyModules = [
+    "Chironeurogenne manualne techniki regeneracyjne",
+    "Techniki psychosomatyczne",
+    "Tlenoterapia hiperbaryczna (HBOT)",
+    "Terapia wodorowa (H₂)",
+    "Terapia tlenowa (O₂)",
+    "Fotobiomodulacja",
+    "Przezskórna elektropresura",
+    "Ćwiczenia fizjoregeneracyjne i edukacja",
+    "Zalecenia dotyczące regeneracji i profilaktyki",
+    "Inne procedury zgodnie z indywidualnymi potrzebami",
+  ];
+  return (
+    <>
+      <Hero
+        eyebrow="Programy i cennik"
+        title="Za każdą regeneracją stoi historia człowieka"
+        text="Wierzymy w w pełni indywidualne podejście. Program i zakres opieki zawsze dostosowujemy do rzeczywistych potrzeb Twojego ciała."
+        image="/assets/pricing-consultation-hero.jpg"
+      />
+      <section className="section shell">
+        <Heading
+          eyebrow="Indywidualna opieka"
+          title="REVIQA Method™"
+          text="Spersonalizowany protokół regeneracyjny"
+        />
+        <article className="protocol-card">
+          <div className="protocol-head">
+            <div>
+              <span className="eyebrow">
+                Spersonalizowany protokół regeneracyjny
+              </span>
+              <h2>REVIQA Method™</h2>
+            </div>
+            <strong>do 90 min | 165 €</strong>
+          </div>
+          <p>
+            Kompleksowe indywidualne spotkanie skupione na funkcjonalnej ocenie
+            zdrowia, ustaleniu głównych priorytetów i stworzeniu protokołu
+            zgodnego z aktualnym stanem, potrzebami i celami klienta.
+          </p>
+          <div className="protocol-columns">
+            <div>
+              <h3>Protokół obejmuje</h3>
+              <ul>
+                <li>Założenie REVIQA Health Passport™</li>
+                <li>Funkcjonalną ocenę stanu zdrowia</li>
+                <li>Terapie z modułów REVIQA Method™</li>
+                <li>Zalecenie odpowiedniego programu</li>
+                <li>Konsultację i wsparcie specjalisty</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Moduły terapeutyczne</h3>
+              <ul>
+                <li>Chironeurogenne manualne techniki regeneracyjne</li>
+                <li>Techniki psychosomatyczne</li>
+                <li>Tlenoterapia hiperbaryczna (HBOT)</li>
+                <li>Terapia wodorowa (H₂)</li>
+                <li>Terapia tlenowa (O₂)</li>
+                <li>Fotobiomodulacja</li>
+                <li>Przezskórna elektropresura</li>
+                <li>Ćwiczenia fizjoregeneracyjne i edukacja</li>
+                <li>Zalecenia regeneracyjne i profilaktyczne</li>
+                <li>Inne procedury według potrzeb</li>
+              </ul>
+            </div>
+          </div>
+          <div className="protocol-note">
+            <h3>Uwaga</h3>
+            <p>
+              REVIQA Method™ jest autorską metodą indywidualnej regeneracji.
+              Klient nie wybiera pojedynczych terapii; specjalista tworzy
+              protokół po funkcjonalnej ocenie zdrowia i aktualnych potrzeb.
+            </p>
+          </div>
+        </article>
+        <article className="hbot-price-card">
+          <div>
+            <span className="eyebrow">Terapia indywidualna</span>
+            <h2>Tlenoterapia hiperbaryczna (HBOT)</h2>
+            <p>1 sesja | seria 5 | seria 10</p>
+          </div>
+          <div>
+            <span>60 min</span>
+            <strong>50 € / 150 € / 250 €</strong>
+          </div>
+        </article>
+      </section>
+      <section className="section dark-panel">
+        <div className="shell">
+          <Heading
+            center
+            eyebrow="Programy regeneracji & longevity"
+            title="Zakres według potrzeb i celów"
+          />
+          <div className="program-grid program-accordion">
+            {programmes.map((p) => (
+              <details key={p.name} className="program-card">
+                <summary>
+                  <img src={asset(p.image)} alt="" />
+                  <span className="program-shade" aria-hidden="true" />
+                  <span className="program-note">{p.note}</span>
+                  <h2>{p.name}</h2>
+                  <p><b>{p.sessions}</b> spersonalizowany protokół regeneracyjny<br />REVIQA Method™</p>
+                  <strong>{p.price}</strong>
+                  <span className="program-more">Dowiedz się więcej <i>+</i></span>
+                </summary>
+                <div className="program-detail">
+                  <div className="program-detail-intro"><span className="eyebrow">{p.duration}</span><h3>Kompleksowe spotkania indywidualne</h3><p>Skoncentrowane na funkcjonalnej ocenie zdrowia, ustaleniu głównych priorytetów i stworzeniu spersonalizowanego protokołu regeneracyjnego zgodnie z aktualnym stanem, potrzebami i celami klienta.</p></div>
+                  <div className="program-detail-columns">
+                    <div><h3>Spersonalizowany protokół obejmuje</h3><ul>{protocolBenefits.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                    <div><h3>Moduły terapeutyczne REVIQA Method™</h3><p>Specjalista REVIQA | BIOMEDICA tworzy protokół na podstawie oceny funkcjonalnej i indywidualnych potrzeb klienta.</p><ul>{therapyModules.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                  </div>
+                  <div className="program-detail-note"><h3>Uwaga</h3><p>REVIQA Method™ jest autorską metodą indywidualnej regeneracji. Klient nie wybiera pojedynczych terapii; specjalista REVIQA | BIOMEDICA tworzy spersonalizowany protokół po funkcjonalnej ocenie stanu zdrowia i aktualnych potrzeb.</p></div>
+                </div>
+              </details>
+            ))}
+          </div>
+          <p className="pricing-note">
+            Programy są kontynuacją kompleksowej oceny wstępnej i indywidualnego
+            planu. Zalecana liczba spotkań może ulec zmianie po ocenie.
+          </p>
+        </div>
+      </section>
+      <section className="section shell">
+        <Notice />
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Gallery() {
-  const photos = [["/assets/center-garden-1.jpeg","Ogród centrum REVIQA"],["/assets/center-garden-2.jpeg","Spokojne zielone otoczenie"],["/assets/center-garden-3.jpeg","Teren REVIQA"],["/assets/center-building-corrected.jpg","Nowoczesny dostępny pawilon"],["/assets/center-garden-4.jpeg","Ogród i wejście do centrum"]];
-  return <><Hero eyebrow="Galeria" title="Prawdziwe miejsce spokoju i prywatności" text="REVIQA znajduje się na spokojnym, zadbanym i dostępnym terenie z parkingiem bezpośrednio przy centrum." image="/assets/center-garden-3.jpeg" /><section className="section shell"><Heading eyebrow="Centrum REVIQA" title="Budynek i ogród" /><div className="gallery-grid">{photos.map(([src,alt],i) => <figure className={`gallery-${i + 1}`} key={src}><img src={asset(src)} alt={alt} /><figcaption>{alt}</figcaption></figure>)}</div></section><CTA /></>;
+  const photos = [
+    ["/assets/center-garden-1.jpeg", "Ogród centrum REVIQA"],
+    ["/assets/center-garden-2.jpeg", "Spokojne zielone otoczenie"],
+    ["/assets/center-garden-3.jpeg", "Teren REVIQA"],
+    ["/assets/center-building-corrected.jpg", "Nowoczesny dostępny pawilon"],
+    ["/assets/center-garden-4.jpeg", "Ogród i wejście do centrum"],
+  ];
+  return (
+    <>
+      <Hero
+        eyebrow="Galeria"
+        title="Prawdziwe miejsce spokoju i prywatności"
+        text="REVIQA znajduje się na spokojnym, zadbanym i dostępnym terenie z parkingiem bezpośrednio przy centrum."
+        image="/assets/center-garden-3.jpeg"
+      />
+      <section className="section shell">
+        <Heading eyebrow="Centrum REVIQA" title="Budynek i ogród" />
+        <div className="gallery-grid">
+          {photos.map(([src, alt], i) => (
+            <figure className={`gallery-${i + 1}`} key={src}>
+              <img src={asset(src)} alt={alt} />
+              <figcaption>{alt}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Faq() {
-  const data = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqsPl.map(([q,a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
-  return <><StructuredData data={data} /><Hero eyebrow="FAQ" title="Najczęściej zadawane pytania" text="Praktyczne informacje przed pierwszą wizytą. Jeśli nie znajdziesz odpowiedzi, napisz lub zadzwoń." /><section className="section shell faq-list">{faqsPl.map(([q,a],i) => <details key={q} open={i === 0}><summary><span>0{i + 1}</span>{q}<b>+</b></summary><p>{a}</p></details>)}</section><CTA /></>;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqsPl.map(([q, a]) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  };
+  return (
+    <>
+      <StructuredData data={data} />
+      <Hero
+        eyebrow="FAQ"
+        title="Najczęściej zadawane pytania"
+        text="Praktyczne informacje przed pierwszą wizytą. Jeśli nie znajdziesz odpowiedzi, napisz lub zadzwoń."
+      />
+      <section className="section shell faq-list">
+        {faqsPl.map(([q, a], i) => (
+          <details key={q} open={i === 0}>
+            <summary>
+              <span>0{i + 1}</span>
+              {q}
+              <b>+</b>
+            </summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Testimonials() {
-  return <><Hero eyebrow="Opinie" title="Prawdziwego doświadczenia nie zastąpią obietnice" text="Ta strona jest przygotowana na zweryfikowane opinie klientów, publikowane wyłącznie za ich zgodą." /><section className="section shell reviews-empty"><div className="ornament">✦</div><Heading center eyebrow="Wkrótce" title="Zweryfikowane doświadczenia pojawią się wkrótce" text="Nie publikujemy anonimowych ani wymyślonych opinii. Każda będzie pochodzić od prawdziwego klienta i zostanie opublikowana za zgodą." /></section><CTA /></>;
+  return (
+    <>
+      <Hero
+        eyebrow="Opinie"
+        title="Prawdziwego doświadczenia nie zastąpią obietnice"
+        text="Ta strona jest przygotowana na zweryfikowane opinie klientów, publikowane wyłącznie za ich zgodą."
+      />
+      <section className="section shell reviews-empty">
+        <div className="ornament">✦</div>
+        <Heading
+          center
+          eyebrow="Wkrótce"
+          title="Zweryfikowane doświadczenia pojawią się wkrótce"
+          text="Nie publikujemy anonimowych ani wymyślonych opinii. Każda będzie pochodzić od prawdziwego klienta i zostanie opublikowana za zgodą."
+        />
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Blog() {
-  const drafts = [["HBOT","Czym jest tlenoterapia hiperbaryczna?","/assets/service-hbot.png"],["Pierwsza wizyta","Czego oczekiwać podczas pierwszej konsultacji w REVIQA?","/assets/center-garden-1.jpeg"],["H₂","Wodór molekularny w indywidualnym planie regeneracji","/assets/service-hydrogen.png"],["Światło","Czym jest fotobiomodulacja?","/assets/service-pbm.png"],["Ruch","Układ nerwowy, ruch i regeneracja","/assets/therapy-regeneration.jpeg"]];
-  return <><Hero eyebrow="Magazyn REVIQA" title="Wiedza dla lepszych decyzji" text="Przygotowujemy artykuły sprawdzone przez specjalistów, które w zrozumiały sposób wyjaśniają technologie, opiekę i kontekst regeneracji." /><section className="section shell"><Heading eyebrow="Planowane tematy" title="W przygotowaniu" /><div className="blog-grid">{drafts.map(([tag,title,image]) => <article key={title}><div><img src={asset(image)} alt="" /><span>Zdjęcie ilustracyjne</span></div><small>{tag}</small><h2>{title}</h2><p>Artykuł jest w przygotowaniu i przed publikacją przejdzie weryfikację specjalisty.</p><b>Wkrótce</b></article>)}</div></section><CTA /></>;
+  const drafts = [
+    [
+      "HBOT",
+      "Czym jest tlenoterapia hiperbaryczna?",
+      "/assets/service-hbot.png",
+    ],
+    [
+      "Pierwsza wizyta",
+      "Czego oczekiwać podczas pierwszej konsultacji w REVIQA?",
+      "/assets/center-garden-1.jpeg",
+    ],
+    [
+      "H₂",
+      "Wodór molekularny w indywidualnym planie regeneracji",
+      "/assets/service-hydrogen.png",
+    ],
+    ["Światło", "Czym jest fotobiomodulacja?", "/assets/service-pbm.png"],
+    [
+      "Ruch",
+      "Układ nerwowy, ruch i regeneracja",
+      "/assets/therapy-regeneration.jpeg",
+    ],
+  ];
+  return (
+    <>
+      <Hero
+        eyebrow="Magazyn REVIQA"
+        title="Wiedza dla lepszych decyzji"
+        text="Przygotowujemy artykuły sprawdzone przez specjalistów, które w zrozumiały sposób wyjaśniają technologie, opiekę i kontekst regeneracji."
+      />
+      <section className="section shell">
+        <Heading eyebrow="Planowane tematy" title="W przygotowaniu" />
+        <div className="blog-grid">
+          {drafts.map(([tag, title, image]) => (
+            <article key={title}>
+              <div>
+                <img src={asset(image)} alt="" />
+                <span>Zdjęcie ilustracyjne</span>
+              </div>
+              <small>{tag}</small>
+              <h2>{title}</h2>
+              <p>
+                Artykuł jest w przygotowaniu i przed publikacją przejdzie
+                weryfikację specjalisty.
+              </p>
+              <b>Wkrótce</b>
+            </article>
+          ))}
+        </div>
+      </section>
+      <CTA />
+    </>
+  );
 }
 
 function Contact() {
-  return <><Hero eyebrow="Kontakt" title="Twoja droga zaczyna się od rozmowy" text="Umów konsultację wstępną telefonicznie lub przez WhatsApp." /><section className="section shell contact-layout"><div><Heading eyebrow="REVIQA Biomedica Poprad" title="Kontakt i godziny otwarcia" /><div className="contact-cards"><a href={`tel:${contactPl.phone}`}><small>Telefon</small><b>{contactPl.phoneDisplay}</b></a><a href={`mailto:${contactPl.email}`}><small>E-mail</small><b>{contactPl.email}</b></a><div><small>Adres</small><b>{contactPl.address}</b></div><div><small>Godziny otwarcia</small><b>Pon–Pt 9:00–15:00</b><p>Weekendy i inne godziny po uzgodnieniu.</p></div></div><div className="contact-actions"><a className="gold-button" href={contactPl.whatsapp} target="_blank" rel="noreferrer">Napisz przez WhatsApp</a><a className="ghost-button" href={`tel:${contactPl.phone}`}>Zadzwoń</a></div><p className="access-note">✓ Parking na miejscu &nbsp; ✓ Wejście bez barier</p></div><div className="map-embed"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199735.6963376034!2d20.152553270098007!3d49.01102797600171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e3b8f55e5821b%3A0xa48b688bd1373dd1!2sReviqa%20Biomedica!5e1!3m2!1scs!2ssk!4v1784717514004!5m2!1scs!2ssk" title="REVIQA Biomedica w Google Maps" loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /><a href="https://www.google.com/maps/search/?api=1&query=Reviqa%20Biomedica%2C%20Hitschova%205022%2F2%2C%20058%2001%20Poprad%2C%20Slovakia" target="_blank" rel="noreferrer">Otwórz trasę w Google Maps</a></div></section></>;
+  return (
+    <>
+      <Hero
+        eyebrow="Kontakt"
+        title="Twoja droga zaczyna się od rozmowy"
+        text="Umów konsultację wstępną telefonicznie lub przez WhatsApp."
+      />
+      <section className="section shell contact-layout">
+        <div>
+          <Heading
+            eyebrow="REVIQA Biomedica Poprad"
+            title="Kontakt i godziny otwarcia"
+          />
+          <div className="contact-cards">
+            <a href={`tel:${contactPl.phone}`}>
+              <small>Telefon</small>
+              <b>{contactPl.phoneDisplay}</b>
+            </a>
+            <a href={`mailto:${contactPl.email}`}>
+              <small>E-mail</small>
+              <b>{contactPl.email}</b>
+            </a>
+            <div>
+              <small>Adres</small>
+              <b>{contactPl.address}</b>
+            </div>
+            <div>
+              <small>Godziny otwarcia</small>
+              <b>Pon–Pt 9:00–15:00</b>
+              <p>Weekendy i inne godziny po uzgodnieniu.</p>
+            </div>
+          </div>
+          <div className="contact-actions">
+            <a
+              className="gold-button"
+              href={contactPl.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Napisz przez WhatsApp
+            </a>
+            <a className="ghost-button" href={`tel:${contactPl.phone}`}>
+              Zadzwoń
+            </a>
+          </div>
+          <p className="access-note">
+            ✓ Parking na miejscu &nbsp; ✓ Wejście bez barier
+          </p>
+        </div>
+        <div className="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199735.6963376034!2d20.152553270098007!3d49.01102797600171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e3b8f55e5821b%3A0xa48b688bd1373dd1!2sReviqa%20Biomedica!5e1!3m2!1scs!2ssk!4v1784717514004!5m2!1scs!2ssk"
+            title="REVIQA Biomedica w Google Maps"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Reviqa%20Biomedica%2C%20Hitschova%205022%2F2%2C%20058%2001%20Poprad%2C%20Slovakia"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Otwórz trasę w Google Maps
+          </a>
+        </div>
+      </section>
+    </>
+  );
 }
 
 function Privacy() {
-  return <><Hero eyebrow="Informacje prawne" title="Ochrona danych osobowych" text="Tymczasowa struktura dokumentu. Ostateczne dane administratora zostaną dodane przed finalną publikacją." /><article className="section shell legal-copy"><div className="draft-alert">Wersja robocza – nie jest ostatecznym dokumentem prawnym.</div><h2>1. Administrator danych</h2><p>Nazwa firmy, numer identyfikacyjny, siedziba i pełne dane zostaną uzupełnione po ich nadaniu. Kontakt: {contactPl.email}.</p><h2>2. Zakres przetwarzania</h2><p>Strona nie zawiera formularza kontaktowego ani newslettera. Kontaktując się telefonicznie, e-mailem lub przez WhatsApp, użytkownik przekazuje dane bezpośrednio przez wybraną usługę.</p><h2>3. Cel i podstawa prawna</h2><p>Ostateczny tekst określi cele komunikacji, zarządzania wizytami, opieki i realizacji obowiązków prawnych.</p><h2>4. Twoje prawa</h2><p>Dokument końcowy będzie zawierać informacje o dostępie, sprostowaniu, usunięciu, ograniczeniu, sprzeciwie i prawie wniesienia skargi do organu nadzorczego.</p></article></>;
+  return (
+    <>
+      <Hero
+        eyebrow="Informacje prawne"
+        title="Ochrona danych osobowych"
+        text="Tymczasowa struktura dokumentu. Ostateczne dane administratora zostaną dodane przed finalną publikacją."
+      />
+      <article className="section shell legal-copy">
+        <div className="draft-alert">
+          Wersja robocza – nie jest ostatecznym dokumentem prawnym.
+        </div>
+        <h2>1. Administrator danych</h2>
+        <p>
+          Nazwa firmy, numer identyfikacyjny, siedziba i pełne dane zostaną
+          uzupełnione po ich nadaniu. Kontakt: {contactPl.email}.
+        </p>
+        <h2>2. Zakres przetwarzania</h2>
+        <p>
+          Strona nie zawiera formularza kontaktowego ani newslettera.
+          Kontaktując się telefonicznie, e-mailem lub przez WhatsApp, użytkownik
+          przekazuje dane bezpośrednio przez wybraną usługę.
+        </p>
+        <h2>3. Cel i podstawa prawna</h2>
+        <p>
+          Ostateczny tekst określi cele komunikacji, zarządzania wizytami,
+          opieki i realizacji obowiązków prawnych.
+        </p>
+        <h2>4. Twoje prawa</h2>
+        <p>
+          Dokument końcowy będzie zawierać informacje o dostępie, sprostowaniu,
+          usunięciu, ograniczeniu, sprzeciwie i prawie wniesienia skargi do
+          organu nadzorczego.
+        </p>
+      </article>
+    </>
+  );
 }
 
 function Cookies() {
-  return <><Hero eyebrow="Informacje prawne" title="Polityka cookies" text="Informacje o technologiach używanych przez tę stronę." /><article className="section shell legal-copy"><h2>Niezbędne technologie</h2><p>Strona korzysta z pamięci przeglądarki w celu zapamiętania wyboru cookies i podstawowych ustawień technicznych.</p><h2>Analityczne cookies – Google Analytics 4</h2><p>Za zgodą używamy Google Analytics 4 o identyfikatorze G-RD86DGX0GV, aby analizować ruch i zainteresowanie kontaktem z centrum. Bez zgody Analytics nie jest uruchamiany.</p><p>Wybór można zmienić w dowolnym momencie przez „Ustawienia cookies” w stopce.</p><h2>Usługi zewnętrzne</h2><p>Strona kontaktowa i stopka korzystają z Google Maps. Linki do WhatsApp, telefonu i poczty mogą otwierać usługi innych podmiotów.</p></article></>;
+  return (
+    <>
+      <Hero
+        eyebrow="Informacje prawne"
+        title="Polityka cookies"
+        text="Informacje o technologiach używanych przez tę stronę."
+      />
+      <article className="section shell legal-copy">
+        <h2>Niezbędne technologie</h2>
+        <p>
+          Strona korzysta z pamięci przeglądarki w celu zapamiętania wyboru
+          cookies i podstawowych ustawień technicznych.
+        </p>
+        <h2>Analityczne cookies – Google Analytics 4</h2>
+        <p>
+          Za zgodą używamy Google Analytics 4 o identyfikatorze G-RD86DGX0GV,
+          aby analizować ruch i zainteresowanie kontaktem z centrum. Bez zgody
+          Analytics nie jest uruchamiany.
+        </p>
+        <p>
+          Wybór można zmienić w dowolnym momencie przez „Ustawienia cookies” w
+          stopce.
+        </p>
+        <h2>Usługi zewnętrzne</h2>
+        <p>
+          Strona kontaktowa i stopka korzystają z Google Maps. Linki do
+          WhatsApp, telefonu i poczty mogą otwierać usługi innych podmiotów.
+        </p>
+      </article>
+    </>
+  );
 }
 
-export default async function PolishPage({ params }: { params: Promise<{ path?: string[] }> }) {
+export default async function PolishPage({
+  params,
+}: {
+  params: Promise<{ path?: string[] }>;
+}) {
   const { path = [] } = await params;
   if (path.length === 0) return <Home />;
   if (path[0] === "terapie" && path[1]) {
@@ -148,9 +1342,18 @@ export default async function PolishPage({ params }: { params: Promise<{ path?: 
     return service ? <Therapy service={service} /> : notFound();
   }
   const pages: Record<string, React.ReactNode> = {
-    "o-nas": <About />, "nasz-zespol": <Team />, terapie: <Therapies />, "metoda-reviqa": <Method />,
-    "programy-cennik": <Pricing />, galeria: <Gallery />, faq: <Faq />, opinie: <Testimonials />,
-    blog: <Blog />, kontakt: <Contact />, "ochrona-danych": <Privacy />, cookies: <Cookies />,
+    "o-nas": <About />,
+    "nasz-zespol": <Team />,
+    terapie: <Therapies />,
+    "metoda-reviqa": <Method />,
+    "programy-cennik": <Pricing />,
+    galeria: <Gallery />,
+    faq: <Faq />,
+    opinie: <Testimonials />,
+    blog: <Blog />,
+    kontakt: <Contact />,
+    "ochrona-danych": <Privacy />,
+    cookies: <Cookies />,
   };
   return path.length === 1 && pages[path[0]] ? pages[path[0]] : notFound();
 }

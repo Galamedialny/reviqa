@@ -14,6 +14,7 @@ export type EnglishService = {
   title: string;
   eyebrow: string;
   intro: string;
+  impact: string[];
   image: string;
   process: string[];
   benefits: string[];
@@ -31,7 +32,12 @@ export const servicesEn: EnglishService[] = [
     short: "HBOT",
     title: "Hyperbaric oxygen therapy (HBOT)",
     eyebrow: "Supporting oxygen availability",
-    intro: "A scientifically established procedure in which the client breathes oxygen in a pressurised environment. Its purpose is to increase oxygen availability to tissues and support an individual regeneration plan.",
+    intro: "More oxygen available to the tissues. Greater support for the body’s natural regenerative processes. Hyperbaric oxygen therapy is always incorporated individually—according to the client’s health, goals and tolerance.",
+    impact: [
+      "Increased pressure allows the body to use oxygen in a way that is not available under normal atmospheric conditions.",
+      "The therapy may support tissue oxygenation, natural healing processes and recovery after selected types of strain.",
+      "The specific protocol and realistic potential benefit are always assessed individually.",
+    ],
     image: "/assets/service-hbot-concept.jpg",
     process: [
       "Before treatment, we assess your health, possible contraindications and the suitability of HBOT.",
@@ -44,10 +50,10 @@ export const servicesEn: EnglishService[] = [
     suitableFor: ["persistent fatigue", "recovery after injuries and procedures", "athletes and increased physical load", "skin and healing concerns", "reduced vitality", "other situations following professional recommendation"],
     modalities: ["individual HBOT protocol", "single session", "series of 5 sessions", "series of 10 sessions", "combination with other care modules"],
     details: [
-      ["Increased oxygen availability", "HBOT increases the availability of oxygen in blood and tissues. The specific effect depends on pressure, duration, protocol and the client’s health."],
-      ["Cell renewal and healing", "Within regeneration plans, HBOT is used to support natural healing processes, tissue renewal and recovery after selected types of strain."],
-      ["Inflammatory load, discomfort and vitality", "HBOT may form part of an individual plan supporting the management of inflammatory load, discomfort, immunity, energy and vitality. Suitability is always assessed individually."],
-      ["Brain and nervous system", "HBOT may also support cognition, concentration and selected neuroprotective mechanisms. It does not replace neurological examination or medical treatment."],
+      ["Increased oxygen availability", "Hyperbaric compression increases the amount of oxygen dissolved in blood plasma and may therefore support its availability in tissues with reduced circulation. The degree of effect depends on pressure, duration, the selected protocol and the client’s health."],
+      ["Cell renewal and healing", "Greater oxygen availability may create more favourable conditions for natural healing processes, tissue renewal and recovery after selected types of strain."],
+      ["Inflammatory load, discomfort and vitality", "As part of a personalised regeneration plan, this technology may support the management of inflammatory load, discomfort, immunity, energy and vitality. Suitability and realistic goals are determined individually."],
+      ["Brain and nervous system", "Greater oxygen availability is also used to support cognitive and neuroprotective mechanisms. Hyperbaric oxygen therapy does not replace neurological examination or prescribed treatment."],
     ],
     faq: [
       ["What will I feel during the session?", "During pressure changes you may feel pressure in your ears, similar to flying. The operator will explain how to equalise it."],
@@ -61,7 +67,12 @@ export const servicesEn: EnglishService[] = [
     short: "H₂ therapy",
     title: "Molecular hydrogen therapy (H₂)",
     eyebrow: "Regeneration at cellular level",
-    intro: "Hydrogen is the smallest molecule. At REVIQA, it is incorporated into personalised plans through inhalation or hydrogen-rich water according to the individual goal.",
+    intro: "The smallest molecule with remarkable regenerative potential. Molecular hydrogen may support cellular balance, vitality and the management of oxidative load. The method and frequency of administration are always selected individually.",
+    impact: [
+      "Molecular hydrogen is being studied for selective antioxidant activity and its ability to pass through biological membranes.",
+      "It may support mitochondria, cellular energy and the body’s natural balance.",
+      "At REVIQA it is a complementary module within a wider personalised protocol, not a substitute for diagnosis or treatment.",
+    ],
     image: "/assets/service-hydrogen-concept.jpg",
     process: [
       "We discuss your goal, health and the role of hydrogen therapy within the complete plan.",
@@ -91,7 +102,12 @@ export const servicesEn: EnglishService[] = [
     short: "O₂ therapy",
     title: "Molecular oxygen therapy (O₂)",
     eyebrow: "Supporting oxygenation and regeneration",
-    intro: "Oxygen therapy is integrated into a personalised regeneration protocol to support oxygenation, cellular energy and the body’s natural regenerative processes.",
+    intro: "Oxygen is fundamental to cellular energy. Individually configured oxygen therapy may support vitality, adaptation to strain and natural regenerative processes. Suitability is assessed according to the client’s current condition.",
+    impact: [
+      "Targeted oxygen support may help the body cope more effectively with physical and mental strain.",
+      "Within a personalised protocol, we use it to support cellular energy, vitality and recovery.",
+      "The method, intensity and frequency are determined through professional assessment.",
+    ],
     image: "/assets/service-diagnostics-concept.jpg",
     process: [
       "We assess your current health, individual needs and possible restrictions.",
@@ -121,7 +137,12 @@ export const servicesEn: EnglishService[] = [
     short: "Light therapy",
     title: "Photobiomodulation (660–850 nm)",
     eyebrow: "The science of light. The energy of life.",
-    intro: "Photobiomodulation uses selected wavelengths of red and near-infrared light to support natural cellular and regenerative processes.",
+    intro: "Light that communicates with cells. Selected wavelengths of red and near-infrared light may support cellular energy, tissue renewal and natural regenerative processes. Parameters are configured for the target area and the client’s needs.",
+    impact: [
+      "Light photons may influence mitochondria and the production of cellular ATP energy.",
+      "Red and near-infrared light are applied according to tissue depth and the intended supportive effect.",
+      "It is a non-invasive supportive module whose settings always follow the individual plan.",
+    ],
     image: "/assets/service-pbm-concept.jpg",
     process: [
       "We identify the target area and objective and rule out possible contraindications.",
@@ -151,7 +172,12 @@ export const servicesEn: EnglishService[] = [
     short: "Chiro-neurogenic therapy",
     title: "Chiro-neurogenic manual regenerative therapy",
     eyebrow: "Movement, nervous system and context",
-    intro: "Our proprietary method precisely combines specialised manual techniques with a deep understanding of the connection between the nervous and movement systems.",
+    intro: "Our proprietary therapy connects the nervous and movement systems as one functional whole. Through targeted manual work, we seek to create conditions for more natural movement, better adaptation and regeneration.",
+    impact: [
+      "We focus not only on the site of discomfort, but on functional relationships between the spine, joints, muscles, fascia and neural pathways.",
+      "Specialised manual techniques are selected according to the client’s current functional condition and goals.",
+      "Every session forms part of a personalised system of care.",
+    ],
     image: "/assets/service-manual-concept.jpg",
     process: [
       "A conversation and functional assessment of the spine, joints, muscles, fascia and movement patterns.",
@@ -177,7 +203,12 @@ export const servicesEn: EnglishService[] = [
     short: "Physio-regenerative guidance",
     title: "Physio-regenerative guidance",
     eyebrow: "Continue your care at home",
-    intro: "After therapy, we teach you simple and safe exercises that you can perform independently at home. Your individual plan builds on therapy, supports movement habits and helps maintain progress.",
+    intro: "Regeneration continues between appointments. We teach you simple, safe movement practices that allow you to support your plan actively at home. The scope of exercise is adapted to your ability and the body’s response.",
+    impact: [
+      "The aim is to bring appropriate movement into daily life and support the client’s independence.",
+      "A smaller number of correctly mastered exercises may be more useful than a generic routine without guidance.",
+      "The plan is continuously adapted according to technique, tolerance and progress.",
+    ],
     image: "/assets/service-physio-home-exercise.jpg",
     process: [
       "We assess your current movement, options, restrictions and response to completed therapies.",
@@ -220,8 +251,8 @@ export const faqsEn: [string, string][] = [
 ];
 
 export const programmesEn = [
-  { name: "RESET", price: "€305", note: "The first step towards regeneration", items: ["2 individual sessions", "individual care plan", "HBOT option according to plan"] },
-  { name: "RESTORE", price: "€455", note: "Return to what you love", items: ["3 individual sessions", "individual care plan", "HBOT option according to plan"] },
-  { name: "REGENERATE", price: "€755", note: "Renew strength and vitality", items: ["5 individual sessions", "individual care plan", "HBOT according to the individual plan"] },
-  { name: "LONGEVITY", price: "€1,495", note: "Make time work for you", items: ["10 individual sessions", "comprehensive long-term plan", "ongoing assessment and optimisation"] },
+  { name: "RESET", price: "€320", note: "The first step towards regeneration", sessions: "2×", duration: "2 × 90 min.", image: "/assets/home-freedom-family.jpg" },
+  { name: "RESTORE", price: "€465", note: "Return to what you love", sessions: "3×", duration: "3 × 90 min.", image: "/assets/service-manual-concept.jpg" },
+  { name: "REGENERATE", price: "€750", note: "Renew strength and vitality", sessions: "5×", duration: "5 × 90 min.", image: "/assets/service-pbm-concept.jpg" },
+  { name: "LONGEVITY", price: "€1,450", note: "Discover more time", sessions: "10×", duration: "10 × 90 min.", image: "/assets/center-garden-1.jpeg" },
 ];

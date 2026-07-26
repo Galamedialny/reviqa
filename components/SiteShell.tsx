@@ -151,7 +151,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <header className={`site-header${locale === "sk" && pathname === "/" ? " sk-home-header" : ""}`}>
+      <header className={`site-header${pathname === "/" || /^\/(en|de|pl|ru)\/?$/.test(pathname) ? " sk-home-header" : ""}`}>
         <div className="nav-wrap">
           <Link href={ui.home} className="brand" aria-label={ui.homeLabel}>
             <img src={asset("/assets/reviqa-logo-header.png")} alt="REVIQA Biomedica" />
